@@ -1,0 +1,162 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "text",
+          "settings": {
+            "text": "{{ product.vendor }}",
+            "text_style": "body"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "judge_me_reviews_preview_badge_TP3iGt": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "dropdown",
+            "swatch_shape": "circle"
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "disabled": true,
+          "settings": {}
+        },
+        "collapsible_tab_JbLaaj": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Product Description",
+            "icon": "bounding-box",
+            "content": "{{ product.description }}",
+            "learnmore": "",
+            "learnmore_link": "",
+            "bydefaultopen": false
+          }
+        },
+        "collapsible_tab_GHNUcQ": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Return and Refund Policy",
+            "icon": "event",
+            "content": "<p>To be eligible for a full refund, items must be returned within 30 days of delivery in their original, unused condition with tags and packaging intact—returns of \"like new\" or slightly used products will not be accepted. Include your name and order number inside the return package and email us at get@get2Eleven.com if you have questions or need to initiate a return (we may request photos before proceeding). Customers are responsible for return shipping costs. Refunds are issued after the item passes inspection. Sale items, used items, and items marked “No Returns” are non returnable.</p>",
+            "learnmore": "Learn More",
+            "learnmore_link": "https://get2eleven.com/pages/refund-policy",
+            "bydefaultopen": false
+          }
+        },
+        "collapsible_tab_MFRPiT": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Shipping information",
+            "icon": "bounding-box",
+            "content": "<p>FREE SHIPPING on orders over $69</p>",
+            "learnmore": "",
+            "learnmore_link": "",
+            "bydefaultopen": false
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "judge_me_reviews_preview_badge_TP3iGt",
+        "price",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "description",
+        "collapsible_tab_JbLaaj",
+        "collapsible_tab_GHNUcQ",
+        "collapsible_tab_MFRPiT"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "cover",
+        "gallery_layout": "thumbnail_slider",
+        "media_position": "left",
+        "image_zoom": "lightbox",
+        "mobile_thumbnails": "show",
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "17090276086b1a824d": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_WibndR": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_WibndR"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "subhead": "",
+        "heading": "We Also Recommend",
+        "bg_heading": "Recommend",
+        "heading_size": "h2",
+        "products_to_show": 3,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "main",
+    "17090276086b1a824d",
+    "related-products"
+  ]
+}

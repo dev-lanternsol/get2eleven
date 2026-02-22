@@ -1,0 +1,43 @@
+
+  <ul class="section-text-with-link">
+  {%- for block in section.blocks -%}
+    <li><a href="{{ block.settings.link }}">{{ block.settings.title }}</a></li>
+    {%- endfor -%}
+    </ul>
+{% schema %}
+  {
+    "name": "Text with Link",
+    "class": "shopify-section--text-link",
+    "settings": [
+    ],
+    "blocks": [
+      {
+        "type": "text",
+        "name": "Text",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Text"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Heading",
+            "default": "Text"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "Link"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Text with Link",
+        "category": "Text"
+      }
+    ]
+  }
+{% endschema %}

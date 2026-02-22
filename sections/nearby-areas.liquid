@@ -1,0 +1,239 @@
+{{ 'section-nearby-areas.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  {%- if section.settings.background_image != blank -%}
+    .nearby-areas-{{ section.id }} {
+      background-image: url('{{ section.settings.background_image | image_url: width: 1920 }}');
+    }
+  {%- endif -%}
+
+  {%- if section.settings.background_image_mobile != blank -%}
+    @media screen and (max-width: 749px) {
+      .nearby-areas-{{ section.id }} {
+        background-image: url('{{ section.settings.background_image_mobile | image_url: width: 750 }}');
+      }
+    }
+  {%- elsif section.settings.background_image != blank -%}
+    @media screen and (max-width: 749px) {
+      .nearby-areas-{{ section.id }} {
+        background-image: url('{{ section.settings.background_image | image_url: width: 750 }}');
+      }
+    }
+  {%- endif -%}
+{%- endstyle -%}
+
+<div class="nearby-areas nearby-areas-{{ section.id }} section-{{ section.id }}-padding color-{{ section.settings.color_scheme }}">
+  <div class="page-width">
+    <div class="nearby-areas__header">
+      {%- if section.settings.heading != blank -%}
+        <h2 class="nearby-areas__heading {{ section.settings.heading_size }}">
+          {{ section.settings.heading }}
+        </h2>
+      {%- endif -%}
+
+      {%- if section.settings.description != blank -%}
+        <div class="nearby-areas__description">
+          {{ section.settings.description }}
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="nearby-areas__grid">
+        {%- for block in section.blocks -%}
+          {%- if block.settings.area_name != blank and block.settings.area_link != blank -%}
+            <a href="{{ block.settings.area_link }}" class="nearby-areas__card" {{ block.shopify_attributes }}>
+              <div class="nearby-areas__icon">
+                {%- if block.settings.custom_icon != blank -%}
+                  {{ block.settings.custom_icon }}
+                {%- else -%}
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                {%- endif -%}
+              </div>
+              <div class="nearby-areas__area-name">
+                {{ block.settings.area_name }}
+              </div>
+            </a>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Nearby Areas",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image (Desktop)",
+      "info": "Optional background image for the section"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image_mobile",
+      "label": "Background Image (Mobile)",
+      "info": "Optional. If not set, desktop image will be used"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Nearby Communities We Serve"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Small"
+        },
+        {
+          "value": "h1",
+          "label": "Medium"
+        },
+        {
+          "value": "h0",
+          "label": "Large"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Explore our services in these nearby areas</p>"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "area",
+      "name": "Area",
+      "settings": [
+        {
+          "type": "text",
+          "id": "area_name",
+          "label": "Area Name",
+          "default": "Area Name"
+        },
+        {
+          "type": "url",
+          "id": "area_link",
+          "label": "Area Link"
+        },
+        {
+          "type": "html",
+          "id": "custom_icon",
+          "label": "Custom Icon SVG (Optional)",
+          "info": "Leave blank to use default map pin icon"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Nearby Areas",
+      "blocks": [
+        {
+          "type": "area",
+          "settings": {
+            "area_name": "Pickleball Paddles in Leucadia, CA",
+            "area_link": "/pages/pickleball-paddles-leucadia-ca"
+          }
+        },
+        {
+          "type": "area",
+          "settings": {
+            "area_name": "Pickleball Paddles in Solana Beach, CA",
+            "area_link": "/pages/pickleball-paddles-solana-beach-ca"
+          }
+        },
+        {
+          "type": "area",
+          "settings": {
+            "area_name": "Pickleball Paddles in Olivenhain, CA",
+            "area_link": "/pages/pickleball-paddles-olivenhain-ca"
+          }
+        },
+        {
+          "type": "area",
+          "settings": {
+            "area_name": "Pickleball Paddles in Cardiff-by-the-Sea, CA",
+            "area_link": "/pages/pickleball-paddles-cardiff-by-the-sea"
+          }
+        },
+        {
+          "type": "area",
+          "settings": {
+            "area_name": "Pickleball Paddles in Rancho Santa Fe, CA",
+            "area_link": "/pages/pickleball-paddles-rancho-santa-fe"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

@@ -1,0 +1,142 @@
+<section class="featured-brands-src">
+  {% if section.settings.title != blank %}
+  <div class="heading section_head">
+    <h2 class="text-center clr_drk_blue f_42 font_600 text_uppercase title m0 section_header">
+              <span class="main_heading">{{ section.settings.title }}</span>
+          {% if section.settings.bg_heading != blank %}
+          <span class="bg_heading">{{ section.settings.bg_heading }}</span>
+          {% endif %}
+    </h2>
+  </div>
+  {% endif %}
+  <div class="slider_box">
+                  <div class="section_button">
+                <div class="butn_box">
+                  <div class="prev_{{ section.id }}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none">
+                      <rect width="44" height="44" rx="4" fill="white"/>
+                      <path d="M27.6378 10.7236L16.3613 22.0001L27.6378 33.2766" stroke="#0F3B6A" stroke-width="1.5"/>
+                    </svg>
+                  </div>
+                  <div class="next_{{ section.id }}">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none">
+                    <rect x="44" y="44" width="44" height="44" rx="4" transform="rotate(-180 44 44)" fill="white"/>
+                    <path d="M16.3622 33.2764L24.8102 24.8283C26.3723 23.2662 26.3723 20.7335 24.8102 19.1715L16.3622 10.7234" stroke="#0F3B6A" stroke-width="1.5"/>
+                  </svg>
+                  </div>
+                </div>
+              </div>
+  <div class="iner-warpp">
+    {% for block in section.blocks %}
+    {% if block.settings.image %}
+    <div class="image_box">
+      <img src="{{ block.settings.image | img_url:'master' }}" loading="lazy" height="" width="">
+      {% if block.settings.brand_image %}
+        <img src="{{ block.settings.brand_image | img_url:'master' }}" loading="lazy" height="" width="" class="brand-image">
+      {% endif %}
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+  </div>
+</section>
+<script>
+$('.featured-brands-src .iner-warpp').slick({
+  centerMode: true,
+  centerPadding: '240px',
+  slidesToShow: 4,
+  prevArrow: '.prev_{{ section.id }}',
+  nextArrow: '.next_{{ section.id }}',
+  responsive: [
+    {
+      breakpoint: 1300,
+      settings: {
+        centerMode: true,
+        centerPadding: '140px',
+        slidesToShow: 4
+      }
+    },
+    {
+      breakpoint: 1100,
+      settings: {
+        centerMode: true,
+        centerPadding: '100px',
+        slidesToShow: 4
+      }
+    },
+    {
+      breakpoint: 990,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 3
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 2
+      }
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 1
+      }
+    }
+  ]
+});
+</script>
+{% schema %}
+  {
+    "name": "Featured Brands",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading"
+      },
+      {
+        "type": "textarea",
+        "id": "bg_heading",
+        "label": "Sub Heading"
+      },
+      {
+        "type": "image_picker",
+        "id": "heading_bg",
+        "label": "heading Background image"
+      }
+      
+    ],
+  "blocks": [
+    {
+      "type": "Brands",
+      "name": "Brands",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Choose Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "brand_image",
+          "label": "Choose Brand Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Brands"
+    }
+  ]
+  }
+{% endschema %}

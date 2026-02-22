@@ -1,0 +1,105 @@
+{% style %}
+  .herobannerbg {
+    min-height: 850px;
+    margin-top: -3rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.herobannerwrap.section-{{ section.id }} {
+    background-image: url('{{section.settings.bg | img_url:'master'}}');
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: cover;
+}
+@media screen and (max-width: 900px) {
+.herobannerwrap.section-{{ section.id }} {
+    background-image: url('{{section.settings.bg_mobile | img_url:'master'}}');
+  }
+  }
+  {% endstyle %}
+<div class="herobannerwrap section-{{ section.id }}">
+  <div class="page-width">
+    <div class="container">
+      <div class="herobanner_row">
+        <div class="herobanner_col">
+          <div class="herobanner_content">
+            <div class="herobanner_data">
+              {% if section.settings.heading != blank %}
+                <h3 class="heading_secondary txtpurple f_32 font_600 text_uppercase clr_wht m0">{{ section.settings.heading }}</h3>
+              {% endif %}
+              {% if section.settings.caption != blank %}
+              <div class="herobanner_text banner__text rte f_18 font_400 body clr_wht">
+                {{ section.settings.caption }}
+              </div>
+              {% endif %}
+              {% if section.settings.btn != blank %}
+                <div class="button_wrap">           
+                  <a class="btn button f_18 font_700 text_uppercase  button--primary" href="{{ section.settings.url }}">{{ section.settings.btn }}</a>             
+                </div>
+              {% endif %}              
+            </div>
+              {% if section.settings.image != blank %}
+              <div class="mobbanner_img_box">
+               <img src="{{ section.settings.image | img_url:'master' }}" alt="mobile img" width="" height="" loading="lazy">
+              </div>
+              {% endif %}
+          </div>
+        </div>
+     
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "footer banner",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "t:sections.image-with-text.blocks.heading.settings.heading.label"
+    },
+    {
+      "type": "richtext",
+      "id": "caption",
+      "label": "t:sections.image-with-text.blocks.caption.settings.text.label"
+    },
+    {
+      "type": "text",
+      "id": "btn",
+      "label": "button name"
+    },
+    {
+      "type": "url",
+      "id": "url",
+      "label": "button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "image"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg",
+      "label": "background image"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_mobile",
+      "label": "background image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "footer banner"
+    }
+  ]
+}
+{% endschema %}

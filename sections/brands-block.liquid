@@ -1,0 +1,225 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
+
+<div class="page-width container brands_sec">
+    <ul
+      class="collection-list grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down" id="paginated-list" data-current-page="1" aria-live="polite"
+      role="list"
+    >
+      {%- for block in section.blocks -%}
+        <li
+          class="collection-list__item grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          {% if settings.animations_reveal_on_scroll %}
+            data-cascade
+            style="--animation-order: {{ forloop.index }};"
+          {% endif %}
+        >
+<a href="{{ block.settings.url }}" class="list-box">
+  {% if block.settings.image != blank %}
+  <div class="image">
+  <img src="{{ block.settings.image | img_url:'master' }}">
+  </div>
+    {% endif %}
+  {% if block.settings.heading != blank %}
+  <div class="content">
+    <h3 class="f_18 font_600">{{ block.settings.heading }}</h3>
+  </div>
+  {% endif %}
+</a>
+        </li>
+      {%- endfor -%}
+    </ul>
+    <nav class="pagination-container">
+    <button class="pagination-button f_17 font_400 clr_blck" id="prev-button" aria-label="Previous page" title="Previous page">
+<span>
+  <svg xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0 0 8 13" fill="none">
+  <path d="M7.1605 1.11898C7.32239 1.2815 7.41333 1.5019 7.41333 1.73171C7.41333 1.96152 7.32239 2.18191 7.1605 2.34444L2.8861 6.6344L7.1605 10.9244C7.3178 11.0878 7.40484 11.3067 7.40287 11.534C7.4009 11.7612 7.31009 11.9786 7.14998 12.1393C6.98988 12.2999 6.7733 12.3911 6.54689 12.3931C6.32048 12.395 6.10235 12.3077 5.93949 12.1498L1.05458 7.24713C0.892699 7.08461 0.801758 6.86421 0.801758 6.6344C0.801758 6.40459 0.892699 6.1842 1.05458 6.02167L5.93949 1.11898C6.10142 0.956507 6.32102 0.865234 6.55 0.865234C6.77897 0.865234 6.99857 0.956507 7.1605 1.11898Z" fill="black"/>
+</svg>
+</span>
+  <span>Previous</span>
+    </button>
+
+    <div id="pagination-numbers">
+
+    </div>
+
+    <button class="pagination-button f_17 font_400 clr_blck" id="next-button" aria-label="Next page" title="Next page">
+              <span>Next</span>
+              <span><svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
+  <path d="M0.443014 11.631C0.28113 11.4685 0.190188 11.2481 0.190188 11.0183C0.190188 10.7885 0.28113 10.5681 0.443014 10.4056L4.71742 6.1156L0.443014 1.82564C0.285717 1.66218 0.19868 1.44326 0.200647 1.21603C0.202615 0.988791 0.29343 0.771422 0.453533 0.610737C0.613636 0.450051 0.830216 0.358906 1.05663 0.356932C1.28304 0.354957 1.50116 0.442311 1.66402 0.600181L6.54893 5.50287C6.71082 5.66539 6.80176 5.88579 6.80176 6.1156C6.80176 6.34541 6.71082 6.5658 6.54893 6.72833L1.66402 11.631C1.50209 11.7935 1.28249 11.8848 1.05352 11.8848C0.824546 11.8848 0.604947 11.7935 0.443014 11.631Z" fill="black"/>
+</svg></span>
+    </button>
+  </nav>
+</div>
+<script>
+  const paginationNumbers = document.getElementById("pagination-numbers");
+const paginatedList = document.getElementById("paginated-list");
+const listItems = paginatedList.querySelectorAll("li");
+const nextButton = document.getElementById("next-button");
+const prevButton = document.getElementById("prev-button");
+if(listItems.length > 35){
+  $('.pagination-container').show();
+}
+  else{
+   $('.pagination-container').hide(); 
+  }
+const paginationLimit = 35;
+const pageCount = Math.ceil(listItems.length / paginationLimit);
+let currentPage = 1;
+
+const disableButton = (button) => {
+  button.classList.add("disabled");
+  button.setAttribute("disabled", true);
+};
+
+const enableButton = (button) => {
+  button.classList.remove("disabled");
+  button.removeAttribute("disabled");
+};
+
+const handlePageButtonsStatus = () => {
+  if (currentPage === 1) {
+    disableButton(prevButton);
+  } else {
+    enableButton(prevButton);
+  }
+
+  if (pageCount === currentPage) {
+    disableButton(nextButton);
+  } else {
+    enableButton(nextButton);
+  }
+};
+
+const handleActivePageNumber = () => {
+  document.querySelectorAll(".pagination-number").forEach((button) => {
+    button.classList.remove("active");
+    const pageIndex = Number(button.getAttribute("page-index"));
+    if (pageIndex == currentPage) {
+      button.classList.add("active");
+    }
+  });
+};
+
+const appendPageNumber = (index) => {
+  const pageNumber = document.createElement("button");
+  pageNumber.className = "pagination-number f_17 font_400 clr_blck number";
+  pageNumber.innerHTML = index;
+  pageNumber.setAttribute("page-index", index);
+  pageNumber.setAttribute("aria-label", "Page " + index);
+
+  paginationNumbers.appendChild(pageNumber);
+};
+
+const getPaginationNumbers = () => {
+  for (let i = 1; i <= pageCount; i++) {
+    appendPageNumber(i);
+  }
+};
+
+const setCurrentPage = (pageNum) => {
+  currentPage = pageNum;
+
+  handleActivePageNumber();
+  handlePageButtonsStatus();
+  
+  const prevRange = (pageNum - 1) * paginationLimit;
+  const currRange = pageNum * paginationLimit;
+
+  listItems.forEach((item, index) => {
+    item.classList.add("hidden");
+    if (index >= prevRange && index < currRange) {
+      item.classList.remove("hidden");
+    }
+  });
+};
+
+window.addEventListener("load", () => {
+  getPaginationNumbers();
+  setCurrentPage(1);
+
+  prevButton.addEventListener("click", () => {
+    setCurrentPage(currentPage - 1);
+  });
+
+  nextButton.addEventListener("click", () => {
+    setCurrentPage(currentPage + 1);
+  });
+
+  document.querySelectorAll(".pagination-number").forEach((button) => {
+    const pageIndex = Number(button.getAttribute("page-index"));
+
+    if (pageIndex) {
+      button.addEventListener("click", () => {
+        setCurrentPage(pageIndex);
+      });
+    }
+  });
+});
+
+</script>
+{% schema %}
+{
+  "name": "brands",
+  "class": "section_brands",
+  "settings": [
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 3,
+      "label": "t:sections.main-list-collections.settings.columns_desktop.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-list-collections.settings.header_mobile.content"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "t:sections.main-list-collections.settings.columns_mobile.options__1.label"
+        },
+        {
+          "value": "2",
+          "label": "t:sections.main-list-collections.settings.columns_mobile.options__2.label"
+        }
+      ],
+      "default": "2",
+      "label": "t:sections.main-list-collections.settings.columns_mobile.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "brand",
+      "name": "add brand",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.image-banner.settings.image.label"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "add link"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "heading"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "brands"
+    }
+  ]
+}
+{% endschema %}

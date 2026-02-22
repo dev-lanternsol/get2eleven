@@ -1,0 +1,131 @@
+{% if page.metafields.custom.faq != blank %}
+  <h2 class="text-center">
+    {{ page.metafields.custom.faq_heading.value }}
+  </h2>
+{% endif %}
+{% if section.settings.heading != blank %}
+  <h2 class="text-center">
+    {{ section.settings.heading }}
+  </h2>
+{% endif %}
+<div class="collapsible-container">
+  {% if page.metafields.custom.faq != blank %}
+    {% assign questions = page.metafields.custom.faq | metafield_tag | split: "Q: " %}
+    {% for question in questions offset: 1 %}
+      <details class="collapsible">
+        <summary class="dropdown-header">
+          <h3>{{ question | split: "A: " | first | remove: "<p>" | remove: "</p>" }}</h3>
+          <svg
+            class="collapsed"
+            xmlns="http://www.w3.org/2000/svg"
+            width="15.117"
+            height="15.117"
+            viewBox="0 0 15.117 15.117"
+          >
+            <g id="Grupo_1124" data-name="Grupo 1124" transform="translate(1 1)">
+              <path id="Trazado_449" data-name="Trazado 449" d="M7027.74,1021v13.117" transform="translate(-7020.74 -1021)" fill="none" stroke="black" stroke-linecap="round" stroke-width="2"/>
+              <path id="Trazado_450" data-name="Trazado 450" d="M0,0V13.117" transform="translate(0 6) rotate(-90)" fill="none" stroke="black" stroke-linecap="round" stroke-width="2"/>
+            </g>
+          </svg>
+          <svg
+            class="expanded"
+            xmlns="http://www.w3.org/2000/svg"
+            width="15.117"
+            height="2"
+            viewBox="0 0 15.117 2"
+          >
+            <g id="Grupo_1097" data-name="Grupo 1097" transform="translate(1 -5)">
+              <path id="Trazado_450" data-name="Trazado 450" d="M0,0V13.117" transform="translate(0 6) rotate(-90)" fill="none" stroke="black" stroke-linecap="round" stroke-width="2"/>
+            </g>
+          </svg>
+        </summary>
+        <div class="dropdown-content" style="max-height: unset;">
+          {{ question | split: "A: " | last | remove_last: "<p>" }}
+        </div>
+      </details>
+    {% endfor %}
+  {% else %}
+    {% for block in section.blocks %}
+      <div class="collapsible">
+        <div class="dropdown-header">
+          <h2>{{ block.settings.title }}</h2>
+          <svg
+            class="collapsed"
+            xmlns="http://www.w3.org/2000/svg"
+            width="15.117"
+            height="15.117"
+            viewBox="0 0 15.117 15.117"
+          >
+            <g id="Grupo_1124" data-name="Grupo 1124" transform="translate(1 1)">
+              <path id="Trazado_449" data-name="Trazado 449" d="M7027.74,1021v13.117" transform="translate(-7020.74 -1021)" fill="none" stroke="black" stroke-linecap="round" stroke-width="2"/>
+              <path id="Trazado_450" data-name="Trazado 450" d="M0,0V13.117" transform="translate(0 6) rotate(-90)" fill="none" stroke="black" stroke-linecap="round" stroke-width="2"/>
+            </g>
+          </svg>
+          <svg
+            class="expanded"
+            xmlns="http://www.w3.org/2000/svg"
+            width="15.117"
+            height="2"
+            viewBox="0 0 15.117 2"
+          >
+            <g id="Grupo_1097" data-name="Grupo 1097" transform="translate(1 -5)">
+              <path id="Trazado_450" data-name="Trazado 450" d="M0,0V13.117" transform="translate(0 6) rotate(-90)" fill="none" stroke="black" stroke-linecap="round" stroke-width="2"/>
+            </g>
+          </svg>
+        </div>
+        <div class="dropdown-content">
+          {{ block.settings.copy }}
+        </div>
+      </div>
+    {% endfor %}
+  {% endif %}
+</div>
+
+{% render 'dropdown-helper' %}
+
+{% schema %}
+{
+  "name": "FAQ Page",
+  "settings": [
+    {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "question",
+      "name": "Question"
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Page"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+{% if page.metafields.custom.faq != blank %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {% for question in questions offset: 1 %}
+    {
+      "@type": "Question",
+      "name": "{{ question | split: "A: " | first | remove: "<p>" | remove: "</p>"  | strip_html }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ question | split: "A: " | last | remove_last: "<p>" | strip_html }}"
+      }
+    }  {% unless forloop.last %},{% endunless %}
+   {% endfor %}
+  ]
+}
+</script>
+ {% endif %}

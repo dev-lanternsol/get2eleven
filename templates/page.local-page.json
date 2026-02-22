@@ -1,0 +1,376 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 100,
+        "padding_bottom": 52
+      }
+    },
+    "image_banner_mJCyg8": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_LWRPFj": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image banner",
+            "heading_size": "h1"
+          }
+        },
+        "text_KkaLUD": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Give customers details about the banner image(s) or content on the template.</p>",
+            "text_style": "body"
+          }
+        },
+        "buttons_pdEAHc": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "Shop Now",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_LWRPFj",
+        "text_KkaLUD",
+        "buttons_pdEAHc"
+      ],
+      "disabled": true,
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/DSC5069_1_f7107045-3bac-4b49-8861-26c3ba342f79.jpg",
+        "image_2": "shopify://shop_images/DSC5069_1.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "page_B7Xc8U": {
+      "type": "page",
+      "disabled": true,
+      "name": "t:sections.page.presets.name",
+      "settings": {
+        "page": "meet-us-at-bobby-riggs",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_with_text_Gw4fjz": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_b7TP83": {
+          "type": "heading",
+          "settings": {
+            "heading": "Image with text",
+            "heading_size": "h1"
+          }
+        },
+        "text_wf6y77": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text_style": "body"
+          }
+        },
+        "button_xVriBg": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Now",
+            "button_link": "shopify://collections/all",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_b7TP83",
+        "text_wf6y77",
+        "button_xVriBg"
+      ],
+      "disabled": true,
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/V2R18.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "brands_block_TnDKNQ": {
+      "type": "brands-block",
+      "blocks": {
+        "brand_MrGQf6": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/Under-Armour-logo_1_1.png",
+            "url": "",
+            "heading": ""
+          }
+        },
+        "brand_iyLtek": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/Under-Armour-logo_1_2.png",
+            "url": "",
+            "heading": ""
+          }
+        },
+        "brand_G48Wf6": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/Under-Armour-logo_1.png",
+            "url": "",
+            "heading": ""
+          }
+        }
+      },
+      "block_order": [
+        "brand_MrGQf6",
+        "brand_iyLtek",
+        "brand_G48Wf6"
+      ],
+      "disabled": true,
+      "settings": {
+        "columns_desktop": 3,
+        "columns_mobile": "2"
+      }
+    },
+    "faq_dropdown_bV46cY": {
+      "type": "faq-dropdown",
+      "blocks": {
+        "question_GUJ9jK": {
+          "type": "question",
+          "settings": {
+            "title": "Your title",
+            "copy": "<p>Welcome to my shop!</p>"
+          }
+        },
+        "question_UGcXGC": {
+          "type": "question",
+          "settings": {
+            "title": "Your title",
+            "copy": "<p>Welcome to my shop!</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_GUJ9jK",
+        "question_UGcXGC"
+      ],
+      "disabled": true,
+      "name": "FAQ dropdown",
+      "settings": {
+        "heading": "FAQ",
+        "use_collection_metafield": false
+      }
+    },
+    "image_banner_BfWFJP": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_G7NeUE": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ page.metafields.custom.banner_heading.value }}",
+            "heading_size": "h1"
+          }
+        },
+        "text_KN9h4U": {
+          "type": "text",
+          "settings": {
+            "text": "{{ page.metafields.custom.banner_content | metafield_tag }}",
+            "text_style": "body"
+          }
+        },
+        "buttons_Rqgamz": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "{{ page.metafields.custom.banner_button_label.value }}",
+            "button_link_1": "{{ page.metafields.custom.banner_button_link.value }}",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_G7NeUE",
+        "text_KN9h4U",
+        "buttons_Rqgamz"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "{{ page.metafields.custom.banner.value }}",
+        "image_2": "{{ page.metafields.custom.banner_mobile.value }}",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
+      }
+    },
+    "map_section_GEyJd4": {
+      "type": "map-section",
+      "name": "Map",
+      "settings": {}
+    },
+    "what_client_says_9fg9iq": {
+      "type": "what-client-says",
+      "blocks": {
+        "review_cqRR4w": {
+          "type": "review",
+          "settings": {
+            "review_back_img": "shopify://shop_images/da21dde662a19a4b8a6e17048660983a.png",
+            "lft_img_bg": "shopify://shop_images/Rectangle_52.png",
+            "lft_img": "shopify://shop_images/Group_387.png",
+            "review": "\"Get 2 Eleven is a game-changer for pickleball enthusiasts like myself! From their wide range of paddles to their durable balls and stylish apparel, this company has everything you need to take your game to the next level. What truly sets them apart is their commitment to customer satisfaction. Every interaction I've had with their team has been nothing short of exceptional. They're knowledgeable, friendly, and always eager to assist. Plus, their fast shipping ensures that I never have to wait long to receive my order. If you're serious about pickleball, look no further than Get 2 Eleven!”",
+            "auth_img": "shopify://shop_images/Ellipse_6.png",
+            "auth_name": "",
+            "auth_prof": ""
+          }
+        },
+        "review_U9MMg4": {
+          "type": "review",
+          "settings": {
+            "review_back_img": "shopify://shop_images/da21dde662a19a4b8a6e17048660983a.png",
+            "lft_img_bg": "shopify://shop_images/Rectangle_52.png",
+            "lft_img": "shopify://shop_images/Group_387.png",
+            "review": "\"I can't say enough good things about Get 2 Eleven. As someone who's relatively new to pickleball, I was overwhelmed by the options available on the market. Thankfully, Get 2 Eleven made the process easy and enjoyable. Their website is user-friendly, making it simple to find exactly what I needed. Plus, their product descriptions are detailed and informative, helping me make informed decisions about my purchases. The quality of their products is top-notch, and I've noticed a significant improvement in my game since using their gear. Whether you're a beginner or a seasoned pro, Get 2 Eleven has everything you need to excel on the court!”",
+            "auth_img": "shopify://shop_images/Ellipse_6.png",
+            "auth_name": "",
+            "auth_prof": ""
+          }
+        }
+      },
+      "block_order": [
+        "review_cqRR4w",
+        "review_U9MMg4"
+      ],
+      "name": "What Client Says",
+      "settings": {
+        "title": "What our clients say about us",
+        "rating": 5,
+        "back_image": "shopify://shop_images/Group_384.png",
+        "back_image_mobile": "shopify://shop_images/undefined_-_Imgur.png",
+        "icon_logo": "shopify://shop_images/graphic-arrow_1.png",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "meta_brands_4X6EHE": {
+      "type": "meta-brands",
+      "name": "Page brands",
+      "settings": {
+        "columns_desktop": 3,
+        "columns_mobile": "2"
+      }
+    },
+    "image_with_text_Fp837L": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_iwEeaA": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ page.metafields.custom.image_heading.value }}",
+            "heading_size": "h1"
+          }
+        },
+        "text_maxegg": {
+          "type": "text",
+          "settings": {
+            "text": "{{ page.metafields.custom.image_content | metafield_tag }}",
+            "text_style": "body"
+          }
+        },
+        "button_QWmPWz": {
+          "type": "button",
+          "settings": {
+            "button_label": "{{ page.metafields.custom.image_button_label.value }}",
+            "button_link": "{{ page.metafields.custom.image_button_link.value }}",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_iwEeaA",
+        "text_maxegg",
+        "button_QWmPWz"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "{{ page.metafields.custom.image_with_text.value }}",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "image_first",
+        "desktop_content_position": "top",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "page_faq_CpCfxf": {
+      "type": "page-faq",
+      "name": "FAQ Page",
+      "settings": {
+        "heading": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_mJCyg8",
+    "page_B7Xc8U",
+    "image_with_text_Gw4fjz",
+    "brands_block_TnDKNQ",
+    "faq_dropdown_bV46cY",
+    "image_banner_BfWFJP",
+    "map_section_GEyJd4",
+    "what_client_says_9fg9iq",
+    "meta_brands_4X6EHE",
+    "image_with_text_Fp837L",
+    "page_faq_CpCfxf"
+  ]
+}

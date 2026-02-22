@@ -1,0 +1,97 @@
+<section class="custom-text-icon section-{{ section.id }}" {% if section.settings.back_color %}style="background:{{ section.settings.back_color }};"{% endif %}>
+  <div class="page-width">
+    <div class="container">
+      <div class="inner">
+        {%  for block in section.blocks %}
+        <div class="item">
+          {% if block.settings.icon_svg != blank %}
+          <div class="icon_image">{{ block.settings.icon_svg }}</div>
+          {% else %}
+          {% if block.settings.icon != blank %}
+          <img src="{{ block.settings.icon | img_url:'master' }}" class="cstm-img" height="" width="" loading="lazy" />
+          {% endif %}
+          {% endif %}
+          <p class="m0 barlow_condense f_24 font_600 text_uppercase clr_wht">{{ block.settings.icon_text }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  $(document).ready(function(){
+    var $slickElement = $('.section-{{ section.id }} .inner');
+    function initSlick() {
+        $slickElement.slick({
+            dots: true,
+            arrows: false,
+            autoplay: true,
+            adaptiveHeight: false,
+            slidesToShow: 1,
+            slidesToScroll: 1
+        });
+    }
+    function destroySlick() {
+        if ($slickElement.hasClass('slick-initialized')) {
+            $slickElement.slick('unslick');
+        }
+    }
+
+    function handleSlick() {
+        if ($(window).width() <= 989) {
+            initSlick();
+        } else {
+            destroySlick();
+        }
+    }
+
+    $(window).on('resize', handleSlick);
+    handleSlick();
+});
+</script>
+{% schema %}
+  {
+    "name": "Icon With Text",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading"
+      },
+      {
+        "type": "color",
+        "id": "back_color",
+        "label": "Choose Color"
+      }
+    ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "t:sections.slideshow.blocks.slide.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Choose Icon"
+        },
+        {
+        "type": "textarea",
+        "id": "icon_svg",
+        "label": "icon svg"
+        },
+        {
+          "type": "textarea",
+          "id": "icon_text",
+          "label": "Icon Heading"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Icon With Text",
+      "category": "custom"
+    }
+  ]
+}
+{% endschema %}

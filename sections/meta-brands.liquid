@@ -1,0 +1,74 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
+{% assign brands = page.metafields.custom.brands.value %}
+<div class="page-width container brands_sec">
+    <ul
+      class="collection-list grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down" id="paginated-list" data-current-page="1" aria-live="polite"
+      role="list"
+    >
+      {%- for brand in brands -%}
+        <li
+          class="collection-list__item grid__item{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+          {% if settings.animations_reveal_on_scroll %}
+            data-cascade
+            style="--animation-order: {{ forloop.index }};"
+          {% endif %}
+        >
+        {% if brand.image != blank %}
+        <div class="image">
+          {% if brand.brand_link != blank %}
+            <a href="{{ brand.brand_link }}">
+          {% endif %}
+            <img src="{{ brand.image | img_url:'master' }}">
+          {% if brand.brand_link != blank %}
+            </a>
+          {% endif %}
+        </div>
+       {% endif %}
+       </li>
+      {%- endfor -%}
+    </ul>
+</div>
+
+{% schema %}
+{
+  "name": "Page brands",
+  "class": "section_brands",
+  "settings": [
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "default": 3,
+      "label": "t:sections.main-list-collections.settings.columns_desktop.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-list-collections.settings.header_mobile.content"
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "t:sections.main-list-collections.settings.columns_mobile.options__1.label"
+        },
+        {
+          "value": "2",
+          "label": "t:sections.main-list-collections.settings.columns_mobile.options__2.label"
+        }
+      ],
+      "default": "2",
+      "label": "t:sections.main-list-collections.settings.columns_mobile.label"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Page brands"
+    }
+  ]
+}
+{% endschema %}

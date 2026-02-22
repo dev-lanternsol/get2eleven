@@ -1,0 +1,42 @@
+<section class="text-with-ball_sec">
+  <div class="page-width">
+  <div class="iner-wrapp">
+    <div class="content-box clr_blck">
+      <h1 class="f_247 m0 barlow_condense">
+        <span class="h1-part">{{ section.settings.text-1 }}</span>
+        {% if section.settings.image != blank %}
+        <img src="{{ section.settings.image | img_url:'master' }}">
+        {% endif %}
+        <span class="h1-part">{{ section.settings.text-2 }}</span>
+      </h1>
+    </div>
+  </div>
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "text with ball",
+    "settings": [
+      {
+        "type": "text",
+        "id": "text-1",
+        "label": "text"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": " image"
+      },
+      {
+        "type": "text",
+        "id": "text-2",
+        "label": "text"
+      }      
+    ],
+  "presets": [
+    {
+      "name": "text with ball"
+    }
+  ]
+  }
+{% endschema %}

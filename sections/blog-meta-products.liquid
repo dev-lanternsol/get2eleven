@@ -1,0 +1,22 @@
+{{ 'blog-products.css' | asset_url | stylesheet_tag}}
+{% assign products = article.metafields.custom.products.value %}
+<div class="page-width">
+<ul class="blog-products">
+{% for product in products %}
+  <li>
+    {{ product.image | image_url: width: 800 | image_tag : width: '800px'}}
+  <div class="btm_desc">
+    <h3>{{ product.heading }}</h3>
+  {{ product.content | metafield_tag}}
+  <a href="{{ product.link }}">{{ product.button_label }}</a>
+    </div>
+  </li>
+  {% endfor %}
+</ul>  
+</div>
+{% schema %}
+  {
+    "name": "Blog Meta Products",
+    "settings": []
+  }
+{% endschema %}

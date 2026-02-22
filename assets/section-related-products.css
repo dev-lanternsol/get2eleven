@@ -1,0 +1,16 @@
+.related-products {
+  display: block;
+}
+
+.related-products__heading {
+  margin: 0 0 6rem;
+}
+.top_heading{
+  margin-bottom: 1rem;
+}
+.related-products hr {
+    margin-top: 8.3rem;
+    margin-bottom: 0;
+    background: #0F3B6A;
+    opacity: 0.1;
+}

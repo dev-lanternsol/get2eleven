@@ -1,0 +1,110 @@
+{% assign links = "
+/collections/color-oxygen-white-and-teal,
+/collections/color-satin-black,
+/collections/color-orange-quartz,
+/collections/color-gold-pink,
+/collections/color-artic-gold,
+/collections/color-green-bay-packers,
+/collections/color-blue-riptide,
+/collections/color-satin-clear,
+/collections/color-pavement,
+/collections/color-dark-blue,
+/collections/brand_onix,
+/collections/color-natural,
+/collections/color-dart-frog-red,
+/collections/owl-pickleball,
+/collections/color-dark-olive,
+/collections/category_deals,
+/collections/category_pickleball-machines,
+/collections/color-legends,
+/collections/color-carbon-black,
+/collections/electrum,
+/collections/size-68-fl-oz,
+/collections/bread-and-butter,
+/collections/color-bubble-gum,
+/collections/color-blue-nights,
+/collections/color-black-met,
+/collections/pickleball-apes,
+/collections/color-vintage-black,
+/collections/prolite,
+/collections/color-balloon-blue,
+/collections/color-blue-black,
+/collections/color-sunrise,
+/collections/color-white-colors,
+/collections/color-heather-kentucky-blue,
+/collections/vatic,
+/collections/apparel-accessories,
+/collections/color-red-violet,
+/collections/thickness-4mm,
+/collections/color-tan,
+/collections/size-small-medium,
+/collections/sporting-goods-outdoor-recreation-outdoor-games-pickleball,
+/collections/brand_nike,
+/collections/gamma,
+/collections/color-aqua-white-sprial-with-blue-green-smile,
+/collections/color-light-brown,
+/collections/2024-new-releases,
+/collections/color-cool-blue,
+/collections/sporting-goods-outdoor-recreation-outdoor-games-pickleball-pickleball-paddles,
+/collections/brand_enhance,
+/collections/color-white-w-colors,
+/collections/color-heather-navy,
+/collections/color-green-yellow,
+/collections/color-tyson,
+/collections/onix,
+/collections/color-spider-red,
+/collections/color-moonlight-blue,
+/collections/brand_foremost,
+/collections/color-signature,
+/collections/color-copen-blue,
+/collections/color-ether,
+/collections/color-multi,
+/collections/size-6-fl-oz,
+/collections/color-black-w-neon,
+/collections/color-proud-pink,
+/collections/color-pickle-green,
+/collections/size-large-xlarge,
+/collections/color-heather-red-violet,
+/collections/color-heather-gray,
+/collections/proton,
+/collections/color-ocean-blue,
+/collections/color-white-black-trim,
+/collections/6-0,
+/collections/color-flint,
+/collections/color-ivory,
+/collections/sporting-goods-outdoor-recreation-outdoor-games-pickleball-pickleballs,
+/collections/brand_civile,
+/collections/color-lakeside-lime,
+/collections/brand_supergoop,
+/collections/brand_epic-pickleball,
+/collections/color-jade,
+/collections/color-turkish-sea,
+/collections/color-light-blue-paris-todd-edition,
+/collections/300-400,
+/collections/color-hot-peach,
+/collections/color-royale-blue,
+/collections/color-white-pink-blk,
+/collections/color-heather-moonlight-blue,
+/collections/k-swiss,
+/collections/color-faded-black,
+/collections/size-2-4-fl-oz,
+/collections/color-light-gray
+" | split: ',' | map: 'strip' %}
+
+{% assign current_host = request.origin %}
+
+{% if collection.url contains '/collections/thickness-16mm' %}
+  <link rel="canonical" href="{{ current_host }}{{ collection.url | split: '?' | first }}" />
+
+{% elsif collection.metafields.custom.seo_canonical_url != blank %}
+  <link rel="canonical" href="{{ collection.metafields.custom.seo_canonical_url }}" />
+
+{% elsif links contains current_url %}
+  <link rel="canonical" href="{{ current_host }}/collections/paddles" />
+  {% elsif canonical_url contains 'collections' %}
+  <link rel="canonical" href="{{ current_host }}{{ collection.url }}" />
+  {% else %}
+  <link rel="canonical" href="{{ canonical_url }}" />
+{% endif %}
+
+

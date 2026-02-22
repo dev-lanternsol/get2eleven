@@ -1,0 +1,606 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slideshow_che8hf": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_cwwdeB": {
+          "type": "slide",
+          "name": "Paddletek Reserve",
+          "settings": {
+            "image": "shopify://shop_images/Group_15.png",
+            "mobile": "shopify://shop_images/Group_16.png",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "SHOP NOW",
+            "link": "https://get2eleven.com/products/paddletek-reserve-honeyfoam-paddle",
+            "button_style_secondary": false,
+            "box_align": "bottom-left",
+            "show_text_box": false,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_y6L8cB": {
+          "type": "slide",
+          "name": "APES",
+          "settings": {
+            "image": "shopify://shop_images/charm-web-desktop.jpg",
+            "mobile": "shopify://shop_images/charm-web-mobile.jpg",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "Tell your brand's story through images",
+            "button_label": "SHOP NOW",
+            "link": "https://get2eleven.com/search?q=apes+charm&options%5Bprefix%5D=last",
+            "button_style_secondary": false,
+            "box_align": "bottom-left",
+            "show_text_box": false,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_qDAFqU": {
+          "type": "slide",
+          "name": "CRBN",
+          "settings": {
+            "image": "shopify://shop_images/truefoam-web-banner.png",
+            "mobile": "shopify://shop_images/truefoam-mobile-banner.png",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "SHOP NOW",
+            "link": "https://get2eleven.com/search?q=wave&options%5Bprefix%5D=last",
+            "button_style_secondary": false,
+            "box_align": "bottom-left",
+            "show_text_box": false,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_wqaJrW": {
+          "type": "slide",
+          "name": "Selkirk",
+          "settings": {
+            "image": "shopify://shop_images/Boomstik-web-desktop_1.jpg",
+            "mobile": "shopify://shop_images/Boomstik-web-mobile-2_1.jpg",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "SHOP NOW",
+            "link": "https://get2eleven.com/search?q=boomstik&_pos=1&_psq=boom&_ss=e&_v=1.0",
+            "button_style_secondary": false,
+            "box_align": "bottom-left",
+            "show_text_box": false,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_qrUJkk": {
+          "type": "slide",
+          "name": "Avoura",
+          "settings": {
+            "image": "shopify://shop_images/avoura-web-banner.png",
+            "mobile": "shopify://shop_images/avoura-power-mobile-banner.png",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "SHOP NOW",
+            "link": "shopify://collections/brand_avoura",
+            "button_style_secondary": false,
+            "box_align": "bottom-left",
+            "show_text_box": false,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_mKPTKw": {
+          "type": "slide",
+          "name": "GX2",
+          "settings": {
+            "image": "shopify://shop_images/gx2-power-web-banner_1.png",
+            "mobile": "shopify://shop_images/gx2-power-mobile-banner_1.png",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "SHOP NOW",
+            "link": "https://get2eleven.com/search?q=GX2&options%5Bprefix%5D=last",
+            "button_style_secondary": false,
+            "box_align": "bottom-left",
+            "show_text_box": false,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_j4Chkg": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/gto-c-header-banner.png",
+            "mobile": "shopify://shop_images/gto-c-header-banner-mobile.png",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "SHOP NOW",
+            "link": "shopify://products/paddletek-bantam-gto-c-paddle-14-3mm",
+            "button_style_secondary": false,
+            "box_align": "bottom-right",
+            "show_text_box": false,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_7KDHHn": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/j2k__j2ti-header-banner_1.png",
+            "mobile": "shopify://shop_images/j2k__j2ti-header-banner-mobile.png",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "SHOP NOW",
+            "link": "shopify://collections/honolulu",
+            "button_style_secondary": false,
+            "box_align": "bottom-right",
+            "show_text_box": false,
+            "text_alignment": "left",
+            "image_overlay_opacity": 0,
+            "color_scheme": "scheme-1",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_cwwdeB",
+        "slide_y6L8cB",
+        "slide_qDAFqU",
+        "slide_wqaJrW",
+        "slide_qrUJkk",
+        "slide_mKPTKw",
+        "slide_j4Chkg",
+        "slide_7KDHHn"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "adapt_image",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": false,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "collection_list_cLYEzt": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_QwHqP9": {
+          "type": "featured_collection",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_7.png",
+            "collection": "paddles"
+          }
+        },
+        "featured_collection_W6L4re": {
+          "type": "featured_collection",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_8.png",
+            "collection": "balls"
+          }
+        },
+        "featured_collection_cmgX6n": {
+          "type": "featured_collection",
+          "settings": {
+            "image": "shopify://shop_images/picleball-accesories.png",
+            "collection": "accessories"
+          }
+        },
+        "featured_collection_kmNEVR": {
+          "type": "featured_collection",
+          "settings": {
+            "image": "shopify://shop_images/pickleball-clothes-apparel_1.png",
+            "collection": "apparel"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_QwHqP9",
+        "featured_collection_W6L4re",
+        "featured_collection_cmgX6n",
+        "featured_collection_kmNEVR"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Top Sellers",
+        "bg_heading": "Sellers",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "top-sellers-2024",
+        "products_to_show": 6,
+        "columns_desktop": 3,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 120,
+        "padding_bottom": 120
+      }
+    },
+    "custom_text_icons_VKrpnd": {
+      "type": "custom-text-icons",
+      "blocks": {
+        "slide_jxQFVV": {
+          "type": "slide",
+          "settings": {
+            "icon": "shopify://shop_images/Group_346_bb528fd3-dbba-4f20-bcfe-096d604ab590.png",
+            "icon_svg": "",
+            "icon_text": "Specialized Gear"
+          }
+        },
+        "slide_gaHCKK": {
+          "type": "slide",
+          "settings": {
+            "icon": "shopify://shop_images/Group_347_df9a3482-d73a-48b8-9776-8d5ae367b410.png",
+            "icon_svg": "",
+            "icon_text": "Beginner Friendly"
+          }
+        },
+        "slide_n7piya": {
+          "type": "slide",
+          "settings": {
+            "icon": "shopify://shop_images/Group_348_59dd206c-0bce-4352-9e5e-55a5840af875.png",
+            "icon_svg": "",
+            "icon_text": "Customizable Equipment"
+          }
+        },
+        "slide_z8pHCW": {
+          "type": "slide",
+          "settings": {
+            "icon": "shopify://shop_images/Vector_3f548648-98f8-453a-a71f-219f2cb6c48d.png",
+            "icon_svg": "",
+            "icon_text": "US Based Customer Service"
+          }
+        }
+      },
+      "block_order": [
+        "slide_jxQFVV",
+        "slide_gaHCKK",
+        "slide_n7piya",
+        "slide_z8pHCW"
+      ],
+      "settings": {
+        "title": "",
+        "back_color": "#0f3b6a"
+      }
+    },
+    "featured_collection_TnAyYW": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "New Releases",
+        "bg_heading": "Releases",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "new-realeases-2023",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 120,
+        "padding_bottom": 120
+      }
+    },
+    "what_client_says_gXAhxA": {
+      "type": "what-client-says",
+      "blocks": {
+        "review_crhMfJ": {
+          "type": "review",
+          "settings": {
+            "review_back_img": "shopify://shop_images/da21dde662a19a4b8a6e17048660983a.png",
+            "lft_img_bg": "shopify://shop_images/Rectangle_52.png",
+            "lft_img": "shopify://shop_images/Group_387.png",
+            "review": "\"Get 2 Eleven is a game-changer for pickleball enthusiasts like myself! From their wide range of paddles to their durable balls and stylish apparel, this company has everything you need to take your game to the next level. What truly sets them apart is their commitment to customer satisfaction. Every interaction I've had with their team has been nothing short of exceptional. They're knowledgeable, friendly, and always eager to assist. Plus, their fast shipping ensures that I never have to wait long to receive my order. If you're serious about pickleball, look no further than Get 2 Eleven!”",
+            "auth_img": "shopify://shop_images/Ellipse_6.png",
+            "auth_name": "Lauren M.",
+            "auth_prof": "client"
+          }
+        },
+        "review_CeYtyN": {
+          "type": "review",
+          "settings": {
+            "review_back_img": "shopify://shop_images/da21dde662a19a4b8a6e17048660983a.png",
+            "lft_img_bg": "shopify://shop_images/Rectangle_52.png",
+            "lft_img": "shopify://shop_images/Group_387.png",
+            "review": "\"I can't say enough good things about Get 2 Eleven. As someone who's relatively new to pickleball, I was overwhelmed by the options available on the market. Thankfully, Get 2 Eleven made the process easy and enjoyable. Their website is user-friendly, making it simple to find exactly what I needed. Plus, their product descriptions are detailed and informative, helping me make informed decisions about my purchases. The quality of their products is top-notch, and I've noticed a significant improvement in my game since using their gear. Whether you're a beginner or a seasoned pro, Get 2 Eleven has everything you need to excel on the court!”",
+            "auth_img": "shopify://shop_images/Ellipse_6.png",
+            "auth_name": "Marley Baird",
+            "auth_prof": "client"
+          }
+        },
+        "review_3zrfYy": {
+          "type": "review",
+          "settings": {
+            "review_back_img": "shopify://shop_images/da21dde662a19a4b8a6e17048660983a.png",
+            "lft_img_bg": "shopify://shop_images/Rectangle_52.png",
+            "lft_img": "shopify://shop_images/Group_387.png",
+            "review": "\"I've been a loyal customer of Get 2 Eleven for years, and they never cease to impress me. Their dedication to providing the best pickleball products on the market is evident in everything they do. Whether I'm in need of a new paddle, replacement balls, or stylish apparel, I know I can count on Get 2 Eleven to deliver. Their products are durable, well-made, and always exceed my expectations. What's more, their customer service team is second to none. They're always available to answer any questions I have and provide expert advice. If you're serious about pickleball, do yourself a favor and shop at Get 2 Eleven. You won't be disappointed!”",
+            "auth_name": "Aaron K.",
+            "auth_prof": "client"
+          }
+        },
+        "review_cy8t4z": {
+          "type": "review",
+          "settings": {
+            "review_back_img": "shopify://shop_images/da21dde662a19a4b8a6e17048660983a.png",
+            "lft_img_bg": "shopify://shop_images/Rectangle_52.png",
+            "lft_img": "shopify://shop_images/Group_387.png",
+            "review": "\"Exceptional Selection and Service! I recently visited Get2Eleven.com and was blown away by the range of pickleball gear they offer. As a newcomer to the sport, I was unsure of what to purchase, but the staff was incredibly helpful and guided me through the process. Their expertise and friendly approach made my shopping experience a delight. Highly recommend!”",
+            "auth_name": "James T.",
+            "auth_prof": "client"
+          }
+        },
+        "review_wRRAQn": {
+          "type": "review",
+          "settings": {
+            "review_back_img": "shopify://shop_images/da21dde662a19a4b8a6e17048660983a.png",
+            "lft_img_bg": "shopify://shop_images/Rectangle_52.png",
+            "lft_img": "shopify://shop_images/Group_387.png",
+            "review": "\"Top-Notch Quality and Convenience! I am thrilled with my recent purchase from Get2Eleven.com. The website is easy to navigate, and the ordering process was seamless. The product arrived promptly and exceeded my expectations. The quality of the gear is outstanding, and I can't wait to hit the court. Thank you, Get2Eleven, for providing a fantastic shopping experience!”",
+            "auth_name": "Lisa K.",
+            "auth_prof": "client"
+          }
+        },
+        "review_RLtU8R": {
+          "type": "review",
+          "settings": {
+            "review_back_img": "shopify://shop_images/da21dde662a19a4b8a6e17048660983a.png",
+            "lft_img_bg": "shopify://shop_images/Rectangle_52.png",
+            "lft_img": "shopify://shop_images/Group_387.png",
+            "review": "\"Great Customer Service and Speedy Delivery! I had a specific query about one of the products on Get2Eleven.com, and the customer service team was quick to respond and provided me with detailed information. I placed my order, and the delivery was faster than expected. The product was exactly as described, and I'm extremely satisfied with my purchase. Will definitely be returning for more!”",
+            "auth_name": "Tom S.",
+            "auth_prof": "client"
+          }
+        },
+        "review_7HnQGG": {
+          "type": "review",
+          "settings": {
+            "review_back_img": "shopify://shop_images/da21dde662a19a4b8a6e17048660983a.png",
+            "lft_img_bg": "shopify://shop_images/Rectangle_52.png",
+            "lft_img": "shopify://shop_images/Group_387.png",
+            "review": "\"Impressive Range of Products! Get2Eleven.com has an extensive selection of pickleball gear, catering to players of all skill levels. I was pleasantly surprised to find everything I needed in one place, from paddles to apparel. The website is user-friendly, making it easy to browse and shop. The checkout process was smooth, and my order arrived on time. I highly recommend Get2Eleven to anyone looking for quality pickleball equipment.”",
+            "auth_name": "Anthony B.",
+            "auth_prof": "client"
+          }
+        }
+      },
+      "block_order": [
+        "review_crhMfJ",
+        "review_CeYtyN",
+        "review_3zrfYy",
+        "review_cy8t4z",
+        "review_wRRAQn",
+        "review_RLtU8R",
+        "review_7HnQGG"
+      ],
+      "settings": {
+        "title": "What our clients say about us",
+        "rating": 5,
+        "back_image": "shopify://shop_images/Group_384.png",
+        "back_image_mobile": "shopify://shop_images/undefined_-_Imgur.png",
+        "icon_logo": "shopify://shop_images/graphic-arrow_1.png",
+        "padding_top": 136,
+        "padding_bottom": 122
+      }
+    },
+    "featured_brands_BEcjGP": {
+      "type": "featured-brands",
+      "blocks": {
+        "brands_htiq8K": {
+          "type": "Brands",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_71.png",
+            "brand_image": "shopify://shop_images/honolulu-pickleball.png"
+          }
+        },
+        "brands_ez84Pw": {
+          "type": "Brands",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_69.png",
+            "brand_image": "shopify://shop_images/Group_543.png"
+          }
+        },
+        "brands_cWpdia": {
+          "type": "Brands",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_68-1.png",
+            "brand_image": "shopify://shop_images/Group_544.png"
+          }
+        },
+        "brands_RLXr66": {
+          "type": "Brands",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_69-1.png",
+            "brand_image": "shopify://shop_images/Group_545.png"
+          }
+        },
+        "brands_bw4URj": {
+          "type": "Brands",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_64.png",
+            "brand_image": "shopify://shop_images/Group_540.png"
+          }
+        },
+        "brands_jJfVDf": {
+          "type": "Brands",
+          "settings": {
+            "image": "shopify://shop_images/joola.png",
+            "brand_image": "shopify://shop_images/Group_541.png"
+          }
+        },
+        "brands_AdHEmN": {
+          "type": "Brands",
+          "settings": {
+            "image": "shopify://shop_images/annaleight.png",
+            "brand_image": "shopify://shop_images/Group_542.png"
+          }
+        }
+      },
+      "block_order": [
+        "brands_htiq8K",
+        "brands_ez84Pw",
+        "brands_cWpdia",
+        "brands_RLXr66",
+        "brands_bw4URj",
+        "brands_jJfVDf",
+        "brands_AdHEmN"
+      ],
+      "settings": {
+        "title": "FEATURED BRANDS",
+        "bg_heading": "BRANDS"
+      }
+    },
+    "page_CiXndD": {
+      "type": "page",
+      "custom_css": [
+        "table td,table th,table tbody,table {border: none !important; box-shadow: none !important;}",
+        "@media only screen and (max-width: 749px) {td {width: 100% !important; } tr {display: grid; }}"
+      ],
+      "settings": {
+        "page": "meet-us-at-bobby-riggs",
+        "heading_size": "h1",
+        "color_scheme": "scheme-5",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_QEJGPE": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Top sellings balls",
+        "bg_heading": "balls",
+        "heading_size": "h1",
+        "description": "get2Eleven",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "home-page-balls",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": true,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 120,
+        "padding_bottom": 40
+      }
+    },
+    "featured_collection_tpJR9N": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "BAGS",
+        "bg_heading": "Paddle",
+        "heading_size": "h1",
+        "description": "get2eleven",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "backpack",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-5",
+        "image_ratio": "portrait",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": true,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "icon": "shopify://shop_images/Screenshot_2024-01-03_at_1.48_1.png",
+        "padding_top": 120,
+        "padding_bottom": 120
+      }
+    }
+  },
+  "order": [
+    "slideshow_che8hf",
+    "collection_list_cLYEzt",
+    "featured_collection",
+    "custom_text_icons_VKrpnd",
+    "featured_collection_TnAyYW",
+    "what_client_says_gXAhxA",
+    "featured_brands_BEcjGP",
+    "page_CiXndD",
+    "featured_collection_QEJGPE",
+    "featured_collection_tpJR9N"
+  ]
+}

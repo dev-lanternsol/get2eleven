@@ -1,0 +1,95 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "about_banner_V7rWRP": {
+      "type": "about-banner",
+      "settings": {
+        "bg-img": "shopify:\/\/shop_images\/Rectangle_2_1.png",
+        "title": ""
+      }
+    },
+    "about_img_txt_Di9KeG": {
+      "type": "about-img-txt",
+      "settings": {
+        "img": "shopify:\/\/shop_images\/Rectangle_53.png",
+        "short-txt": "The world’s\u2028largest online\u2028pickleball\u2028superstore",
+        "sub-txt": "Who We Are",
+        "title": "WE WELCOME YOU TO\u2028OUR Store",
+        "desc": "Welcome to Get2Eleven, your premier destination for all things pickleball! As the world's largest online pickleball superstore, we take pride in offering top-quality products, exceptional customer service, and lightning-fast shipping.<br><br>\nOur mission is simple: to provide pickleball enthusiasts with the best equipment and gear available, paired with unparalleled customer support.<br><br>\nWe are a fantastic team of people that provide our customers with quality pickleball products, outstanding customer service and super-fast shipping.<br><br>\nAt Get2Eleven, our end goal for clients is to ensure they have everything they need to elevate their pickleball experience to new heights. Whether you're a beginner or a seasoned pro, we're here to help you perform at your best on the court."
+      }
+    },
+    "about_img_content_GACQYF": {
+      "type": "about-img-content",
+      "settings": {
+        "bg-img": "shopify:\/\/shop_images\/Group_439.png",
+        "mob-img": "shopify:\/\/shop_images\/Group_453.png",
+        "sub-txt": "What We Do",
+        "title": "WE ARE PICKLEBALL EXPERTS",
+        "desc": "We are committed to honesty, superior customer service, innovation and being the best. Compare us to other online pickleball stores.<br><br> \nYou'll find the absolute best service and the best selection in online pickleball equipment and apparel at Get2elevan.com.\n\nAt Get2Eleven, our end goal for clients is to ensure they have everything they need to elevate their pickleball experience to new heights. Whether you're a beginner or a seasoned pro, we're here to help you perform at your best on the court.<br><br>\n \nWe are driven by our core values of honesty, integrity, and innovation. These values guide everything we do, from selecting the products we offer to providing expert advice and assistance to our customers.<br><br>\n \nOur history is rooted in a passion for pickleball and a commitment to sharing that passion with others. Founded in 2023, Get2Eleven has grown from a small operation to the go-to destination for pickleball enthusiasts worldwide.<br><br>\n \nAs a business, we exist to serve our customers and meet their needs. We make money by selling a wide range of pickleball equipment, apparel, and accessories.<br><br>\n \nOur product and service offerings include everything a pickleball player could need, from paddles and balls to apparel and accessories. We carefully curate our selection to ensure we offer only the best products from top brands in the industry.<br><br>\n \nBehind Get2Eleven is a dedicated team of pickleball enthusiasts who are passionate about the sport and committed to providing exceptional service to our customers.<br><br>\n \nCommunity involvement is important to us, especially here in Southern California. We actively support local pickleball clubs, events, and initiatives, helping to grow the sport and foster a sense of community among players of all skill levels.\n \nThank you for choosing Get2Eleven as your go-to pickleball destination. We look forward to serving you and helping you elevate your game!",
+        "img": "shopify:\/\/shop_images\/Rectangle_117.png"
+      }
+    },
+    "about_story_sec_4pQ6wt": {
+      "type": "about-story-sec",
+      "blocks": {
+        "block_jbnfAj": {
+          "type": "block",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Rectangle_62.png",
+            "heading": "Exceptional customer care",
+            "desc": "We believe in providing exceptional customer service, and our knowledgeable, California-based team is always on hand to answer any questions you may have or offer advice on the best gear for your needs. Whether you're a beginner or a seasoned pro, we're here to help you find the perfect pickleball equipment to elevate your game."
+          }
+        },
+        "block_d74tyK": {
+          "type": "block",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Rectangle_118.png",
+            "heading": "Quality without compromise",
+            "desc": "We take pride in the quality of our products and only source from the most trusted and reliable suppliers in the industry. Our team of experts rigorously tests each product to ensure that it meets our high standards and can withstand the toughest conditions. When you shop at Get2Eleven, you can trust that you're getting top-quality gear that will help you perform at your best on the court."
+          }
+        },
+        "block_qDKPah": {
+          "type": "block",
+          "settings": {
+            "img": "shopify:\/\/shop_images\/Rectangle_119.png",
+            "heading": "Social responsibility",
+            "desc": "At Get2Eleven, we are deeply committed to making a positive impact on the environment and the communities we serve. We believe that as a company, we have a responsibility to be good stewards of our planet and to give back to those in need. That's why we strive to minimize our environmental footprint and support local pickleball clubs, events, and initiatives."
+          }
+        }
+      },
+      "block_order": [
+        "block_jbnfAj",
+        "block_d74tyK",
+        "block_qDKPah"
+      ],
+      "settings": {
+        "sub-txt": "our store",
+        "title": "Our core values",
+        "bg_heading": "values"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "about_banner_V7rWRP",
+    "about_img_txt_Di9KeG",
+    "about_img_content_GACQYF",
+    "about_story_sec_4pQ6wt"
+  ]
+}

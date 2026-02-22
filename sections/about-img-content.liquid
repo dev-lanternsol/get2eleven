@@ -1,0 +1,82 @@
+<div class="about-wrap-sec page-width">
+  <div class="container">
+    
+        <div class="about-img-txt-contnt-sec">
+    <div class="about-img-cont-innr-sec">
+         <div class="about-left-side-contnt">
+          <div class="abou-sub-txt">
+            <span class="f_16 font_500 clr_blue">{{ section.settings.sub-txt }}</span>
+          </div>
+             <div class="abou-heading-txt">
+            <h4 class="clr_drk_blue font_600 f_32">{{ section.settings.title }}</h4>
+          </div>
+           <div class="abou-description-txt">
+            <p class="font_400 f_22">{{ section.settings.desc }}</p>
+          </div>
+        </div>
+       <div class="about-right-side-full-img">
+         <div class="about-rght-img-sec">
+          {% if section.settings.img != blank %}
+          <img src="{{ section.settings.img | img_url:'master'}}" height="" width="" loading="lazy">
+          {% endif %}
+        </div> 
+      </div>     
+  </div>
+  </div>
+    </div>
+</div>
+
+
+<style>
+  .about-wrap-sec{
+    background-image:url('{{ section.settings.bg-img | img_url:'master'}}')
+  }
+  @media only screen and (max-width: 480px) {
+   .about-wrap-sec{
+    background-image:url('{{ section.settings.mob-img | img_url:'master'}}')
+  }
+}
+</style>    
+
+{% schema %}
+  {
+    "name": "about-img-content",
+    "settings": [
+           {
+        "type" : "image_picker",
+        "id" : "bg-img",
+        "label" : "background-image"
+      },
+       {
+        "type" : "image_picker",
+        "id" : "mob-img",
+        "label" : "background-image"
+      },
+      {
+        "type" : "text",
+        "id" : "sub-txt",
+        "label" : "sub-text"
+      },
+        {
+        "type" : "text",
+        "id" : "title",
+        "label" : "Title"
+      },
+         {
+        "type" : "textarea",
+        "id" : "desc",
+        "label" : "description"
+      },
+          {
+        "type" : "image_picker",
+        "id" : "img",
+        "label" : "select-image"
+      }
+    ],
+    "presets":[
+      {
+        "name" : "about-img-content"
+      }
+    ]
+  }
+{% endschema %}

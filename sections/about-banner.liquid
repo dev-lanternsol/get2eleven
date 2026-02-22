@@ -1,0 +1,36 @@
+<div class="about-banner-outr-sec">
+  <div class="about-banner-title">
+    {% if section.settings.title != blank %}
+      <h3 class="clr_wht font_600 f_42">{{ section.settings.title }}</h3>
+    {% else %}
+      <h3 class="clr_wht font_600 f_42">{{ page.title }}</h3>
+    {% endif %}
+</div>
+</div>
+<style>
+  .about-banner-outr-sec{
+    background-image:url('{{ section.settings.bg-img | img_url:'master'}}');
+  }
+</style>
+{% schema %}
+  {
+    "name": "about-banner",
+    "settings": [
+      {
+      "type" : "image_picker",
+      "id" : "bg-img",
+      "label" : "banner-img"
+    },
+    {
+      "type" : "text",
+      "id" : "title",
+      "label" : "Heading"
+    }
+    ],
+    "presets":[
+      {
+        "name" : "about-banner"
+      }
+    ]
+  }
+{% endschema %}

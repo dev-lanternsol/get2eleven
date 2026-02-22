@@ -1,0 +1,372 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "about_banner_EjWJUW": {
+      "type": "about-banner",
+      "custom_css": [
+        ".about-banner-title h3.f_42 {color: #000;}"
+      ],
+      "settings": {
+        "bg-img": "shopify://shop_images/Group_383_d6cd04d5-662b-4158-90c5-8112ace2cefb.png",
+        "title": "BRANDS"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 100,
+        "padding_bottom": 52
+      }
+    },
+    "brands_block_CTb7Dj": {
+      "type": "brands-block",
+      "blocks": {
+        "brand_XEtYLy": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/3_cf7d211a-61ba-40b8-9fbe-b8ae4cc890a2.webp",
+            "url": "shopify://collections/brand_luzz-pickleball",
+            "heading": "Luzz Pickleball"
+          }
+        },
+        "brand_NLApzy": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/Group_481.png",
+            "url": "shopify://collections/selkirk",
+            "heading": "Selkirk"
+          }
+        },
+        "brand_wpD8Te": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/Group_482.png",
+            "url": "shopify://collections/joola",
+            "heading": "JOOLA"
+          }
+        },
+        "brand_dUzW39": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/Group_488.png",
+            "url": "shopify://collections/gearbox",
+            "heading": "Gearbox"
+          }
+        },
+        "brand_DrHaGd": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/honolulu-pickleball-logo.png",
+            "url": "shopify://collections/honolulu",
+            "heading": "Honolulu Pickleball"
+          }
+        },
+        "brand_cAMgCB": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/Group_486.png",
+            "url": "shopify://collections/crbn",
+            "heading": "CRBN"
+          }
+        },
+        "brand_LzN77N": {
+          "type": "brand",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Group_487.png",
+            "url": "shopify://collections/6-0",
+            "heading": "6.0"
+          }
+        },
+        "brand_WBpDRE": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/Group_519.png",
+            "url": "shopify://collections/travismatthew",
+            "heading": "TravisMatthew"
+          }
+        },
+        "brand_bQJYND": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/Group_490.png",
+            "url": "shopify://collections/ronbus",
+            "heading": "Ronbus"
+          }
+        },
+        "brand_wrBRwN": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/Group_505.png",
+            "url": "shopify://collections/vulcan",
+            "heading": "Vulcan"
+          }
+        },
+        "brand_Nr7tNj": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/Group_518.png",
+            "url": "shopify://collections/core-pickelball",
+            "heading": "Core Pickelball"
+          }
+        },
+        "brand_H4LYXG": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/Group_483.png",
+            "url": "shopify://collections/proxr-and-now-purchased-paddletek",
+            "heading": "ProXr"
+          }
+        },
+        "brand_V7UUyJ": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/Group_468_1.png",
+            "url": "shopify://collections/paddletek",
+            "heading": "Paddletek"
+          }
+        },
+        "brand_Tm4wdc": {
+          "type": "brand",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Group_506.png",
+            "url": "shopify://collections/gamma",
+            "heading": "Gamma"
+          }
+        },
+        "brand_gddYjK": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/Group_502.png",
+            "url": "shopify://collections/franklin",
+            "heading": "Franklin"
+          }
+        },
+        "brand_9tgaGf": {
+          "type": "brand",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Group_517.png",
+            "url": "shopify://collections/skechers",
+            "heading": "Skechers"
+          }
+        },
+        "brand_7FpkJr": {
+          "type": "brand",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Group_520.png",
+            "url": "shopify://collections/k-swiss",
+            "heading": "K-Swiss"
+          }
+        },
+        "brand_6hKTkJ": {
+          "type": "brand",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Group_521.png",
+            "url": "shopify://collections/owl-pickleball",
+            "heading": "Owl Pickleball"
+          }
+        },
+        "brand_UUDgGw": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/Group_512.png",
+            "url": "shopify://collections/get2eleven",
+            "heading": "Get2Eleven"
+          }
+        },
+        "brand_9FYCKN": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/Group_493.png",
+            "url": "shopify://collections/engage",
+            "heading": "Engage"
+          }
+        },
+        "brand_zXBAQF": {
+          "type": "brand",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Group_496.png",
+            "url": "shopify://collections/vatic",
+            "heading": "Vatic"
+          }
+        },
+        "brand_tX8C9B": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/Group_499.png",
+            "url": "shopify://collections/volair",
+            "heading": "Volair"
+          }
+        },
+        "brand_9FjyBA": {
+          "type": "brand",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Group_504.png",
+            "url": "shopify://collections/pickleball-apes",
+            "heading": "Pickleball Apes"
+          }
+        },
+        "brand_EQ7HKi": {
+          "type": "brand",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Group_507.png",
+            "url": "shopify://collections/onix",
+            "heading": "Onix"
+          }
+        },
+        "brand_gAWNn3": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/Group_515.png",
+            "url": "shopify://collections/11six24",
+            "heading": "11SIX24"
+          }
+        },
+        "brand_8wi66y": {
+          "type": "brand",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Group_509.png",
+            "url": "shopify://collections/electrum",
+            "heading": "Electrum"
+          }
+        },
+        "brand_nBy6Hk": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/Group_508.png",
+            "url": "shopify://collections/prokennex",
+            "heading": "ProKennex"
+          }
+        },
+        "brand_LQVMDW": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/Group_510.png",
+            "url": "shopify://collections/holbrook-pickleball",
+            "heading": "Holbrook Pickleball"
+          }
+        },
+        "brand_fL74wE": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/Group_503.png",
+            "url": "shopify://collections/head",
+            "heading": "Head"
+          }
+        },
+        "brand_cwy9Lz": {
+          "type": "brand",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Group_494.png",
+            "url": "shopify://collections/bread-and-butter",
+            "heading": "Bread and Butter"
+          }
+        },
+        "brand_8y9NrB": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/Logo_Thrive_White_Black_1_48eb53c0-6151-4641-863e-4244d34145a7.webp",
+            "url": "shopify://collections/thrive",
+            "heading": "Thrive"
+          }
+        },
+        "brand_HDPdUF": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/tifoso.png",
+            "url": "shopify://collections/tifosi",
+            "heading": "Tifosi"
+          }
+        },
+        "brand_cEDXEw": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_design_2.png",
+            "url": "shopify://collections/apes",
+            "heading": "Pickleball Apes"
+          }
+        },
+        "brand_8h3AGe": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/Group_485.png",
+            "url": "shopify://collections/diadem",
+            "heading": "Diadem"
+          }
+        },
+        "brand_K8JMfB": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/Group_491.png",
+            "url": "shopify://collections/gruvn",
+            "heading": "Gruvn"
+          }
+        }
+      },
+      "block_order": [
+        "brand_XEtYLy",
+        "brand_NLApzy",
+        "brand_wpD8Te",
+        "brand_dUzW39",
+        "brand_DrHaGd",
+        "brand_cAMgCB",
+        "brand_LzN77N",
+        "brand_WBpDRE",
+        "brand_bQJYND",
+        "brand_wrBRwN",
+        "brand_Nr7tNj",
+        "brand_H4LYXG",
+        "brand_V7UUyJ",
+        "brand_Tm4wdc",
+        "brand_gddYjK",
+        "brand_9tgaGf",
+        "brand_7FpkJr",
+        "brand_6hKTkJ",
+        "brand_UUDgGw",
+        "brand_9FYCKN",
+        "brand_zXBAQF",
+        "brand_tX8C9B",
+        "brand_9FjyBA",
+        "brand_EQ7HKi",
+        "brand_gAWNn3",
+        "brand_8wi66y",
+        "brand_nBy6Hk",
+        "brand_LQVMDW",
+        "brand_fL74wE",
+        "brand_cwy9Lz",
+        "brand_8y9NrB",
+        "brand_HDPdUF",
+        "brand_cEDXEw",
+        "brand_8h3AGe",
+        "brand_K8JMfB"
+      ],
+      "settings": {
+        "columns_desktop": 5,
+        "columns_mobile": "2"
+      }
+    }
+  },
+  "order": [
+    "about_banner_EjWJUW",
+    "main",
+    "brands_block_CTb7Dj"
+  ]
+}

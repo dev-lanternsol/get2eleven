@@ -1,0 +1,91 @@
+<div class="page-width">
+  <div class="container">
+<div class="story-custom-sec">
+    <div class="about-top-sec">
+     <div class="about-top-sub-txt-sec">
+       <span class="f_16 font_500 clr_blue">{{ section.settings.sub-txt }}</span>
+     </div>
+     {%- if section.settings.title != blank -%}
+        <h2 class="text-center clr_drk_blue f_42 font_600 text_uppercase section_header m0">
+              <span class="main_heading">{{ section.settings.title }}</span>
+          {% if section.settings.bg_heading != blank %}
+          <span class="bg_heading">{{ section.settings.bg_heading }}</span>
+          {% endif %}
+        </h2>
+      {%- endif -%}
+  </div>
+  
+  <div class="about-story-sec-outr">
+    {% for block in section.blocks %}
+    <div class="about-story-sec-innr">
+      <div class="about-story-img">
+        {% if block.settings.img != blank %}
+        <img src="{{ block.settings.img | img_url:'master'}}" height="" width="" loading="lazy">
+        {% endif %}
+      </div>
+        <div class="about-story-heading">
+         <h4 class="font_600 f_18 clr_drk_blue">{{ block.settings.heading }}</h4>
+      </div>
+        <div class="about-story-dsec">
+         <p class="font_500 f_16 jakarta">{{ block.settings.desc }}</p>
+      </div>
+    </div>
+    {% endfor %}
+</div>
+</div>
+</div>
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "about-story-sec",
+    "settings": [
+        {
+          "type" : "text",
+          "id" : "sub-txt",
+          "label" : "sub-txt"
+        },
+         {
+          "type" : "text",
+          "id" : "title",
+          "label" : "Title"
+        },
+         {
+          "type" : "text",
+          "id" : "bg_heading",
+          "label" : "Background Heading"
+        }
+    ],
+    "blocks":[
+      {
+        "type" : "block",
+        "name" : "story-block",
+        "settings":[
+          {
+            "type" : "image_picker",
+            "id" : "img",
+            "label" : "select-image"
+          },
+           {
+            "type" : "text",
+            "id" : "heading",
+            "label" : "heading"
+          },
+            {
+            "type" : "textarea",
+            "id" : "desc",
+            "label" : "description"
+          }
+        ]
+      }
+    ],
+    "presets":[
+      {
+        "name" : "about-story-sec"
+      }
+    ]
+    
+  }
+{% endschema %}

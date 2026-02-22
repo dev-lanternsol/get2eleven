@@ -1,0 +1,386 @@
+{{ 'component-slideshow.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign social_icons = true
+  if settings.social_facebook_link == blank and settings.social_instagram_link == blank and settings.social_youtube_link == blank and settings.social_tiktok_link == blank and settings.social_twitter_link == blank and settings.social_pinterest_link == blank and settings.social_snapchat_link == blank and settings.social_tumblr_link == blank and settings.social_vimeo_link == blank
+    assign social_icons = false
+  endif
+  if section.settings.enable_country_selector or section.settings.enable_language_selector
+    assign language_country_selector = true
+  endif
+  if section.blocks.size > 0
+    assign announcement_bar = true
+  endif
+-%}
+
+{% if social_icons %}
+  {{ 'component-list-social.css' | asset_url | stylesheet_tag }}
+{% endif %}
+
+<div
+  class="utility-bar_sec utility-bar color-{{ section.settings.color_scheme }} gradient{% if section.settings.show_line_separator and section.blocks.size > 0 %} utility-bar--bottom-border{% elsif section.settings.show_line_separator and section.settings.show_social and social_icons%} utility-bar--bottom-border-social-only{% endif %}{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header-localization{% endif %}"
+  {{ block.shopify_attributes }}
+>
+  <div class="page-width utility-bar__grid{% if announcement_bar and language_country_selector or section.settings.show_social and social_icons %} utility-bar__grid--3-col{% elsif language_country_selector or section.settings.show_social and social_icons %} utility-bar__grid--2-col{% endif %}">
+    {%- if section.settings.show_social and social_icons -%}
+      {%- render 'social-icons' -%}
+    {%- endif -%}
+    {%- if section.blocks.size == 1 -%}
+      <div
+        class="announcement-bar{% if section.settings.show_social %} announcement-bar--one-announcement{% endif %}"
+        role="region"
+        aria-label="{{ 'sections.header.announcement' | t }}"
+        {{ block.shopify_attributes }}
+      >
+        {%- if section.blocks.first.settings.text != blank -%}
+          {%- if section.blocks.first.settings.link != blank -%}
+            <a
+              href="{{ section.blocks.first.settings.link }}"
+              class="announcement-bar__link link link--text focus-inset animate-arrow"
+            >
+          {%- endif -%}
+          <p class="announcement-bar__message h5">
+            <span>{{ section.blocks.first.settings.text | escape }}</span>
+            {%- if section.blocks.first.settings.link != blank -%}
+              {% render 'icon-arrow' %}
+            {%- endif -%}
+          </p>
+          {%- if section.blocks.first.settings.link != blank -%}
+            </a>
+          {%- endif -%}
+        {%- endif -%}
+      </div>
+    {%- elsif section.blocks.size > 1 -%}
+      <slideshow-component
+        class="announcement-bar"
+        role="region"
+        aria-roledescription="{{ 'sections.announcements.carousel' | t }}"
+        aria-label="{{ 'sections.announcements.announcement_bar' | t }}"
+      >
+        <div class="announcement-bar-slider slider-buttons">
+          <button
+            type="button"
+            class="slider-button slider-button--prev"
+            name="previous"
+            aria-label="{{ 'sections.announcements.previous_announcement' | t }}"
+            aria-controls="Slider-{{ section.id }}"
+          >
+            {% render 'icon-caret' %}
+          </button>
+          <div
+            class="grid grid--1-col slider slider--everywhere"
+            id="Slider-{{ section.id }}"
+            aria-live="polite"
+            aria-atomic="true"
+            data-autoplay="{{ section.settings.auto_rotate }}"
+            data-speed="{{ section.settings.change_slides_speed }}"
+          >
+            {%- for block in section.blocks -%}
+              <div
+                class="slideshow__slide slider__slide grid__item grid--1-col"
+                id="Slide-{{ section.id }}-{{ forloop.index }}"
+                {{ block.shopify_attributes }}
+                role="group"
+                aria-roledescription="{{ 'sections.announcements.announcement' | t }}"
+                aria-label="{{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}"
+                tabindex="-1"
+              >
+                <div
+                  class="announcement-bar__announcement"
+                  role="region"
+                  aria-label="{{ 'sections.header.announcement' | t }}"
+                  {{ block.shopify_attributes }}
+                >
+                  {%- if block.settings.text != blank -%}
+                    {%- if block.settings.link != blank -%}
+                      <a
+                        href="{{ block.settings.link }}"
+                        class="announcement-bar__link link link--text focus-inset animate-arrow"
+                      >
+                    {%- endif -%}
+                    <p class="announcement-bar__message h5">
+                      <span>{{ block.settings.text | escape }}</span>
+                      {%- if block.settings.link != blank -%}
+                        {% render 'icon-arrow' %}
+                      {%- endif -%}
+                    </p>
+                    {%- if block.settings.link != blank -%}
+                      </a>
+                    {%- endif -%}
+                  {%- endif -%}
+                </div>
+              </div>
+            {%- endfor -%}
+          </div>
+          <button
+            type="button"
+            class="slider-button slider-button--next"
+            name="next"
+            aria-label="{{ 'sections.announcements.next_announcement' | t }}"
+            aria-controls="Slider-{{ section.id }}"
+          >
+            {% render 'icon-caret' %}
+          </button>
+        </div>
+      </slideshow-component>
+    
+      {%- if request.design_mode -%}
+        <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
+        <style>
+          /* theme editor power preview fix */
+          .announcement-bar-slider .slider__slide[aria-hidden='true'] {
+            visibility: hidden;
+          }
+        </style>
+      {%- endif -%}
+    {%- endif -%}
+    <div class="localization-wrapper">
+          <div class="custom_contact_box">
+          <div class="iner_wrapp">
+  <ul class="footer-block__details-content list-unstyled list-unstyled_contant">
+{% if section.settings.url_contact != blank %}
+                          <li>
+                    <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+  <path d="M11.353 0L12.0817 0.19686C12.9727 0.437979 13.785 0.908496 14.4374 1.56148C15.0899 2.21447 15.5597 3.02711 15.8001 3.91835L15.9962 4.6462L14.5405 5.03917L14.3437 4.31131C14.1719 3.6747 13.8362 3.09426 13.3701 2.62787C12.9039 2.16149 12.3237 1.82547 11.6872 1.65332L10.9593 1.45571L11.353 0ZM1.78462e-05 0.160656H6.47151L7.59309 5.20661L6.19018 6.60952C7.01468 7.89358 8.10623 8.98487 9.39048 9.80907L10.7934 8.40691L15.8393 9.52849V16H15.0851C12.1815 16.0045 9.33891 15.1672 6.90144 13.5894C5.10425 12.4263 3.57374 10.8958 2.41061 9.09856C0.832865 6.66107 -0.00445746 3.81847 1.78462e-05 0.91491V0.160656ZM1.52889 1.66916C1.65578 4.02241 2.39664 6.30141 3.67776 8.27944C4.72494 9.89725 6.10275 11.2751 7.72056 12.3222C9.69856 13.6034 11.9776 14.3443 14.3308 14.4711V10.7383L11.2738 10.0595L9.6341 11.7L9.13403 11.4156C7.23537 10.3366 5.66345 8.76463 4.58437 6.86597L4.30002 6.3659L5.94052 4.72615L5.26169 1.66916H1.52889ZM10.6637 2.54787L11.3923 2.74473C11.8378 2.86529 12.2439 3.10055 12.5701 3.42704C12.8964 3.75354 13.1313 4.15985 13.2515 4.60547L13.4476 5.33333L11.9919 5.72629L11.795 4.99844C11.7435 4.80745 11.6427 4.63332 11.5028 4.49343C11.3629 4.35354 11.1888 4.25278 10.9978 4.20119L10.2699 4.00433L10.6637 2.54787Z" fill="white"/>
+</svg></span>
+                            <a
+                              href="{{ section.settings.url_contact }}"
+                              class="link link--text list-menu__item list-menu__item--link f_14 font_400 clr_blck"
+                            >
+                             {{ section.settings.contact }}
+                            </a>
+                          </li>
+  {% endif %}
+{% if section.settings.url_whatsapp != blank %}
+                          <li>
+                            <a
+                              href="{{ section.settings.url_whatsapp }}"
+                              class="link link--text list-menu__item list-menu__item--link f_16 font_400 clr_blck"
+                            >
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+  <path d="M0.382646 8.92191C0.382226 10.4393 0.778699 11.9209 1.53259 13.2268L0.310547 17.6886L4.87671 16.4914C6.13965 17.1789 7.55469 17.5392 8.99265 17.5393H8.99643C13.7434 17.5393 17.6075 13.6765 17.6096 8.9287C17.6105 6.62805 16.7153 4.46466 15.089 2.83705C13.4629 1.20957 11.3003 0.312818 8.99608 0.311768C4.24854 0.311768 0.384676 4.17431 0.382716 8.92191" fill="url(#paint0_linear_425_2869)"/>
+  <path d="M0.0748988 8.91898C0.0744088 10.4909 0.485092 12.0255 1.26586 13.3782L0 18L4.72989 16.7598C6.03313 17.4704 7.50045 17.845 8.99353 17.8456H8.99738C13.9147 17.8456 17.9176 13.8439 17.9197 8.92612C17.9206 6.54279 16.9932 4.30164 15.3088 2.61572C13.6241 0.930005 11.3841 0.000979984 8.99738 0C4.07925 0 0.0768588 4.00114 0.0748988 8.91898ZM2.89172 13.1452L2.71512 12.8649C1.97271 11.6844 1.58085 10.3203 1.58141 8.91954C1.58295 4.83195 4.90958 1.50638 9.00018 1.50638C10.9811 1.50722 12.8428 2.27944 14.2431 3.68054C15.6433 5.08178 16.4138 6.94445 16.4133 8.92556C16.4114 13.0131 13.0848 16.3391 8.99738 16.3391H8.99444C7.66355 16.3384 6.35828 15.981 5.21996 15.3056L4.94906 15.145L2.14225 15.8809L2.89172 13.1452Z" fill="url(#paint1_linear_425_2869)"/>
+  <path d="M6.76753 5.1902C6.60051 4.81899 6.42475 4.8115 6.26592 4.80499C6.13586 4.79939 5.98718 4.79981 5.83864 4.79981C5.68997 4.79981 5.4484 4.85574 5.24421 5.07869C5.03982 5.30184 4.46387 5.84112 4.46387 6.93793C4.46387 8.03481 5.26276 9.0948 5.37413 9.24369C5.48564 9.3923 6.91642 11.7151 9.18242 12.6087C11.0657 13.3514 11.4489 13.2037 11.8576 13.1664C12.2664 13.1293 13.1767 12.6273 13.3624 12.1067C13.5483 11.5862 13.5483 11.14 13.4925 11.0468C13.4368 10.9539 13.2881 10.8981 13.0652 10.7867C12.8422 10.6752 11.7461 10.1358 11.5418 10.0614C11.3374 9.98708 11.1888 9.94998 11.0401 10.1732C10.8914 10.3961 10.4645 10.8981 10.3344 11.0468C10.2044 11.1958 10.0743 11.2144 9.8514 11.1029C9.62831 10.991 8.91034 10.7559 8.05852 9.99646C7.39577 9.40553 6.94834 8.67579 6.81828 8.45256C6.68822 8.22969 6.80435 8.10887 6.91614 7.99778C7.01631 7.89789 7.13915 7.73745 7.25073 7.60733C7.36189 7.47713 7.39899 7.38424 7.47333 7.23556C7.54774 7.08675 7.5105 6.95655 7.45485 6.84504C7.39899 6.73353 6.96577 5.63098 6.76753 5.1902Z" fill="white"/>
+  <defs>
+    <linearGradient id="paint0_linear_425_2869" x1="865.262" y1="1738" x2="865.262" y2="0.311768" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1FAF38"/>
+      <stop offset="1" stop-color="#60D669"/>
+    </linearGradient>
+    <linearGradient id="paint1_linear_425_2869" x1="895.986" y1="1800" x2="895.986" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F9F9F9"/>
+      <stop offset="1" stop-color="white"/>
+    </linearGradient>
+  </defs>
+</svg>
+                            </a>
+                          </li>
+  {% endif %}
+                      </ul>           
+          </div>
+        </div>
+      {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
+        <noscript class="small-hide medium-hide">
+          {%- form 'localization', id: 'AnnouncementCountryMobileFormNoScript', class: 'localization-form' -%}
+            <div class="localization-form__select">
+              <h2 class="visually-hidden" id="AnnouncementCountryMobileLabelNoScript">
+                {{ 'localization.country_label' | t }}
+              </h2>
+              <select
+                class="localization-selector link"
+                name="country_code"
+                aria-labelledby="AnnouncementCountryMobileLabelNoScript"
+              >
+                {%- for country in localization.available_countries -%}
+                  <option
+                    value="{{ country.iso_code }}"
+                    {%- if country.iso_code == localization.country.iso_code %}
+                      selected
+                    {% endif %}
+                  >
+                    {{ country.name }} ({{ country.currency.iso_code }}
+                    {{ country.currency.symbol }})
+                  </option>
+                {%- endfor -%}
+              </select>
+              {% render 'icon-caret' %}
+            </div>
+            <button class="button button--tertiary">{{ 'localization.update_country' | t }}</button>
+          {%- endform -%}
+        </noscript>
+
+        <localization-form class="small-hide medium-hide no-js-hidden">
+          {%- form 'localization', id: 'AnnouncementCountryForm', class: 'localization-form' -%}
+            <div>
+              <h2 class="visually-hidden" id="AnnouncementCountryLabel">{{ 'localization.country_label' | t }}</h2>
+              {%- render 'country-localization', localPosition: 'AnnouncementCountry' -%}
+            </div>
+          {%- endform -%}
+        </localization-form>
+      {% endif %}
+
+      {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
+        <noscript class="small-hide medium-hide">
+          {%- form 'localization', id: 'AnnouncementLanguageMobileFormNoScript', class: 'localization-form' -%}
+            <div class="localization-form__select">
+              <h2 class="visually-hidden" id="AnnouncementLanguageMobileLabelNoScript">
+                {{ 'localization.language_label' | t }}
+              </h2>
+              <select
+                class="localization-selector link"
+                name="locale_code"
+                aria-labelledby="AnnouncementLanguageMobileLabelNoScript"
+              >
+                {%- for language in localization.available_languages -%}
+                  <option
+                    value="{{ language.iso_code }}"
+                    lang="{{ language.iso_code }}"
+                    {%- if language.iso_code == localization.language.iso_code %}
+                      selected
+                    {% endif %}
+                  >
+                    {{ language.endonym_name | capitalize }}
+                  </option>
+                {%- endfor -%}
+              </select>
+              {% render 'icon-caret' %}
+            </div>
+            <button class="button button--tertiary">{{ 'localization.update_language' | t }}</button>
+          {%- endform -%}
+        </noscript>
+
+        <localization-form class="small-hide medium-hide no-js-hidden">
+          {%- form 'localization', id: 'AnnouncementLanguageForm', class: 'localization-form' -%}
+            <div>
+              <h2 class="visually-hidden" id="AnnouncementLanguageLabel">{{ 'localization.language_label' | t }}</h2>
+              {%- render 'language-localization', localPosition: 'AnnouncementLanguage' -%}
+            </div>
+          {%- endform -%}
+        </localization-form>
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.announcement-bar.name",
+  "max_blocks": 12,
+  "class": "announcement-bar-section",
+  "enabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-4"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_line_separator",
+      "default": true,
+      "label": "t:sections.header.settings.show_line_separator.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.announcement-bar.settings.header__1.content",
+      "info": "t:sections.announcement-bar.settings.header__1.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social",
+      "default": false,
+      "label": "t:sections.announcement-bar.settings.show_social.label"
+    },
+
+        {
+          "type": "text",
+          "id": "contact",
+          "label": "Contact"
+        },
+        {
+          "type": "url",
+          "id": "url_contact",
+          "label": "add link"
+        },
+        {
+          "type": "url",
+          "id": "url_whatsapp",
+          "label": "add whatsapp link"
+        },
+    {
+      "type": "header",
+      "content": "t:sections.announcement-bar.settings.header__2.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_rotate",
+      "label": "t:sections.announcement-bar.settings.auto_rotate.label",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "change_slides_speed",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "label": "t:sections.announcement-bar.settings.change_slides_speed.label",
+      "default": 5
+    },
+    {
+      "type": "header",
+      "content": "t:sections.announcement-bar.settings.header__3.content",
+      "info": "t:sections.announcement-bar.settings.header__3.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_country_selector",
+      "default": false,
+      "label": "t:sections.announcement-bar.settings.enable_country_selector.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.announcement-bar.settings.header__4.content",
+      "info": "t:sections.announcement-bar.settings.header__4.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_language_selector",
+      "default": false,
+      "label": "t:sections.announcement-bar.settings.enable_language_selector.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "t:sections.announcement-bar.blocks.announcement.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Welcome to our store",
+          "label": "t:sections.announcement-bar.blocks.announcement.settings.text.label"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.announcement-bar.blocks.announcement.settings.link.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.announcement-bar.presets.name",
+      "blocks": [
+        {
+          "type": "announcement"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

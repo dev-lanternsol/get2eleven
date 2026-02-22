@@ -1,0 +1,410 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "image": "shopify://shop_images/Group_383.png",
+        "show_collection_description": false,
+        "show_collection_image": true,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "logo_with_link_NMGFAj": {
+          "type": "logo_with_link",
+          "settings": {
+            "text": "All",
+            "url": "shopify://collections/all"
+          }
+        },
+        "logo_with_link_VkHMHC": {
+          "type": "logo_with_link",
+          "settings": {
+            "logo": "shopify://shop_images/Group_450_ba6d8410-bf56-45d1-b771-33ea559b69a3.png",
+            "text": "",
+            "url": "shopify://collections/selkirk"
+          }
+        },
+        "logo_with_link_dzzNjy": {
+          "type": "logo_with_link",
+          "settings": {
+            "logo": "shopify://shop_images/Group_451.png",
+            "text": "",
+            "url": "shopify://collections/joola"
+          }
+        },
+        "logo_with_link_TjkX6z": {
+          "type": "logo_with_link",
+          "settings": {
+            "logo": "shopify://shop_images/Group_409_8b7e787b-50bf-446c-8707-7748b4d32104.png",
+            "text": "",
+            "url": "shopify://collections/gearbox"
+          }
+        },
+        "logo_with_link_LRzHf6": {
+          "type": "logo_with_link",
+          "settings": {
+            "logo": "shopify://shop_images/Group_458.png",
+            "text": "",
+            "url": "shopify://collections/diadem"
+          }
+        },
+        "logo_with_link_x7wEjK": {
+          "type": "logo_with_link",
+          "settings": {
+            "logo": "shopify://shop_images/Group_441.png",
+            "text": "",
+            "url": "shopify://collections/gruvn"
+          }
+        },
+        "logo_with_link_99bzGj": {
+          "type": "logo_with_link",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/Group_400_e5dc50a2-d78a-4d9e-ab2b-f1ef732409a8.png",
+            "text": "",
+            "url": "shopify://collections/6-0"
+          }
+        },
+        "logo_with_link_JQmkUz": {
+          "type": "logo_with_link",
+          "settings": {
+            "logo": "shopify://shop_images/Group_459.png",
+            "text": "",
+            "url": "shopify://collections/crbn"
+          }
+        },
+        "logo_with_link_rDG3rm": {
+          "type": "logo_with_link",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/Group_519.png",
+            "text": "",
+            "url": "shopify://collections/travismatthew"
+          }
+        },
+        "logo_with_link_RwwmTp": {
+          "type": "logo_with_link",
+          "settings": {
+            "logo": "shopify://shop_images/Group_447.png",
+            "text": "",
+            "url": "shopify://collections/ronbus"
+          }
+        },
+        "logo_with_link_PAiM3g": {
+          "type": "logo_with_link",
+          "settings": {
+            "logo": "shopify://shop_images/Group_449.png",
+            "text": "",
+            "url": "shopify://collections/vulcan"
+          }
+        },
+        "logo_with_link_TP99Cy": {
+          "type": "logo_with_link",
+          "settings": {
+            "logo": "shopify://shop_images/Group_518.png",
+            "text": "",
+            "url": "shopify://collections/core-pickelball"
+          }
+        },
+        "logo_with_link_7GmQp8": {
+          "type": "logo_with_link",
+          "settings": {
+            "logo": "shopify://shop_images/Group_460.png",
+            "text": "",
+            "url": "shopify://collections/proxr-and-now-purchased-paddletek"
+          }
+        },
+        "logo_with_link_PCqFDU": {
+          "type": "logo_with_link",
+          "settings": {
+            "logo": "shopify://shop_images/Group_468_1.png",
+            "text": "",
+            "url": "shopify://collections/paddletek"
+          }
+        },
+        "logo_with_link_CHinNt": {
+          "type": "logo_with_link",
+          "settings": {
+            "logo": "shopify://shop_images/Group_405_3cef051c-5ec5-477f-bf09-2614df374019.png",
+            "text": "",
+            "url": "shopify://collections/engage"
+          }
+        },
+        "logo_with_link_xHmkTm": {
+          "type": "logo_with_link",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/Group_408_ed521ebc-0d38-4da9-9cee-29a16802784e.png",
+            "text": "",
+            "url": "shopify://collections/gamma"
+          }
+        },
+        "logo_with_link_k8c6EX": {
+          "type": "logo_with_link",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/Group_406_bd7d04ed-c14d-453e-a3d7-ea27f125ccd7.png",
+            "text": "",
+            "url": "shopify://collections/franklin"
+          }
+        },
+        "logo_with_link_nXGYTP": {
+          "type": "logo_with_link",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/Group_517.png",
+            "text": "",
+            "url": "shopify://collections/skechers"
+          }
+        },
+        "logo_with_link_ez3BPL": {
+          "type": "logo_with_link",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/Group_520.png",
+            "text": "",
+            "url": "shopify://collections/k-swiss"
+          }
+        },
+        "logo_with_link_Ka7QYY": {
+          "type": "logo_with_link",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/Group_521.png",
+            "text": "",
+            "url": "shopify://collections/owl-pickleball"
+          }
+        },
+        "logo_with_link_z6eqK6": {
+          "type": "logo_with_link",
+          "settings": {
+            "logo": "shopify://shop_images/Group_512.png",
+            "text": "",
+            "url": "shopify://collections/get2eleven"
+          }
+        },
+        "logo_with_link_ecz8TL": {
+          "type": "logo_with_link",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/Group_445.png",
+            "text": "",
+            "url": "shopify://collections/vatic"
+          }
+        },
+        "logo_with_link_fhgc7G": {
+          "type": "logo_with_link",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/Group_448_3e1b78d4-6371-437c-90f8-1ce732023cc3.png",
+            "text": "",
+            "url": "shopify://collections/volair"
+          }
+        },
+        "logo_with_link_kQ64Qz": {
+          "type": "logo_with_link",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/Group_401_3b66f228-ac6f-4dce-a235-6584cb1b692e.png",
+            "text": "",
+            "url": "shopify://collections/pickleball-apes"
+          }
+        },
+        "logo_with_link_YtfN8X": {
+          "type": "logo_with_link",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/Group_446.png",
+            "text": "",
+            "url": "shopify://collections/onix"
+          }
+        },
+        "logo_with_link_Y4PdnE": {
+          "type": "logo_with_link",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/Group_508.png",
+            "text": "",
+            "url": "shopify://collections/prokennex"
+          }
+        },
+        "logo_with_link_Xw4CfX": {
+          "type": "logo_with_link",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/Group_509.png",
+            "text": "",
+            "url": "shopify://collections/electrum"
+          }
+        },
+        "logo_with_link_7FK9Bn": {
+          "type": "logo_with_link",
+          "settings": {
+            "logo": "shopify://shop_images/Group_510.png",
+            "text": "",
+            "url": "shopify://collections/holbrook-pickleball"
+          }
+        },
+        "logo_with_link_9adLWb": {
+          "type": "logo_with_link",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/Group_515.png",
+            "text": "",
+            "url": "shopify://collections/11six24"
+          }
+        },
+        "logo_with_link_g7pjBi": {
+          "type": "logo_with_link",
+          "settings": {
+            "logo": "shopify://shop_images/Group_442.png",
+            "text": "",
+            "url": "shopify://collections/head"
+          }
+        },
+        "logo_with_link_hgqz9t": {
+          "type": "logo_with_link",
+          "disabled": true,
+          "settings": {
+            "logo": "shopify://shop_images/Group_402_842abbf8-1dd3-4a19-8cdb-54f3058cc5a1.png",
+            "text": "",
+            "url": "shopify://collections/bread-and-butter"
+          }
+        },
+        "logo_with_link_KRCF9f": {
+          "type": "logo_with_link",
+          "settings": {
+            "logo": "shopify://shop_images/KTCHN_PICKLEBALL_LOGO.webp",
+            "text": "",
+            "url": "shopify://collections/ktchn"
+          }
+        },
+        "logo_with_link_9PbG74": {
+          "type": "logo_with_link",
+          "settings": {
+            "logo": "shopify://shop_images/Logo_Thrive_White_Black_1_48eb53c0-6151-4641-863e-4244d34145a7.webp",
+            "text": "",
+            "url": "shopify://collections/thrive"
+          }
+        }
+      },
+      "block_order": [
+        "logo_with_link_NMGFAj",
+        "logo_with_link_VkHMHC",
+        "logo_with_link_dzzNjy",
+        "logo_with_link_TjkX6z",
+        "logo_with_link_LRzHf6",
+        "logo_with_link_x7wEjK",
+        "logo_with_link_99bzGj",
+        "logo_with_link_JQmkUz",
+        "logo_with_link_rDG3rm",
+        "logo_with_link_RwwmTp",
+        "logo_with_link_PAiM3g",
+        "logo_with_link_TP99Cy",
+        "logo_with_link_7GmQp8",
+        "logo_with_link_PCqFDU",
+        "logo_with_link_CHinNt",
+        "logo_with_link_xHmkTm",
+        "logo_with_link_k8c6EX",
+        "logo_with_link_nXGYTP",
+        "logo_with_link_ez3BPL",
+        "logo_with_link_Ka7QYY",
+        "logo_with_link_z6eqK6",
+        "logo_with_link_ecz8TL",
+        "logo_with_link_fhgc7G",
+        "logo_with_link_kQ64Qz",
+        "logo_with_link_YtfN8X",
+        "logo_with_link_Y4PdnE",
+        "logo_with_link_Xw4CfX",
+        "logo_with_link_7FK9Bn",
+        "logo_with_link_9adLWb",
+        "logo_with_link_g7pjBi",
+        "logo_with_link_hgqz9t",
+        "logo_with_link_KRCF9f",
+        "logo_with_link_9PbG74"
+      ],
+      "settings": {
+        "products_per_page": 15,
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": true,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "enable_filtering": true,
+        "menu": "s-d-collection-filter",
+        "filter_type": "vertical",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 82,
+        "padding_bottom": 56
+      }
+    },
+    "170984804094a089d0": {
+      "type": "apps",
+      "blocks": {
+        "power_tools_filter_menu_filter_menu_RV7DxK": {
+          "type": "shopify://apps/power-tools-filter-menu/blocks/filter-menu/6ae6bf19-7d76-44e9-9e0e-5df155960acd",
+          "settings": {
+            "pt_display_mode": "vertical",
+            "pt_sidebar_selector": "#FacetsWrapperDesktop, .mobile-facets__main",
+            "existing_sidebar_hide_other_els": true,
+            "pt_container_classes": ".page-width",
+            "pt_z_index": "1",
+            "pt_mobile_enable": true,
+            "pt_mobile_max_width": "767px",
+            "pt_mobile_color": "#222222",
+            "pt_mobile_size": "xsmall",
+            "pt_mobile_hide_selected": true,
+            "pt_show_refine": true,
+            "pt_show_collection_group": false,
+            "pt_show_clear": true,
+            "pt_show_view_all": false,
+            "pt_show_collection_count": false,
+            "pt_show_tags_group": false,
+            "pt_show_tags_grouped": false,
+            "pt_show_show_single_group": true,
+            "pt_scroll_filter_group": true,
+            "pt_show_inactive_filters": false,
+            "pt_hide_headers": false,
+            "pt_clear_to_current_collection": false,
+            "pt_desktop_always_show_selected": true
+          }
+        }
+      },
+      "block_order": [
+        "power_tools_filter_menu_filter_menu_RV7DxK"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "faq_dropdown_MUJcV4": {
+      "type": "faq-dropdown",
+      "settings": {
+        "heading": "",
+        "use_collection_metafield": true
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid",
+    "170984804094a089d0",
+    "faq_dropdown_MUJcV4"
+  ]
+}

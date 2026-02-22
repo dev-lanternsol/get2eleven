@@ -1,0 +1,545 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "seo_hero_main": {
+      "type": "seo-hero",
+      "custom_css": [
+        ".seo-hero__buttons .button--primary {color: #0f3b6a !important; border: 1px solid;}"
+      ],
+      "settings": {
+        "background_image": "shopify://shop_images/Rectangle_41156.png",
+        "color_scheme": "scheme-3e8b1b9d-efbc-4c58-82da-f1e933938f88",
+        "top_icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-map-pin h-5 w-5 mr-2 text-blue-200\" aria-hidden=\"true\"><path d=\"M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0\"></path><circle cx=\"12\" cy=\"10\" r=\"3\"></circle></svg>",
+        "top_icon_text": "{{ page.metafields.custom.top_icon_text.value }}",
+        "heading": "{{ page.metafields.custom.main_banner_title_desktop.value }}",
+        "heading_size": "h2",
+        "description": "<p>{{ page.metafields.custom.main_banner_description_desktop | metafield_tag }}</p>",
+        "description_mobile": "<p>{{ page.metafields.custom.main_banner_description_mobile.value }}</p>",
+        "sub_description": "",
+        "button_label_1": "Shop Paddles Now",
+        "button_link_1": "shopify://collections/all",
+        "button_style_secondary_1": true,
+        "button_label_2": "Call Us Now",
+        "button_link_2": "{{ page.metafields.custom.banner_button_link.value }}",
+        "button_style_secondary_2": false,
+        "bottom_icon_1": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-clock h-4 w-4 mr-2\" aria-hidden=\"true\"><path d=\"M12 6v6l4 2\"></path><circle cx=\"12\" cy=\"12\" r=\"10\"></circle></svg>",
+        "bottom_icon_1_text": "Fast Local Delivery",
+        "bottom_icon_2": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-phone h-4 w-4 mr-2\" aria-hidden=\"true\"><path d=\"M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384\"></path></svg>",
+        "bottom_icon_2_text": "In-Store Pickup Available",
+        "right_image": "shopify://shop_images/CRBN_TruFoamWaves_05_CoreExplainer_2.jpg",
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
+    "brand_logo_title_n6qVrg": {
+      "type": "brand-logo-title",
+      "blocks": {
+        "brand_K9AQTi": {
+          "type": "brand",
+          "settings": {
+            "logo": "shopify://shop_images/selkirk.avif",
+            "brand_name": "Selkirk",
+            "link": "shopify://collections/selkirk"
+          }
+        },
+        "brand_rJ4QkT": {
+          "type": "brand",
+          "settings": {
+            "logo": "shopify://shop_images/joola_96069a3b-a693-4793-8a6e-a313a7bff721.png",
+            "brand_name": "JOOLA",
+            "link": "shopify://collections/joola"
+          }
+        },
+        "brand_LJjrNE": {
+          "type": "brand",
+          "settings": {
+            "logo": "shopify://shop_images/Rectangle_41183.png",
+            "brand_name": "Gearbox",
+            "link": "shopify://collections/gearbox"
+          }
+        },
+        "brand_mdzqMW": {
+          "type": "brand",
+          "settings": {
+            "logo": "shopify://shop_images/crbon.png",
+            "brand_name": "CRBN",
+            "link": "shopify://collections/crbn"
+          }
+        },
+        "brand_tTg67R": {
+          "type": "brand",
+          "settings": {
+            "logo": "shopify://shop_images/1-Image_2_252b62aa-4a32-4c49-a4f6-f74ad4f53dbd.webp",
+            "brand_name": "Paddletek",
+            "link": "shopify://collections/paddletek"
+          }
+        }
+      },
+      "block_order": [
+        "brand_K9AQTi",
+        "brand_rJ4QkT",
+        "brand_LJjrNE",
+        "brand_mdzqMW",
+        "brand_tTg67R"
+      ],
+      "name": "Brand Logo Title",
+      "settings": {
+        "heading": "Top Pickleball Paddle Brands We Carry",
+        "heading_size": "h1",
+        "columns_desktop": 5,
+        "columns_mobile": 3,
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_3QAwWD": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_adLhED": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ page.metafields.custom.h2_text_1.value }}",
+            "heading_size": "h1",
+            "heading_tag": "h2"
+          }
+        },
+        "text_ngEXze": {
+          "type": "text",
+          "settings": {
+            "text": "<p></p>{{ page.metafields.custom.p_text_1 | metafield_tag }}"
+          }
+        }
+      },
+      "block_order": [
+        "heading_adLhED",
+        "text_ngEXze"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-3e8b1b9d-efbc-4c58-82da-f1e933938f88",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "page_gXyemK": {
+      "type": "page",
+      "name": "t:sections.page.presets.name",
+      "settings": {
+        "page": "{{ page.metafields.custom.map_page.value }}",
+        "heading_size": "h1",
+        "color_scheme": "scheme-2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_3mQ77a": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_UQHii4": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ page.metafields.custom.h3_text_3.value }}",
+            "heading_size": "h1",
+            "heading_tag": "h3"
+          }
+        },
+        "text_8NQjVw": {
+          "type": "text",
+          "settings": {
+            "text": "{{ page.metafields.custom.p_text_3 | metafield_tag }}"
+          }
+        }
+      },
+      "block_order": [
+        "heading_UQHii4",
+        "text_8NQjVw"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-3e8b1b9d-efbc-4c58-82da-f1e933938f88",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "multicolumn_RB8A6R": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_MVYWmy": {
+          "type": "column",
+          "settings": {
+            "title": "Expert Fitting & Demo",
+            "heading_tag": "h3",
+            "text": "<p>{{ page.metafields.custom.p_text_5 | metafield_tag }}</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_rCxMte": {
+          "type": "column",
+          "settings": {
+            "title": "Same-Day Pickup",
+            "heading_tag": "h3",
+            "text": "{{ page.metafields.custom.p_text_6 | metafield_tag }}",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_WVRVkf": {
+          "type": "column",
+          "settings": {
+            "title": "Support From Pickleball Gear Experts",
+            "heading_tag": "h3",
+            "text": "{{ page.metafields.custom.p_text_7 | metafield_tag }}",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_MVYWmy",
+        "column_rCxMte",
+        "column_WVRVkf"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "{{ page.metafields.custom.h2_text_4.value }}",
+        "description": "<p>{{ page.metafields.custom.p_text_4 | metafield_tag }}</p>",
+        "heading_size": "h1",
+        "heading_tag": "h2",
+        "image_width": "third",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "review_carousel_kbHNP6": {
+      "type": "review-carousel",
+      "blocks": {
+        "review_kBdUTc": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Doodlin' Social Club",
+            "review_text": "Love Bobby Riggs! So much fun! So glad we have this facility near home!"
+          }
+        },
+        "review_GANjHD": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Claire EcoArtist",
+            "review_text": "HUGE SELECTION of best PB Paddles !!! U will find what I want here."
+          }
+        },
+        "review_k8iwfr": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Miami Tennis Pro",
+            "review_text": "Get2Eleven has all the best Pickleball paddles and gear available to choose from. Tony and his team are super knowledgeable with the details you need to identify the best paddle for your game. The team is Very responsive and attentive to handle your needs and talk you through any questions you may have. I personally have been very impressed with this company and highly recommend them!"
+          }
+        },
+        "review_EeYBnD": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Nalini R",
+            "review_text": "This place offers an outstanding experience for players of all levels! Their paddles are high-quality, well-balanced, and provide excellent control and power. Whether you’re a beginner or a seasoned player, their gear enhances gameplay and improves performance. The customer service is also top-notch, ensuring you get the right paddle for your playing style. The durability and design of their products make them a great investment for any pickleball enthusiast. Highly recommended!"
+          }
+        },
+        "review_mV3gzd": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Armando Garza",
+            "review_text": "Great selection at affordable prices…staff was very knowledgeable to guide me through my paddle upgrade!!! Thank you!!!!"
+          }
+        }
+      },
+      "block_order": [
+        "review_kBdUTc",
+        "review_GANjHD",
+        "review_k8iwfr",
+        "review_EeYBnD",
+        "review_mV3gzd"
+      ],
+      "name": "Review Carousel",
+      "settings": {
+        "title": "<strong>Reviews from Our Players</strong>",
+        "heading_size": "h1",
+        "card_background": "#ffffff",
+        "text_color": "#000000",
+        "star_color": "#ffd700",
+        "button_color": "#000000",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_tFLg4m": {
+      "type": "featured-collection",
+      "custom_css": [],
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "title": "<strong>Best-Selling Paddles</strong>",
+        "bg_heading": "",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "100-200",
+        "products_to_show": 3,
+        "columns_desktop": 3,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 88
+      }
+    },
+    "nearby_areas_pYTArC": {
+      "type": "nearby-areas",
+      "blocks": {
+        "area_nH7e43": {
+          "type": "area",
+          "settings": {
+            "area_name": "Leucadia, CA",
+            "area_link": "shopify://pages/pickleball-paddles-leucadia-ca",
+            "custom_icon": ""
+          }
+        },
+        "area_7WmHfj": {
+          "type": "area",
+          "settings": {
+            "area_name": "Solana Beach, CA",
+            "area_link": "shopify://pages/pickleball-paddles-solana-beach-ca",
+            "custom_icon": ""
+          }
+        },
+        "area_VLfBqE": {
+          "type": "area",
+          "settings": {
+            "area_name": "Olivenhain, CA",
+            "area_link": "shopify://pages/pickleball-paddles-olivenhain-ca",
+            "custom_icon": ""
+          }
+        },
+        "area_aLJwe7": {
+          "type": "area",
+          "settings": {
+            "area_name": "Cardiff-by-the-Sea, CA",
+            "area_link": "shopify://pages/pickleball-paddles-cardiff-by-the-sea",
+            "custom_icon": ""
+          }
+        },
+        "area_ac9LtH": {
+          "type": "area",
+          "settings": {
+            "area_name": "Rancho Santa Fe, CA",
+            "area_link": "shopify://pages/pickleball-paddles-rancho-santa-fe",
+            "custom_icon": ""
+          }
+        }
+      },
+      "block_order": [
+        "area_nH7e43",
+        "area_7WmHfj",
+        "area_VLfBqE",
+        "area_aLJwe7",
+        "area_ac9LtH"
+      ],
+      "name": "Nearby Areas",
+      "settings": {
+        "background_image": "shopify://shop_images/Gen-3-Carousel-Banner.webp",
+        "background_image_mobile": "shopify://shop_images/Joola-mobile-banner.jpg",
+        "color_scheme": "scheme-2",
+        "heading": "{{ page.metafields.custom.seo_section_6_title.value }}",
+        "heading_size": "h2",
+        "description": "<p>{{ page.metafields.custom.seo_section_6_description | metafield_tag }}</p>",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "faq_dropdown_rFG4hn": {
+      "type": "faq-dropdown",
+      "blocks": {
+        "question_g7V6Vr": {
+          "type": "question",
+          "settings": {
+            "title": "What’s the difference between a 14mm and 16mm pickleball paddle?",
+            "copy": "<p>A 14mm paddle is thinner and delivers more power with a quicker response—great for players who prefer speed and sharp volleys near the net. A 16mm paddle is thicker and better for control, absorbing more of the ball’s energy to help with placement and touch shots. 14mm paddles suit aggressive players, while 16mm paddles are ideal for longer rallies and more controlled gameplay. We also carry paddles from 10mm to 20mm to fine-tune your feel on the court.</p>"
+          }
+        },
+        "question_c7Pwg6": {
+          "type": "question",
+          "settings": {
+            "title": "How do I choose the right pickleball paddle for my game?",
+            "copy": "<p>Choosing the right paddle starts with understanding how different features affect your performance on the court. If you play regularly in Encinitas at the park, with a local club, or just for fun—your paddle should match how you move, hit, and compete.<br/><br/>Here are the main factors to consider:</p><ul><li><strong>Core Thickness:</strong> Controls how the ball feels when it hits the paddle and affects both touch and power.<br/></li><li><strong>Weight:</strong> A lighter paddle gives you quick movement and control, while a heavier one delivers more power and stability.<br/></li><li><strong>Grip Size and Handle Length:</strong> A good grip makes a big difference in comfort and control. Longer handles are great for two-handed shots.<br/></li><li><strong>Paddle Shape:</strong> Elongated paddles offer more reach, while widebody designs have a larger sweet spot—great for beginners.<br/></li><li><strong>Material:</strong> Carbon fiber and fiberglass each offer different feels and balance between spin and pop.<br/><br/>If you're unsure where to begin, read our <a href=\"https://get2eleven.com/blogs/news/pickle-paddle-buying-guide-understanding-pickleball-paddle-characteristics\"><span style=\"text-decoration:underline\"><em><strong>paddle buying guide</strong></em></span></a> to explore how shape, weight, and construction come into play.</li></ul>"
+          }
+        },
+        "question_rb9Q3j": {
+          "type": "question",
+          "settings": {
+            "title": "What’s the difference between a 14mm and 16mm pickleball paddle?",
+            "copy": "<p>A<a href=\"https://get2eleven.com/collections/thickness-14mm\"> <span style=\"text-decoration:underline\">14mm paddle</span></a> is thinner and delivers more power with a quicker response. It’s a great choice for players who prefer speed and sharp volleys near the net. On the other hand,<a href=\"https://get2eleven.com/collections/thickness-16mm\"> <span style=\"text-decoration:underline\">16mm paddles</span></a> are thicker and better for control, absorbing more of the ball’s energy to help with placement and touch shots. Many 14mm paddles are used by aggressive players, while 16mm paddles are popular for longer rallies and more controlled gameplay. While 14mm and 16mm are the most common sizes, we also carry a wide range of paddles by thickness from 10mm up to 20mm, giving you even more ways to fine-tune your feel on the court.</p>"
+          }
+        },
+        "question_6TJfAe": {
+          "type": "question",
+          "settings": {
+            "title": "Do elongated paddles offer more advantages for local play?",
+            "copy": "<p>Elongated paddles give you added reach, which can be helpful during fast exchanges or when covering wide shots on outdoor courts in Encinitas. These paddles typically have a narrower face and longer handle, making them ideal for two-handed shots and spin. They’re especially useful if you play at a competitive pace or need extra coverage without sacrificing control. Models like the<a href=\"https://get2eleven.com/products/gearbox-pro-ultimate-power-elongated-paddle?_pos=1&_sid=c975eef5b&_ss=r\"> <span style=\"text-decoration:underline\"><strong>Gearbox PRO Ultimate Power Elongated Paddle 14mm</strong></span></a><strong> </strong>are known for their powerful feel and extended shape, which many intermediate and advanced players prefer.</p><p><a href=\"https://get2eleven.com/pages/paddle-quiz\"><span style=\"text-decoration:underline\"><strong>Take our paddle quiz</strong></span></a><strong> </strong>to get matched with options based on your playstyle. It will give you a list of paddles from different brands with elongated shapes, wider faces, or thicker cores, depending on what suits your game best.</p>"
+          }
+        },
+        "question_jN84mV": {
+          "type": "question",
+          "settings": {
+            "title": "What makes Selkirk and Joola popular among players in Encinitas?",
+            "copy": "<p>Selkirk and Joola are two of the most recognized names in the pickleball world, and they’re especially popular with players across Encinitas and San Diego because of their innovation and reliability.<a href=\"https://get2eleven.com/collections/brand_selkirk\"> <span style=\"text-decoration:underline\"><strong>Selkirk paddles</strong></span></a><strong> </strong>are known for their durability, control, and pro-level feel, often chosen by players who value spin and consistency. Joola, on the other hand, has made a strong impact with their<a href=\"https://get2eleven.com/blogs/news/joola-launches-gen-3-paddle-line-up-featuring-revolutionary-technology\"> <span style=\"text-decoration:underline\"><strong>Gen 3 paddle lineup</strong></span></a><strong>,</strong> offering updated tech that blends power and touch in a lightweight design. Both brands are trusted by professionals and club-level players.</p>"
+          }
+        },
+        "question_cwyngg": {
+          "type": "question",
+          "settings": {
+            "title": "Are thicker paddles better for control or comfort on slower courts?",
+            "copy": "<p>Yes, thicker paddles are generally better for control and comfort. A thicker core absorbs more of the ball’s energy, which helps you slow things down during long rallies and improve your placement. On slower courts, a thicker paddle can give you more time to respond and reset, especially during soft exchanges or dinking. If you play a more strategic game or want to reduce stress on your wrist or elbow, exploring<a href=\"https://get2eleven.com/collections/thickness-16mm\"> <span style=\"text-decoration:underline\"><strong>control paddles</strong></span></a> with thicker cores can be a smart move.</p>"
+          }
+        },
+        "question_AnrMPm": {
+          "type": "question",
+          "settings": {
+            "title": "Do pickleball paddles really make a difference in performance?",
+            "copy": "<p>Absolutely! The paddle you use can affect everything from how much spin you create to how easy it is to control the ball. Materials like carbon fiber or fiberglass, along with the paddle’s weight and shape, all contribute to how it plays. Local pickleball players in Encinitas often notice the difference when they switch paddles, especially when adjusting to different court surfaces or playing styles. To learn more about how paddle design impacts your game, read our<a href=\"https://get2eleven.com/blogs/news/demystifying-pickleball-paddles-a-guide-to-understanding-technology-and-types\"><strong> </strong><span style=\"text-decoration:underline\"><strong>guide to paddle technology</strong></span></a><strong>.</strong></p>"
+          }
+        },
+        "question_eCaHfb": {
+          "type": "question",
+          "settings": {
+            "title": "Why are some paddles more expensive than others?",
+            "copy": "<p>The price of a pickleball paddle usually reflects its materials, construction, and performance features. Higher-end paddles often use premium carbon fiber or proprietary technology that enhances feel, control, or spin. Some models also include added edge protection or foam-injected walls for durability. If you’re buying online or in-store in, it helps to understand what makes a paddle premium before deciding. Our article on<a href=\"https://get2eleven.com/blogs/news/advanced-technology-is-helping-shape-future-pickleball-paddles\"><strong> </strong><span style=\"text-decoration:underline\"><strong>advanced paddle design</strong></span></a><strong> </strong>explains how new products are evolving to meet the needs of competitive players.</p>"
+          }
+        },
+        "question_KxKY3Y": {
+          "type": "question",
+          "settings": {
+            "title": "Which materials—carbon fiber or fiberglass—offer better feel and spin?",
+            "copy": "<p>Carbon fiber paddles are a top choice for players who want more control, spin, and a clean feel on every shot. The surface is rigid, which helps you guide the ball with precision, especially during dinks or quick resets. Fiberglass paddles, on the other hand, offer a softer feel with more pop off the face, which many players like for fast-paced play.</p><p>Two solid carbon fiber options to check out are the<a href=\"https://get2eleven.com/products/gearbox-pro-ultimate-power-elongated-paddle\"><strong> </strong><span style=\"text-decoration:underline\"><strong>Gearbox PRO Ultimate Power Elongated Paddle 14mm</strong></span></a><strong>,</strong> which delivers both power and spin, and the<a href=\"https://get2eleven.com/products/paddletek-bantam-ts-5-paddle-copy\"><strong> </strong><span style=\"text-decoration:underline\"><strong>Paddletek Bantam TKO-CX 12.7 Paddle</strong></span></a><strong>,</strong> built with PT-700 raw carbon fiber for sharp responsiveness and excellent durability.</p>"
+          }
+        },
+        "question_g63VY8": {
+          "type": "question",
+          "settings": {
+            "title": "How does paddle weight affect control and power?",
+            "copy": "<p>Paddle weight is one of the key things that affects how your game feels. Lightweight paddles are easier to move quickly, making them a great match for beginners, juniors, or anyone who relies on quick reactions at the net. Heavier paddles, often preferred by experienced players, add more power to your shots and help reduce vibration for better comfort.</p>"
+          }
+        },
+        "question_YVztE8": {
+          "type": "question",
+          "settings": {
+            "title": "What paddle shape works best for beginner or casual players?",
+            "copy": "<p>For beginners or casual players, wider paddles with a larger sweet spot are usually easier to control and offer more forgiveness on off-center hits. These shapes are ideal for players of all ages, including those who are just getting started with the sport. If you're just starting out or playing for fun on weekends, look for paddles labeled as widebody or classic. One good example is the<a href=\"https://get2eleven.com/products/crbn-tf-genesis-square-paddle\"><strong> </strong><span style=\"text-decoration:underline\"><strong>CRBN 2 TF Trufoam Genesis Square Paddle</strong></span></a><strong>,</strong> which combines a forgiving shape with solid control.</p>"
+          }
+        },
+        "question_anKCqG": {
+          "type": "question",
+          "settings": {
+            "title": "Is it worth adding lead tape or extra grip to customize my paddle?",
+            "copy": "<p>Yes, especially if you want to adjust the balance or comfort of your paddle without buying a new one. Many players add lead tape to increase power or customize feel, and<a href=\"https://get2eleven.com/collections/category_edge-guard-tape\"><strong> </strong><span style=\"text-decoration:underline\"><strong>extra grip tape</strong></span></a> helps with sweat control and handle fit. These small upgrades can make a big difference in how your paddle performs. We also suggest checking out our<a href=\"https://get2eleven.com/collections/category_grip\"><strong> </strong><span style=\"text-decoration:underline\"><strong>grip accessories</strong></span></a>, which can help improve durability and extend your paddle's lifespan.</p>"
+          }
+        },
+        "question_eCWanw": {
+          "type": "question",
+          "settings": {
+            "title": "How fast is shipping to Encinitas and nearby areas?",
+            "copy": "<p>We ship quickly to Encinitas and surrounding San Diego communities, so you don’t have to wait long for your new paddle, court shoes, or accessories. Most orders are processed within 1–2 business days, with tracking included. If you're purchasing online, you’ll have full access to our gear including paddles, bags, balls, nets, and more. Shipping is fast, reliable, and backed by our support team to keep your week covered with great service.</p>"
+          }
+        },
+        "question_7fm3Yf": {
+          "type": "question",
+          "settings": {
+            "title": "Where is Get2Eleven located and what are your business hours?",
+            "copy": "<p>Our Get2Eleven is conveniently located at<a href=\"https://www.google.com/maps/place/get2Eleven+Pickleball+Shop+San+Diego/@33.0356966,-117.2736164,17z/data=!4m6!3m5!1s0x80dc0d774b941d15:0x6c726c3aeffb9aac!8m2!3d33.0356966!4d-117.2736164!16s%2Fg%2F11lp18v619?entry=ttu&g_ep=EgoyMDI1MDYyMi4wIKXMDSoASAFQAw%3D%3D\"> <span style=\"text-decoration:underline\"><strong>875 Santa Fe Dr, Encinitas, CA 92024</strong></span></a><strong>,</strong> just minutes from local courts and clubs. You can stop by to shop for paddles, balls, bag, grips, nets, and other accessories. We carry options for women, juniors, and adults so you can find something that fits your hand and playing style. Get a free demo or feel the difference in shape and weight before making a purchase, especially helpful if you’re still deciding on the right paddle or pair of court shoes.</p><p>We are open:</p><ul><li>Monday–Friday: 8 AM–9 PM</li><li>Saturday–Sunday: 8 AM–7 PM</li></ul><p>Get help from our team if you're not sure what to buy, and test gear in person before making a purchase. Whether you're shopping on your lunch break or heading in after a day at the courts, we make it easy to find the gear you need.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_g7V6Vr",
+        "question_c7Pwg6",
+        "question_rb9Q3j",
+        "question_6TJfAe",
+        "question_jN84mV",
+        "question_cwyngg",
+        "question_AnrMPm",
+        "question_eCaHfb",
+        "question_KxKY3Y",
+        "question_g63VY8",
+        "question_YVztE8",
+        "question_anKCqG",
+        "question_eCWanw",
+        "question_7fm3Yf"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".collapsible-container {margin-top: 0;}"
+      ],
+      "name": "FAQ dropdown",
+      "settings": {
+        "heading": "{{ page.metafields.custom.faq_heading.value }}",
+        "heading_size": "h1",
+        "question_size": "h2",
+        "use_collection_metafield": false
+      }
+    },
+    "faq_dropdown_v2_gWfC3Y": {
+      "type": "faq-dropdown-v2",
+      "custom_css": [],
+      "name": "FAQ dropdown v2",
+      "settings": {
+        "heading": "{{ page.metafields.custom.faq_heading.value }}",
+        "heading_size": "h1",
+        "question_size": "h4",
+        "faq_metafield": "<p>{{ page.metafields.custom.faq | metafield_tag }}</p>"
+      }
+    }
+  },
+  "order": [
+    "seo_hero_main",
+    "brand_logo_title_n6qVrg",
+    "rich_text_3QAwWD",
+    "page_gXyemK",
+    "rich_text_3mQ77a",
+    "multicolumn_RB8A6R",
+    "review_carousel_kbHNP6",
+    "featured_collection_tFLg4m",
+    "nearby_areas_pYTArC",
+    "faq_dropdown_rFG4hn",
+    "faq_dropdown_v2_gWfC3Y"
+  ]
+}

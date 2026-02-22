@@ -1,0 +1,136 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 100,
+        "padding_bottom": 52
+      }
+    },
+    "intro-with-quiz": {
+      "type": "intro-with-quiz",
+      "settings": {
+        "heading": "Take the Pickleball Paddle Quiz",
+        "content": "<p>There are so many paddles out there, but only a few will truly match your game. This quick quiz looks at your play style and preferences to find your perfect fit. Get personalized paddle recommendations without the guesswork.</p>"
+      }
+    },
+    "17448237070321bcc0": {
+      "type": "apps",
+      "blocks": {
+        "revenuehunt_recommender_quiz_inline_quiz_8yJmx8": {
+          "type": "shopify://apps/revenuehunt-recommender-quiz/blocks/inline-quiz/672f3d48-fd3b-4227-8778-c6e58c4f8a98",
+          "settings": {
+            "quiz_id": "yGHx49Y",
+            "quiz_height": 600,
+            "quiz_autoscroll": true,
+            "quiz_fixed_height": false
+          }
+        }
+      },
+      "block_order": [
+        "revenuehunt_recommender_quiz_inline_quiz_8yJmx8"
+      ],
+      "disabled": true,
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "collapsible_content_TyrmX4": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_KGzFFn": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How does the pickleball paddle quiz help me find the right paddle?",
+            "icon": "check_mark",
+            "row_content": "<p>There are so many paddles out there that it’s easy to feel stuck choosing one. This pickleball paddle quiz looks at your play style, skill level, and what you actually want from your paddle. Based on your answers, we’ll give you paddle recommendations that match your needs so you can find the right pickleball paddle without all the guesswork.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_4Cnbkt": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is this quiz beginner-friendly, or just for advanced players?",
+            "icon": "check_mark",
+            "row_content": "<p>The quiz works for everyone. It looks at your current skill level, personal preference, and how you like to play so we can recommend a beginner-friendly paddle or something more high-performance.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_eYgaJq": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What’s the difference between power paddles and control paddles?",
+            "icon": "check_mark",
+            "row_content": "<p>Power paddles are built to generate explosive power with every shot. They usually have a stiffer paddle face, sometimes made with raw carbon fiber or graphite, and tend to be a bit heavier to give you extra power on drives and topspin serves.</p><p>On the other hand, control paddles focus on a softer feel, a forgiving sweet spot, and more forgiveness for players who value placement and finesse. The best paddle for you depends on your game and what you prefer when you’re playing pickleball.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_ib7biq": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will the quiz suggest raw carbon fiber paddles or other paddle types?",
+            "icon": "check_mark",
+            "row_content": "<p>Yes. The pickleball paddle quiz considers your play style, preferences, and skill level to match you with the best options. That could include raw carbon fiber paddles, hybrid paddles, or even fiberglass models.</p><p>Each material offers a different feel. Carbon fiber tends to offer more control and best spin, while fiberglass adds power and is often more beginners. Your results are tailored to help you find the right pickleball paddle for your game.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_iHHTGy": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do things like edge guards or paddle thickness make a real difference?",
+            "icon": "check_mark",
+            "row_content": "<p>Yes, they do. An edge guard protects your paddle from damage and adds a bit of weight around the edges, which can affect how balanced the paddle feels. Paddle thickness matters too—thicker paddles (like 16mm) usually offer more control and a softer feel, while thinner ones give you more power and pop. These small details can change how your paddle performs, especially as your game improves.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_LLVNni": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What should I look for when reviewing a paddle’s features?",
+            "icon": "check_mark",
+            "row_content": "<p>When choosing the right pickleball paddle, focus on features that match your play style, skill level, and preferences. Here's what to pay attention to:</p><p><strong>1. Paddle shape</strong></p><ul><li> Standard shape balanced and offers a forgiving sweet spot</li><li> Elongated paddle adds extra reach and helps with overheads and spin</li></ul><p><strong>2. Weight</strong></p><ul><li>Lightweight is ideal for faster swings, better for control and net play</li><li>Heavier paddle gives added power and stability on hard hits</li></ul><p><strong>3. Core material</strong></p><ul><li>Polymer cores have a soft feel, great for control and quieter play</li><li>Nomex or aluminum has a harder feel, more responsive and loud</li></ul><p><strong>4. Surface material (paddle face)</strong></p><ul><li>Raw carbon fiber paddles and graphite give more control, best spin, and durability</li><li>Fiberglass adds explosive power and is often used in beginner friendly paddles</li></ul><p><strong>5. Grip size</strong></p><ul><li>Smaller grips allow more wrist action for spin and control</li><li>Larger grips provide comfort and reduce strain during long matches</li></ul><p><strong>6. Edge guard</strong></p><ul><li>Protects the paddle from wear and tear</li><li>Some advanced paddles come with minimal or edgeless designs for a cleaner feel</li></ul><p>Once you finish the pickleball paddle quiz, review your top paddle matches by checking these features. </p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_KGzFFn",
+        "collapsible_row_4Cnbkt",
+        "collapsible_row_eYgaJq",
+        "collapsible_row_ib7biq",
+        "collapsible_row_iHHTGy",
+        "collapsible_row_LLVNni"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "FAQ",
+        "heading_size": "h1",
+        "heading_alignment": "center",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "intro-with-quiz",
+    "17448237070321bcc0",
+    "collapsible_content_TyrmX4"
+  ]
+}

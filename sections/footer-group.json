@@ -1,0 +1,210 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "170730775325ad2756": {
+      "type": "apps",
+      "blocks": {
+        "instafeed_app_block_KA3iNL": {
+          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
+          "settings": {
+            "title": "",
+            "title_color": "",
+            "title_size_v2": 0,
+            "alignment": "center",
+            "instafeed_margin_top": 0,
+            "instafeed_margin_bottom": 0,
+            "instafeed_margin_sides": 0,
+            "show_instagram_link": false,
+            "link_alignment": "left",
+            "link_color": "#000000",
+            "background_color": "",
+            "feed_id": "",
+            "html_area": ""
+          }
+        }
+      },
+      "block_order": [
+        "instafeed_app_block_KA3iNL"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "footer_banner_ndrTQg": {
+      "type": "footer_banner",
+      "disabled": true,
+      "settings": {
+        "heading": "Ready to Upgrade Your Gear?",
+        "caption": "<p>Pickleball paddles are not one-size-fits-all. The best choice comes down to how you play, what feels comfortable in your hand, and what helps you stay consistent on the court. A paddle that fits your style makes the game more fun, more confident, and easier to improve.<br/><br/>Get2Eleven makes it simple to find your next paddle and gear. Shop online anytime, or visit our pro shop for help choosing the right setup based on grip size, paddle weight, and overall feel.</p>",
+        "btn": "",
+        "url": "",
+        "bg": "shopify://shop_images/Rectangle_42.png",
+        "bg_mobile": "shopify://shop_images/Rectangle_42_1.png"
+      }
+    },
+    "image_banner_fMVUnr": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_Gcwtg7": {
+          "type": "heading",
+          "settings": {
+            "heading": "Take your PickleBall game to the next level with us",
+            "heading_size": "h1"
+          }
+        },
+        "text_kRxNgz": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. enim veniam quis nostrud exercitation ullamco laborisaliquip exea commodo.</p>",
+            "text_style": "body"
+          }
+        },
+        "buttons_nAM7qM": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "shop now",
+            "button_link_1": "#",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_Gcwtg7",
+        "text_kRxNgz",
+        "buttons_nAM7qM"
+      ],
+      "disabled": true,
+      "settings": {
+        "image": "shopify://shop_images/undefined_-_Imgur_5d842e24-e6bc-49b7-b5ea-c3a7721b54e8.png",
+        "image_2": "shopify://shop_images/Group_455.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "scheme-4",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "newsletter_Q797ep": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_hqEk7H": {
+          "type": "heading",
+          "settings": {
+            "heading": "Elevate your game",
+            "heading_size": "h1"
+          }
+        },
+        "paragraph_AfCxjW": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Enter your email & stay up to date ...</p>"
+          }
+        },
+        "email_form_KPcXg4": {
+          "type": "email_form",
+          "settings": {}
+        },
+        "social_icons_D7zGeV": {
+          "type": "social-icons",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_hqEk7H",
+        "paragraph_AfCxjW",
+        "email_form_KPcXg4",
+        "social_icons_D7zGeV"
+      ],
+      "settings": {
+        "icon": "shopify://shop_images/KZDH100-N-_-Dura-Fast-Neon-100-count-carton_6883-Edit_600x_1.png",
+        "icon_2": "shopify://shop_images/Ellipse_31_1.png",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 70,
+        "padding_bottom": 70
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "image_BEWJDp": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/1_12.png",
+            "image_width": 550,
+            "alignment": ""
+          }
+        },
+        "link_list_p6NdRP": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick links",
+            "menu": "company"
+          }
+        },
+        "link_list_GFEb4h": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick links",
+            "menu": "information"
+          }
+        },
+        "contant_LfQ6Tp": {
+          "type": "contant",
+          "settings": {
+            "heading": "CONTACT",
+            "gmail": "get@get2eleven.com",
+            "url_gmail": "mailto:get@get2eleven.com",
+            "contact": "858-333-0018",
+            "url_contact": "tel:858-333-0018"
+          }
+        }
+      },
+      "block_order": [
+        "image_BEWJDp",
+        "link_list_p6NdRP",
+        "link_list_GFEb4h",
+        "contant_LfQ6Tp"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "newsletter_enable": false,
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": true,
+        "show_social": false,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true,
+        "show_policy": false,
+        "margin_top": 0,
+        "padding_top": 69,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "170730775325ad2756",
+    "footer_banner_ndrTQg",
+    "image_banner_fMVUnr",
+    "newsletter_Q797ep",
+    "footer"
+  ]
+}

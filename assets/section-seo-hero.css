@@ -1,0 +1,242 @@
+.seo-hero {
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.seo-hero__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+  min-height: 500px;
+}
+
+@media screen and (min-width: 750px) {
+  .seo-hero__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    min-height: 600px;
+  }
+}
+
+@media screen and (min-width: 990px) {
+  .seo-hero__grid {
+    gap: 5rem;
+  }
+}
+
+/* Left Content Block */
+.seo-hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 1;
+}
+
+/* Top Icon + Text */
+.seo-hero__top-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.seo-hero__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.seo-hero__icon svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.seo-hero__icon-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Heading */
+.seo-hero__heading {
+  font-size: 35px;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Description */
+.seo-hero__description {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.seo-hero__description p {
+  margin: 0;
+  font-size: 14px;
+}
+
+@media screen and (min-width: 750px) {
+  .seo-hero__description {
+    font-size: 1.125rem;
+  }
+  .seo-hero__description p {
+    font-size: 22px;
+  }
+}
+
+/* Description Desktop/Mobile Visibility */
+.seo-hero__description--mobile {
+  display: block;
+}
+
+.seo-hero__description--desktop {
+  display: none;
+}
+
+@media screen and (min-width: 750px) {
+  .seo-hero__description--mobile {
+    display: none;
+  }
+  
+  .seo-hero__description--desktop {
+    display: block;
+  }
+}
+
+/* Sub Description */
+.seo-hero__sub-description {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.seo-hero__sub-description p {
+  margin: 0;
+}
+
+@media screen and (min-width: 750px) {
+  .seo-hero__sub-description {
+    font-size: 1rem;
+  }
+}
+
+/* Buttons */
+.seo-hero__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.seo-hero__buttons .button {
+  min-width: 150px;
+}
+
+@media screen and (max-width: 749px) {
+  .seo-hero__buttons {
+    flex-direction: column;
+  }
+
+  .seo-hero__buttons .button {
+    width: 100%;
+  }
+}
+
+/* Bottom Icons */
+.seo-hero__bottom-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 0.5rem;
+}
+
+.seo-hero__bottom-icon-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.seo-hero__bottom-icon-item .seo-hero__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.seo-hero__bottom-icon-item .seo-hero__icon-text {
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+/* Right Image Block */
+.seo-hero__image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.seo-hero__image {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.seo-hero__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--media-radius);
+  box-shadow: var(--media-shadow-horizontal-offset) var(--media-shadow-vertical-offset) var(--media-shadow-blur-radius) rgba(var(--color-shadow), var(--media-shadow-opacity));
+}
+
+.seo-hero__image--placeholder {
+  aspect-ratio: 1 / 1;
+  background-color: rgba(var(--color-foreground), 0.04);
+  border-radius: var(--media-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.seo-hero__image--placeholder svg {
+  width: 50%;
+  height: 50%;
+  opacity: 0.3;
+}
+
+/* Mobile Adjustments */
+@media screen and (max-width: 749px) {
+  .seo-hero__grid {
+    gap: 2rem;
+  }
+
+  .seo-hero__content {
+    gap: 1rem;
+  }
+
+  .seo-hero__heading {
+    font-size: 2rem;
+  }
+
+  .seo-hero__bottom-icons {
+    gap: 1.5rem;
+  }
+}
+
+/* Responsive Typography */
+@media screen and (min-width: 750px) and (max-width: 989px) {
+  .seo-hero__heading.h0 {
+    font-size: 3rem;
+  }
+
+  .seo-hero__heading.h1 {
+    font-size: 2.5rem;
+  }
+}
+

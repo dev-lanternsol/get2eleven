@@ -1,0 +1,79 @@
+{% comment %}
+  Renders a set of links for paginated results. Must be used within paginate tags.
+
+  Usage:
+  {% paginate results by 2 %}
+    {% render 'pagination', paginate: paginate, anchor: '#yourID' %}
+  {% endpaginate %}
+
+  Accepts:
+  - paginate: {Object}
+  - anchor: {String} (optional) This can be added so that on page reload it takes you to wherever you've placed your anchor tag.
+{% endcomment %}
+
+{{ 'component-pagination.css' | asset_url | stylesheet_tag }}
+
+{%- if paginate.parts.size > 0 -%}
+  <div class="pagination-wrapper">
+    <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
+      <ul class="pagination__list list-unstyled" role="list">
+
+          <li class="item-arrow">
+            <a
+              href="{{ paginate.previous.url }}{{ anchor }}"
+              class="pagination__item pagination__item--next pagination__item-arrow link motion-reduce f_17 font_400 clr_blck"
+              aria-label="{{ 'general.pagination.previous' | t }}"
+            >
+<span>
+  <svg xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0 0 8 13" fill="none">
+  <path d="M7.1605 1.11898C7.32239 1.2815 7.41333 1.5019 7.41333 1.73171C7.41333 1.96152 7.32239 2.18191 7.1605 2.34444L2.8861 6.6344L7.1605 10.9244C7.3178 11.0878 7.40484 11.3067 7.40287 11.534C7.4009 11.7612 7.31009 11.9786 7.14998 12.1393C6.98988 12.2999 6.7733 12.3911 6.54689 12.3931C6.32048 12.395 6.10235 12.3077 5.93949 12.1498L1.05458 7.24713C0.892699 7.08461 0.801758 6.86421 0.801758 6.6344C0.801758 6.40459 0.892699 6.1842 1.05458 6.02167L5.93949 1.11898C6.10142 0.956507 6.32102 0.865234 6.55 0.865234C6.77897 0.865234 6.99857 0.956507 7.1605 1.11898Z" fill="black"/>
+</svg>
+</span>
+  <span>Previous</span>
+            </a>
+          </li>
+
+        {%- for part in paginate.parts -%}
+          <li>
+            {%- if part.is_link -%}
+              <a
+                href="{{ part.url }}{{ anchor }}"
+                class="pagination__item link f_17 font_400 clr_blck number"
+                aria-label="{{ 'general.pagination.page' | t: number: part.title }}"
+              >
+                {{- part.title -}}
+              </a>
+            {%- else -%}
+              {%- if part.title == paginate.current_page -%}
+                <a
+                  role="link"
+                  aria-disabled="true"
+                  class="pagination__item pagination__item--current light f_17 font_400 clr_blck number"
+                  aria-current="page"
+                  aria-label="{{ 'general.pagination.page' | t: number: part.title }}"
+                >
+                  {{- part.title -}}
+                </a>
+              {%- else -%}
+                <span class="pagination__item">{{ part.title }}</span>
+              {%- endif -%}
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+
+          <li class="item-arrow">
+            <a
+              href="{{ paginate.next.url }}{{ anchor }}"
+              class="pagination__item pagination__item--prev pagination__item-arrow link motion-reduce f_17 font_400 clr_blck"
+              aria-label="{{ 'general.pagination.next' | t }}"
+            >
+              <span>Next</span>
+              <span><svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
+  <path d="M0.443014 11.631C0.28113 11.4685 0.190188 11.2481 0.190188 11.0183C0.190188 10.7885 0.28113 10.5681 0.443014 10.4056L4.71742 6.1156L0.443014 1.82564C0.285717 1.66218 0.19868 1.44326 0.200647 1.21603C0.202615 0.988791 0.29343 0.771422 0.453533 0.610737C0.613636 0.450051 0.830216 0.358906 1.05663 0.356932C1.28304 0.354957 1.50116 0.442311 1.66402 0.600181L6.54893 5.50287C6.71082 5.66539 6.80176 5.88579 6.80176 6.1156C6.80176 6.34541 6.71082 6.5658 6.54893 6.72833L1.66402 11.631C1.50209 11.7935 1.28249 11.8848 1.05352 11.8848C0.824546 11.8848 0.604947 11.7935 0.443014 11.631Z" fill="black"/>
+</svg></span>
+            </a>
+          </li>
+      </ul>
+    </nav>
+  </div>
+{%- endif -%}

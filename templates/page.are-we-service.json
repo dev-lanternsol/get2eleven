@@ -1,0 +1,510 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 100,
+        "padding_bottom": 52
+      }
+    },
+    "image_banner_rwCjqm": {
+      "type": "image-banner",
+      "blocks": {
+        "subheading_XkxRKA": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "<strong>Trying to decide which pickleball paddle fits your game?</strong>",
+            "subheading_uppercase": true,
+            "subheading_tag": "p",
+            "subheading_size": "f_14"
+          }
+        },
+        "heading_fTU3WU": {
+          "type": "heading",
+          "settings": {
+            "heading": "Pickleball Paddles and Gear in the Greater San Diego Area",
+            "heading_size": "h2",
+            "heading_font_size": "f_36",
+            "heading_uppercase": false
+          }
+        },
+        "text_bqj9xC": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At <strong>Get2Eleven</strong>, we carry top pickleball paddles from <strong>Selkirk, JOOLA, Gearbox, Ronbus, Paddletek, and more</strong>, so players across San Diego County can find the right paddle for their skill level and playing style. We serve the Greater San Diego Area with <strong>nationwide shipping (free over $69)</strong> plus <strong>in-store pickup</strong> for local players who want paddles, balls, and gear built for control, spin, and power.</p>",
+            "text_style": "body"
+          }
+        },
+        "buttons_kYVrmF": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "SHOP PADDLES",
+            "button_link_1": "#",
+            "button_style_secondary_1": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "subheading_XkxRKA",
+        "heading_fTU3WU",
+        "text_bqj9xC",
+        "buttons_kYVrmF"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Rectangle_39.png",
+        "image_2": "shopify://shop_images/Rectangle_39_1.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "scheme-1",
+        "section_width": "full-width",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "image_with_text_UkCYUU": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_GBBG6C": {
+          "type": "heading",
+          "settings": {
+            "heading": "Serving Pickleball Players Across Greater San Diego",
+            "heading_size": "f_16"
+          }
+        },
+        "text_eaHnne": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pickleball gear needs change fast as players improve, switch paddles, or adjust their setup for more control, spin, or power. That’s why Get2Eleven makes it easy to get what you need, whether you’re upgrading your paddle, grabbing a fresh overgrip, or stocking up on balls for weekly play. Orders ship across the <strong>Greater San Diego Area and nationwide</strong>, plus an in-store pickup option for local players.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_GBBG6C",
+        "text_eaHnne"
+      ],
+      "name": "t:sections.image-with-text.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Rectangle_38.png",
+        "height": "adapt",
+        "desktop_image_width": "medium",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "",
+        "color_scheme": "scheme-854140fc-e164-4b4c-8a4a-f041fa982a28",
+        "section_width": "boxed",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "rich_text_N94YyK": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_FpCBr4": {
+          "type": "heading",
+          "settings": {
+            "heading": "Top Pickleball Paddle Brands We Carry",
+            "heading_size": "f_14",
+            "heading_tag": "h2",
+            "heading_uppercase": true
+          }
+        },
+        "text_JryGW9": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Get2Eleven carries trusted <a href=\"/pages/brands\" title=\"brands\">paddle brands</a> used by everyday players and pro-level competitors.</p>",
+            "text_size": "f_14"
+          }
+        }
+      },
+      "block_order": [
+        "heading_FpCBr4",
+        "text_JryGW9"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-1c404e86-08ac-4782-bd5c-9a4c16085fbe",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_zefEiE": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_6dbB8V": {
+          "type": "heading",
+          "settings": {
+            "heading": "Shop Pickleball Paddles and Gear Near San Diego",
+            "heading_size": "h2",
+            "heading_tag": "h2",
+            "heading_uppercase": true
+          }
+        },
+        "text_MmGdUc": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Get2Eleven offers the <a href=\"/collections/paddles\" title=\"Pickleball Paddles\">best pickleball paddles</a> for San Diego County and the Greater San Diego Area, along with shoes, balls, bags, grips, and court-ready accessories.</p>",
+            "text_size": "medium"
+          }
+        }
+      },
+      "block_order": [
+        "heading_6dbB8V",
+        "text_MmGdUc"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-392a3b94-919d-4d6f-ba3a-c760b278a857",
+        "full_width": true,
+        "padding_top": 100,
+        "padding_bottom": 52
+      }
+    },
+    "image_banner_cRbgrE": {
+      "type": "image-banner",
+      "blocks": {
+        "text_tL97Vm": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Whether you’re buying your first pickleball paddle or upgrading to a pro-level option, you’ll find paddles built for control, spin, and power. Each paddle is chosen to feel comfortable in your hand and dependable during longer matches.<br/><br/>If you want a simple setup for casual play or group use, paddle sets and bundles make it easy to get started without overthinking every detail. You can add overgrips, edge tape, and other upgrades through our pickleball accessories collection so your setup fits your playing style.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "text_tL97Vm"
+      ],
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Rectangle_41.png",
+        "image_2": "shopify://shop_images/Rectangle_41_1.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-right",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "scheme-1",
+        "section_width": "full-width",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
+      }
+    },
+    "multicolumn_7dqW4A": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_ciDtBn": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Group.svg",
+            "title": "Expert Paddle Help (Fitting + Feel Test)",
+            "heading_tag": "h3",
+            "text": "<p>Get support choosing the right paddle weight, core thickness (14mm vs 16mm), shape, and grip size so your paddle feels right from the first game.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_VhqBzh": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Group_1.svg",
+            "title": "Top Brands, Wide Selection",
+            "heading_tag": "h3",
+            "text": "<p>Shop trusted brands with gear in stock for every playing style, whether you want more power, more control, or heavier spin.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_UTyfW8": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Group_96.svg",
+            "title": "Gear Recommendations That Make Sense",
+            "heading_tag": "h3",
+            "text": "<p>Quick guidance from pickleball gear experts, plus clear explanations of paddle tech so you know what you’re buying.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_tjzTaE": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Group_97.svg",
+            "title": "Fast Delivery+ Easy Pickup",
+            "heading_tag": "h3",
+            "text": "<p>Convenient pickup for local players and reliable nationwide shipping when you want gear delivered to your door.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_aaRwnh": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Vector.svg",
+            "title": "Trustedby Local Players",
+            "heading_tag": "h3",
+            "text": "<p>Backed by real customer reviews from players who shop with Get2Eleven for quality gear and reliable service.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_ciDtBn",
+        "column_VhqBzh",
+        "column_UTyfW8",
+        "column_tjzTaE",
+        "column_aaRwnh"
+      ],
+      "name": "t:sections.multicolumn.presets.name",
+      "settings": {
+        "title": "Why Local PlayersChoose Get2Eleven",
+        "description": "",
+        "heading_size": "h2",
+        "heading_tag": "h2",
+        "image_width": "half",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-624fd31b-5e23-442b-89ca-93bd4730a235",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "review_carousel_9n7GFY": {
+      "type": "review-carousel",
+      "blocks": {
+        "review_4f8Btc": {
+          "type": "review",
+          "settings": {
+            "customer_name": "Sarah Martinez",
+            "review_text": "The team at Get2Eleven helped me find the perfect paddle for my playing style. The in-store experience was great - I could actually test different weights and grips before buying."
+          }
+        },
+        "review_DpRpe9": {
+          "type": "review",
+          "settings": {
+            "customer_name": "John Doe",
+            "review_text": "Amazing product! Highly recommend to everyone."
+          }
+        },
+        "review_3ai9mH": {
+          "type": "review",
+          "settings": {
+            "customer_name": "John Doe",
+            "review_text": "Amazing product! Highly recommend to everyone."
+          }
+        },
+        "review_NaQzGF": {
+          "type": "review",
+          "settings": {
+            "customer_name": "John Doe",
+            "review_text": "Amazing product! Highly recommend to everyone."
+          }
+        },
+        "review_RHTbiz": {
+          "type": "review",
+          "settings": {
+            "customer_name": "John Doe",
+            "review_text": "Amazing product! Highly recommend to everyone."
+          }
+        },
+        "review_ixNjdp": {
+          "type": "review",
+          "settings": {
+            "customer_name": "John Doe",
+            "review_text": "Amazing product! Highly recommend to everyone."
+          }
+        }
+      },
+      "block_order": [
+        "review_4f8Btc",
+        "review_DpRpe9",
+        "review_3ai9mH",
+        "review_NaQzGF",
+        "review_RHTbiz",
+        "review_ixNjdp"
+      ],
+      "name": "Review Carousel",
+      "settings": {
+        "title": "What our players say",
+        "heading_size": "h2",
+        "card_background": "#f9fafb",
+        "text_color": "#000000",
+        "star_color": "#ffd700",
+        "button_color": "#000000",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "featured_collection_ViU9DT": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.presets.name",
+      "settings": {
+        "title": "Best-Selling Paddles",
+        "bg_heading": "",
+        "heading_size": "h2",
+        "description": "Get2Eleven offers the best pickleball paddles for San Diego County and the Greater San Diego Area, along with shoes, balls, bags, grips, and court-ready accessories.",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "paddles",
+        "products_to_show": 3,
+        "columns_desktop": 3,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-1c404e86-08ac-4782-bd5c-9a4c16085fbe",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "collapsible_content_hhmzfw": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_JAGqFm": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "How does the pickleball paddle quiz help me find the right paddle?",
+            "icon": "none",
+            "row_content": "<p>There are so many paddles out there that it’s easy to feel stuck choosing one. This pickleball paddle quiz looks at your play style, skill level, and what you actually want from your paddle. Based on your answers, we’ll give you paddle recommendations that match your needs so you can find the right pickleball paddle without all the guesswork.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_gmQHF3": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Is this quiz beginner-friendly, or just for advanced players?",
+            "icon": "none",
+            "row_content": "<p>The quiz works for everyone. It looks at your current skill level, personal preference, and how you like to play so we can recommend a beginner-friendly paddle or something more high-performance.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_LTb4RC": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What’s the difference between power paddles and control paddles?",
+            "icon": "none",
+            "row_content": "<p>Power paddles are built to generate explosive power with every shot. They usually have a stiffer paddle face, sometimes made with raw carbon fiber or graphite, and tend to be a bit heavier to give you extra power on drives and topspin serves.</p><p>On the other hand, control paddles focus on a softer feel, a forgiving sweet spot, and more forgiveness for players who value placement and finesse. The best paddle for you depends on your game and what you prefer when you’re playing pickleball.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_GFcmdm": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Will the quiz suggest raw carbon fiber paddles or other paddle types?",
+            "icon": "none",
+            "row_content": "<p>Yes. The pickleball paddle quiz considers your play style, preferences, and skill level to match you with the best options. That could include raw carbon fiber paddles, hybrid paddles, or even fiberglass models.</p><p>Each material offers a different feel. Carbon fiber tends to offer more control and best spin, while fiberglass adds power and is often more beginners. Your results are tailored to help you find the right pickleball paddle for your game.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_bzKbyk": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Do things like edge guards or paddle thickness make a real difference?",
+            "icon": "none",
+            "row_content": "<p>Yes, they do. An edge guard protects your paddle from damage and adds a bit of weight around the edges, which can affect how balanced the paddle feels. Paddle thickness matters too—thicker paddles (like 16mm) usually offer more control and a softer feel, while thinner ones give you more power and pop. These small details can change how your paddle performs, especially as your game improves.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_pqEKTf": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "What should I look for when reviewing a paddle’s features?",
+            "icon": "none",
+            "row_content": "<p>When choosing the right pickleball paddle, focus on features that match your play style, skill level, and preferences. Here's what to pay attention to:</p><p><strong>1. Paddle shape</strong></p><ul><li> Standard shape balanced and offers a forgiving sweet spot</li><li> Elongated paddle adds extra reach and helps with overheads and spin</li></ul><p><strong>2. Weight</strong></p><ul><li>Lightweight is ideal for faster swings, better for control and net play</li><li>Heavier paddle gives added power and stability on hard hits</li></ul><p><strong>3. Core material</strong></p><ul><li>Polymer cores have a soft feel, great for control and quieter play</li><li>Nomex or aluminum has a harder feel, more responsive and loud</li></ul><p><strong>4. Surface material (paddle face)</strong></p><ul><li>Raw carbon fiber paddles and graphite give more control, best spin, and durability</li><li>Fiberglass adds explosive power and is often used in beginner friendly paddles</li></ul><p><strong>5. Grip size</strong></p><ul><li>Smaller grips allow more wrist action for spin and control</li><li>Larger grips provide comfort and reduce strain during long matches</li></ul><p><strong>6. Edge guard</strong></p><ul><li>Protects the paddle from wear and tear</li><li>Some advanced paddles come with minimal or edgeless designs for a cleaner feel</li></ul><p>Once you finish the pickleball paddle quiz, review your top paddle matches by checking these features. </p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_JAGqFm",
+        "collapsible_row_gmQHF3",
+        "collapsible_row_LTb4RC",
+        "collapsible_row_GFcmdm",
+        "collapsible_row_bzKbyk",
+        "collapsible_row_pqEKTf"
+      ],
+      "settings": {
+        "caption": "",
+        "heading": "San Diego Pickleball Paddle FAQs",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "layout": "row",
+        "color_scheme": "scheme-392a3b94-919d-4d6f-ba3a-c760b278a857",
+        "container_color_scheme": "scheme-fcfdf58c-be6e-4e3b-9f84-c4cd6e9eeb19",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 100
+      }
+    },
+    "footer_banner_LEJPME": {
+      "type": "footer_banner",
+      "settings": {
+        "heading": "Ready to Upgrade Your Gear?",
+        "caption": "<p>Pickleball paddles are not one-size-fits-all. The best choice comes down to how you play, what feels comfortable in your hand, and what helps you stay consistent on the court. A paddle that fits your style makes the game more fun, more confident, and easier to improve.<br/><br/>Get2Eleven makes it simple to find your next paddle and gear. Shop online anytime, or visit our pro shop for help choosing the right setup based on grip size, paddle weight, and overall feel.</p>",
+        "btn": "",
+        "url": "",
+        "bg": "shopify://shop_images/Rectangle_42.png",
+        "bg_mobile": "shopify://shop_images/Rectangle_42_1.png"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image_banner_rwCjqm",
+    "image_with_text_UkCYUU",
+    "rich_text_N94YyK",
+    "rich_text_zefEiE",
+    "image_banner_cRbgrE",
+    "multicolumn_7dqW4A",
+    "review_carousel_9n7GFY",
+    "featured_collection_ViU9DT",
+    "collapsible_content_hhmzfw",
+    "footer_banner_LEJPME"
+  ]
+}

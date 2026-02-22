@@ -1,0 +1,41 @@
+{% if page.metafields.custom.map_code.value %}
+  <div class="page-width">
+<table width="100%">
+  <tbody>
+    <tr>
+      <td style="width: 44.9437%;">
+        <h3 class="DUwDvf lfPIob">{{ page.metafields.custom.map_heading.value }}</h3>
+        {{ page.metafields.custom.map_content | metafield_tag}}
+        {% if page.metafields.custom.map_button_label != blank %}
+          <a href="{{ page.metafields.custom.map_button_link.value }}">{{ page.metafields.custom.map_button_label.value }}</a>
+          {% endif %}
+      </td>
+      <td style="width: 50.0563%;">
+        {{ page.metafields.custom.map_code.value }}
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+{% endif %}
+{% schema %}
+  {
+    "name": "Map",
+    "tag": "section",
+    "class": "index-section index-map-section",
+    "settings": [
+      
+    ],
+    "presets": [
+      {
+        "name": "Map"
+      }
+    ],
+    "disabled_on": {
+      "groups": [
+        "aside"
+      ]
+    }
+  }
+{% endschema %}

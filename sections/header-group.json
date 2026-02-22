@@ -1,0 +1,64 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_mjQpAh": {
+          "type": "announcement",
+          "settings": {
+            "text": "FREE SHIPPING on orders over $69",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "announcement_mjQpAh"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3e8b1b9d-efbc-4c58-82da-f1e933938f88",
+        "show_line_separator": false,
+        "show_social": true,
+        "contact": "858-333-0018",
+        "url_contact": "tel:858-3333-0018",
+        "url_whatsapp": "https:\/\/api.whatsapp.com\/send\/?phone=18583330018&text&type=phone_number&app_absent=0",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+        "logo_position": "middle-left",
+        "menu": "main-menu",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "color_scheme": "scheme-1",
+        "menu_color_scheme": "scheme-1",
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "mobile_logo_position": "center",
+        "margin_bottom": 0,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
+    }
+  },
+  "order": [
+    "announcement-bar",
+    "header"
+  ]
+}

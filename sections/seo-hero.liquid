@@ -1,0 +1,350 @@
+{{ 'section-seo-hero.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  {%- if section.settings.background_image != blank -%}
+    .seo-hero-{{ section.id }} {
+      background-image: url('{{ section.settings.background_image | image_url: width: 1920 }}');
+    }
+
+    @media screen and (max-width: 749px) {
+      .seo-hero-{{ section.id }} {
+        background-image: url('{{ section.settings.background_image_mobile | default: section.settings.background_image | image_url: width: 750 }}');
+      }
+    }
+  {%- endif -%}
+{%- endstyle -%}
+
+<div class="seo-hero seo-hero-{{ section.id }} section-{{ section.id }}-padding color-{{ section.settings.color_scheme }}">
+  <div class="page-width">
+    <div class="seo-hero__grid">
+      {%- comment -%} Left Content Block {%- endcomment -%}
+      <div class="seo-hero__content">
+        {%- if section.settings.top_icon != blank or section.settings.top_icon_text != blank -%}
+          <div class="seo-hero__top-icon">
+            {%- if section.settings.top_icon != blank -%}
+              <div class="seo-hero__icon">
+                {{ section.settings.top_icon }}
+              </div>
+            {%- endif -%}
+            {%- if section.settings.top_icon_text != blank -%}
+              <span class="seo-hero__icon-text">{{ section.settings.top_icon_text }}</span>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.heading != blank -%}
+          <h1 class="seo-hero__heading {{ section.settings.heading_size }}">
+            {{ section.settings.heading }}
+          </h1>
+        {%- endif -%}
+
+        {%- if section.settings.description != blank -%}
+          <div class="seo-hero__description seo-hero__description--desktop">
+            {{ section.settings.description }}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.description_mobile != blank -%}
+          <div class="seo-hero__description seo-hero__description--mobile">
+            {{ section.settings.description_mobile }}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.sub_description != blank -%}
+          <div class="seo-hero__sub-description">
+            {{ section.settings.sub_description }}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.button_label_1 != blank or section.settings.button_label_2 != blank -%}
+          <div class="seo-hero__buttons">
+            {%- if section.settings.button_label_1 != blank -%}
+              <a
+                {% if section.settings.button_link_1 == blank %}
+                  role="link" aria-disabled="true"
+                {% else %}
+                  href="{{ section.settings.button_link_1 }}"
+                {% endif %}
+                class="button{% if section.settings.button_style_secondary_1 %} button--secondary{% else %} button--primary{% endif %}"
+              >
+                {{ section.settings.button_label_1 | escape }}
+              </a>
+            {%- endif -%}
+            {%- if section.settings.button_label_2 != blank -%}
+              <a
+                {% if section.settings.button_link_2 == blank %}
+                  role="link" aria-disabled="true"
+                {% else %}
+                  href="{{ section.settings.button_link_2 }}"
+                {% endif %}
+                class="button{% if section.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %}"
+              >
+                {{ section.settings.button_label_2 | escape }}
+              </a>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.bottom_icon_1 != blank or section.settings.bottom_icon_1_text != blank or section.settings.bottom_icon_2 != blank or section.settings.bottom_icon_2_text != blank -%}
+          <div class="seo-hero__bottom-icons">
+            {%- if section.settings.bottom_icon_1 != blank or section.settings.bottom_icon_1_text != blank -%}
+              <div class="seo-hero__bottom-icon-item">
+                {%- if section.settings.bottom_icon_1 != blank -%}
+                  <div class="seo-hero__icon">
+                    {{ section.settings.bottom_icon_1 }}
+                  </div>
+                {%- endif -%}
+                {%- if section.settings.bottom_icon_1_text != blank -%}
+                  <span class="seo-hero__icon-text">{{ section.settings.bottom_icon_1_text }}</span>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+            {%- if section.settings.bottom_icon_2 != blank or section.settings.bottom_icon_2_text != blank -%}
+              <div class="seo-hero__bottom-icon-item">
+                {%- if section.settings.bottom_icon_2 != blank -%}
+                  <div class="seo-hero__icon">
+                    {{ section.settings.bottom_icon_2 }}
+                  </div>
+                {%- endif -%}
+                {%- if section.settings.bottom_icon_2_text != blank -%}
+                  <span class="seo-hero__icon-text">{{ section.settings.bottom_icon_2_text }}</span>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- comment -%} Right Image Block {%- endcomment -%}
+      <div class="seo-hero__image-wrapper">
+        {%- if section.settings.right_image != blank -%}
+          <div class="seo-hero__image">
+            {{
+              section.settings.right_image
+              | image_url: width: 800
+              | image_tag: loading: 'lazy', widths: '400, 600, 800, 1000'
+            }}
+          </div>
+        {%- else -%}
+          <div class="seo-hero__image seo-hero__image--placeholder">
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "SEO Hero Section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background Image (Desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image_mobile",
+      "label": "Background Image (Mobile)",
+      "info": "Optional. If not set, desktop image will be used"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Top Icon + Text"
+    },
+    {
+      "type": "html",
+      "id": "top_icon",
+      "label": "Top Icon SVG",
+      "info": "Paste SVG code here"
+    },
+    {
+      "type": "text",
+      "id": "top_icon_text",
+      "label": "Top Icon Text",
+      "default": "Featured"
+    },
+    {
+      "type": "header",
+      "content": "Main Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Your Main Heading Here"
+    },
+    {
+      "type": "select",
+      "id": "heading_size",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Small"
+        },
+        {
+          "value": "h1",
+          "label": "Medium"
+        },
+        {
+          "value": "h0",
+          "label": "Large"
+        }
+      ],
+      "default": "h1",
+      "label": "Heading size"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description (Desktop)",
+      "default": "<p>Your main description text goes here. This can be a longer text explaining your product or service.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "description_mobile",
+      "label": "Description (Mobile)",
+      "info": "Optional. If not set, desktop description will be shown on mobile"
+    },
+    {
+      "type": "richtext",
+      "id": "sub_description",
+      "label": "Sub Description",
+      "default": "<p>Additional information or sub description.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Buttons"
+    },
+    {
+      "type": "text",
+      "id": "button_label_1",
+      "label": "Button 1 Label",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link_1",
+      "label": "Button 1 Link"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_style_secondary_1",
+      "label": "Use secondary button style",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_label_2",
+      "label": "Button 2 Label",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "button_link_2",
+      "label": "Button 2 Link"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_style_secondary_2",
+      "label": "Use secondary button style",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Bottom Icons + Text"
+    },
+    {
+      "type": "html",
+      "id": "bottom_icon_1",
+      "label": "Bottom Icon 1 SVG",
+      "info": "Paste SVG code here"
+    },
+    {
+      "type": "text",
+      "id": "bottom_icon_1_text",
+      "label": "Bottom Icon 1 Text",
+      "default": "Free Shipping"
+    },
+    {
+      "type": "html",
+      "id": "bottom_icon_2",
+      "label": "Bottom Icon 2 SVG",
+      "info": "Paste SVG code here"
+    },
+    {
+      "type": "text",
+      "id": "bottom_icon_2_text",
+      "label": "Bottom Icon 2 Text",
+      "default": "24/7 Support"
+    },
+    {
+      "type": "header",
+      "content": "Right Side Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "right_image",
+      "label": "Right Side Image"
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "SEO Hero Section"
+    }
+  ]
+}
+{% endschema %}
+

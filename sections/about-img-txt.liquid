@@ -1,0 +1,70 @@
+<div class="page-width">
+  <div class="container">
+  <div class="about-img-txt-outer-sec">
+    <div class="about-img-txt-innr-sec">
+       <div class="about-left-side-sec">
+        <div class="about-left-img-sec">
+          {% if section.settings.img != blank %}
+          <img src="{{ section.settings.img | img_url:'master'}}" height="" width="" loading="lazy">
+          {% endif %}
+        </div>
+         {% if section.settings.short-txt != blank %}
+          <div class="about-left-img-innr-sec">
+            <span class="f_26 font_600 text_uppercase conthrax clr_wht">{{ section.settings.short-txt }}</span>
+        </div>
+         {% endif %}
+      </div>
+        <div class="about-right-side-sec">
+          <div class="abou-sub-txt">
+            <span class="f_16 font_500 clr_blue">{{ section.settings.sub-txt }}</span>
+          </div>
+             <div class="abou-title-txt">
+            <h4 class="clr_drk_blue font_600 f_32">{{ section.settings.title }}</h4>
+          </div>
+           <div class="abou-desc-txt">
+            <p class="font_400 f_22">{{ section.settings.desc }}</p>
+          </div>
+        </div>
+  </div>
+  </div>
+</div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "about-img-txt",
+    "settings": [
+      {
+        "type" : "image_picker",
+        "id" : "img",
+        "label" : "select-image"
+      },
+      {
+        "type" : "text",
+        "id" : "short-txt",
+        "label" : "short-content"
+      },
+      {
+        "type" : "text",
+        "id" : "sub-txt",
+        "label" : "sub-text"
+      },
+        {
+        "type" : "text",
+        "id" : "title",
+        "label" : "Title"
+      },
+         {
+        "type" : "textarea",
+        "id" : "desc",
+        "label" : "description"
+      }
+    ],
+    "presets":[
+      {
+        "name" : "about-img-txt"
+      }
+    ]
+  }
+{% endschema %}
