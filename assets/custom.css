@@ -1460,6 +1460,9 @@ body .description-container p {
 .section_boxed {
   max-width: 1048px;
   margin: 0 auto;
+}
+
+.section_boxed > .image-with-text:not(.image-with-text--overlap) {
   border-radius: 12px;
   overflow: hidden;
 }
@@ -1476,6 +1479,7 @@ body .description-container p {
 
   .f_14 {
     line-height: 18px;
+    font-size: 12px;
   }
 }
 

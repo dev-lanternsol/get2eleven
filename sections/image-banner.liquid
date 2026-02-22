@@ -12,23 +12,13 @@
       #Banner-{{ section.id }}::before,
       #Banner-{{ section.id }} .banner__media::before,
       #Banner-{{ section.id }}:not(.banner--mobile-bottom) .banner__content::before {
-        padding-bottom: {{ 1 | divided_by: section.settings.image_2.aspect_ratio | times: 100 }}%;
+        {%- if section.settings.image_2 != blank -%}
+          padding-bottom: {{ 1 | divided_by: section.settings.image_2.aspect_ratio | times: 100 }}%;
+        {%- else -%}
+          padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;
+        {%- endif -%}
         content: '';
         display: block;
-      }
-    }
-    @media screen and (max-width: 429px) {
-      #Banner-{{ section.id }}::before,
-      #Banner-{{ section.id }} .banner__media::before,
-      #Banner-{{ section.id }}:not(.banner--mobile-bottom) .banner__content::before {
-        padding-bottom: {{ 1 | divided_by: section.settings.image_2.aspect_ratio | times: 110 }}%;
-      }
-    }
-    @media screen and (max-width: 375px) {
-      #Banner-{{ section.id }}::before,
-      #Banner-{{ section.id }} .banner__media::before,
-      #Banner-{{ section.id }}:not(.banner--mobile-bottom) .banner__content::before {
-        padding-bottom: {{ 1 | divided_by: section.settings.image_2.aspect_ratio | times: 140 }}%;
       }
     }
     @media screen and (min-width: 750px) {
@@ -289,7 +279,8 @@
         }
       ],
       "default": "middle-center",
-      "label": "t:sections.image-banner.settings.desktop_content_position.label"
+      "label": "t:sections.image-banner.settings.desktop_content_position.label",
+      "info": "Controls the position of the content box on the banner."
     },
     {
       "type": "checkbox",
@@ -315,7 +306,8 @@
         }
       ],
       "default": "center",
-      "label": "t:sections.image-banner.settings.desktop_content_alignment.label"
+      "label": "t:sections.image-banner.settings.desktop_content_alignment.label",
+      "info": "Controls the alignment of the text inside the box."
     },
     {
       "type": "color_scheme",
