@@ -69,7 +69,7 @@
         "image_2": "shopify://shop_images/Rectangle_39_1.png",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
-        "desktop_content_position": "middle-center",
+        "desktop_content_position": "middle-left",
         "show_text_box": false,
         "desktop_content_alignment": "left",
         "color_scheme": "scheme-1",
@@ -115,6 +115,7 @@
         "color_scheme": "scheme-854140fc-e164-4b4c-8a4a-f041fa982a28",
         "section_width": "boxed",
         "image_behavior": "none",
+        "mobile_layout": "text_first",
         "mobile_content_alignment": "left",
         "padding_top": 36,
         "padding_bottom": 36
@@ -194,7 +195,7 @@
         "text_tL97Vm": {
           "type": "text",
           "settings": {
-            "text": "<p>Whether you’re buying your first pickleball paddle or upgrading to a pro-level option, you’ll find paddles built for control, spin, and power. Each paddle is chosen to feel comfortable in your hand and dependable during longer matches.<br/><br/>If you want a simple setup for casual play or group use, paddle sets and bundles make it easy to get started without overthinking every detail. You can add overgrips, edge tape, and other upgrades through our pickleball accessories collection so your setup fits your playing style.</p>",
+            "text": "<p>Whether you’re buying your first pickleball paddle or upgrading to a pro-level option, you’ll find paddles built for control, spin, and power. Each paddle is chosen to feel comfortable in your hand and dependable during longer matches.<br/><br/>If you want a simple setup for casual play or group use, <a href=\"#\" title=\"#\">paddle sets and bundles</a> make it easy to get started without overthinking every detail. You can add overgrips, edge tape, and other upgrades through our <a href=\"#\" title=\"#\">pickleball accessories</a> collection so your setup fits your playing style.</p>",
             "text_style": "body"
           }
         }
@@ -482,15 +483,45 @@
         "padding_bottom": 100
       }
     },
-    "footer_banner_LEJPME": {
-      "type": "footer_banner",
+    "image_banner_TBHnFT": {
+      "type": "image-banner",
+      "blocks": {
+        "heading_k4CFgW": {
+          "type": "heading",
+          "settings": {
+            "heading": "Ready to Upgrade Your Gear?",
+            "heading_size": "h1",
+            "heading_font_size": "f_32",
+            "heading_uppercase": true
+          }
+        },
+        "text_JWBe4F": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Pickleball paddles are not one-size-fits-all. The best choice comes down to how you play, what feels comfortable in your hand, and what helps you stay consistent on the court. A paddle that fits your style makes the game more fun, more confident, and easier to improve.<br/><br/>Get2Eleven makes it simple to find your next paddle and gear. Shop online anytime, or visit our pro shop for help choosing the right setup based on grip size, paddle weight, and overall feel.</p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "heading_k4CFgW",
+        "text_JWBe4F"
+      ],
+      "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "heading": "Ready to Upgrade Your Gear?",
-        "caption": "<p>Pickleball paddles are not one-size-fits-all. The best choice comes down to how you play, what feels comfortable in your hand, and what helps you stay consistent on the court. A paddle that fits your style makes the game more fun, more confident, and easier to improve.<br/><br/>Get2Eleven makes it simple to find your next paddle and gear. Shop online anytime, or visit our pro shop for help choosing the right setup based on grip size, paddle weight, and overall feel.</p>",
-        "btn": "",
-        "url": "",
-        "bg": "shopify://shop_images/Rectangle_42.png",
-        "bg_mobile": "shopify://shop_images/Rectangle_42_1.png"
+        "image": "shopify://shop_images/Rectangle_42.png",
+        "image_2": "shopify://shop_images/Rectangle_42_1.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "desktop_content_position": "middle-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "scheme-1",
+        "section_width": "full-width",
+        "image_behavior": "none",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": false,
+        "show_text_below": false
       }
     }
   },
@@ -505,6 +536,6 @@
     "review_carousel_9n7GFY",
     "featured_collection_ViU9DT",
     "collapsible_content_hhmzfw",
-    "footer_banner_LEJPME"
+    "image_banner_TBHnFT"
   ]
 }
