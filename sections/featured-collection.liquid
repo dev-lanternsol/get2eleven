@@ -15,115 +15,115 @@
 {%- endif -%}
 
 {%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: 40px;
-    padding-bottom: 40px;
-    position: relative;
-  }
-    {% if section.settings.icon != blank %}
-.collection.section-{{ section.id }}-padding::before{
-    position: absolute;
-    top: 0;
-    left: 3.6%;
-    z-index: 2;
-    display: block;
-    cursor: default;
-    content: ' ';
-    width: 181px;
-    height: 185px;
-    flex-shrink: 0;
-    background-image: url('{{ section.settings.icon | img_url:'master' }}');
-    background-position: center;
-    background-size: auto;
-    background-repeat: no-repeat;
-    animation-name: roll;
-    animation-duration: 5s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    transform: translateY(-50%);
-  }
-.collection.section-{{ section.id }}-padding::after{
-    position: absolute;
-    right: 3.6%;
-    bottom: 0;
-    z-index: 2;
-    display: block;
-    cursor: default;
-    content: ' ';
-    width: 181px;
-    height: 185px;
-    flex-shrink: 0;
-    background-image: url('{{ section.settings.icon | img_url:'master' }}');
-    background-position: center;
-    background-size: auto;
-    background-repeat: no-repeat;
-    animation-name: roll-two;
-    animation-duration: 5s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    transform: translateY(50%);
-  }
-@keyframes roll {
-  0% {left: 9rem}
-  100% {left: calc(100% - 27.1rem);}
-}
-@keyframes roll-two {
-  0% {right: 9rem}
-  100% {right: calc(100% - 27.1rem);}
-}
-  {% endif %}
-  @media screen and (min-width: 1201px) {
     .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
+      padding-top: 40px;
+      padding-bottom: 40px;
+      position: relative;
+    }
+      {% if section.settings.icon != blank %}
+  .collection.section-{{ section.id }}-padding::before{
+      position: absolute;
+      top: 0;
+      left: 3.6%;
+      z-index: 2;
+      display: block;
+      cursor: default;
+      content: ' ';
+      width: 181px;
+      height: 185px;
+      flex-shrink: 0;
+      background-image: url('{{ section.settings.icon | img_url:'master' }}');
+      background-position: center;
+      background-size: auto;
+      background-repeat: no-repeat;
+      animation-name: roll;
+      animation-duration: 5s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      transform: translateY(-50%);
+    }
+  .collection.section-{{ section.id }}-padding::after{
+      position: absolute;
+      right: 3.6%;
+      bottom: 0;
+      z-index: 2;
+      display: block;
+      cursor: default;
+      content: ' ';
+      width: 181px;
+      height: 185px;
+      flex-shrink: 0;
+      background-image: url('{{ section.settings.icon | img_url:'master' }}');
+      background-position: center;
+      background-size: auto;
+      background-repeat: no-repeat;
+      animation-name: roll-two;
+      animation-duration: 5s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      transform: translateY(50%);
+    }
+  @keyframes roll {
+    0% {left: 9rem}
+    100% {left: calc(100% - 27.1rem);}
+  }
+  @keyframes roll-two {
+    0% {right: 9rem}
+    100% {right: calc(100% - 27.1rem);}
+  }
+    {% endif %}
+    @media screen and (min-width: 1201px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
     }
   }
-}
-@media screen and (min-width: 750px) and (max-width: 1200px) {
-.section-{{ section.id }}-padding {
-      padding-top: 60px;
-      padding-bottom: 60px;
-}
-}
-@media screen and (max-width: 1200px) {
-.collection.section-{{ section.id }}-padding::before {
-    top: 0;
-    background-size: 100%;
-    width: 70px;
-    height: 72px;
-    flex-shrink: 0;
-    transform: translateY(-50%);
-}
-    .collection.section-{{ section.id }}-padding::after{
-    bottom: 0;
-    background-size: 100%;
-    width: 70px;
-    height: 72px;
-    flex-shrink: 0;
-    transform: translateY(50%);
-      
+  @media screen and (min-width: 750px) and (max-width: 1200px) {
+  .section-{{ section.id }}-padding {
+        padding-top: 60px;
+        padding-bottom: 60px;
   }
-  @keyframes roll {
-  0% {left: 9rem}
-  100% {left: calc(100% - 16rem);}
-}
-@keyframes roll-two {
-  0% {right: 9rem}
-  100% {right: calc(100% - 16rem);}
-}
   }
-@media screen and (max-width: 989px) {
+  @media screen and (max-width: 1200px) {
+  .collection.section-{{ section.id }}-padding::before {
+      top: 0;
+      background-size: 100%;
+      width: 70px;
+      height: 72px;
+      flex-shrink: 0;
+      transform: translateY(-50%);
+  }
+      .collection.section-{{ section.id }}-padding::after{
+      bottom: 0;
+      background-size: 100%;
+      width: 70px;
+      height: 72px;
+      flex-shrink: 0;
+      transform: translateY(50%);
+
+    }
     @keyframes roll {
-  0% {left: 2rem}
-  100% {left: calc(100% - 9rem);}
-}
-@keyframes roll-two {
-  0% {right: 2rem}
-  100% {right: calc(100% - 9rem);}
-}
+    0% {left: 9rem}
+    100% {left: calc(100% - 16rem);}
   }
+  @keyframes roll-two {
+    0% {right: 9rem}
+    100% {right: calc(100% - 16rem);}
+  }
+    }
+  @media screen and (max-width: 989px) {
+      @keyframes roll {
+    0% {left: 2rem}
+    100% {left: calc(100% - 9rem);}
+  }
+  @keyframes roll-two {
+    0% {right: 2rem}
+    100% {right: calc(100% - 9rem);}
+  }
+    }
 {%- endstyle -%}
 
 {%- liquid
@@ -162,9 +162,9 @@
       {%- endif -%}
       {%- if section.settings.title != blank -%}
         <h2 class="text-center clr_drk_blue font_600 text_uppercase section_header title heading-bg-{{ section.id }} inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-              <span class="main_heading">{{ section.settings.title }}</span>
+          <span class="main_heading">{{ section.settings.title }}</span>
           {% if section.settings.bg_heading != blank %}
-          <span class="bg_heading">{{ section.settings.bg_heading }}</span>
+            <span class="bg_heading">{{ section.settings.bg_heading }}</span>
           {% endif %}
         </h2>
       {%- endif -%}
@@ -284,11 +284,11 @@
       "default": "Featured collection",
       "label": "t:sections.featured-collection.settings.title.label"
     },
-      {
-        "type": "textarea",
-        "id": "bg_heading",
-        "label": "Sub Heading"
-      },   
+    {
+      "type": "textarea",
+      "id": "bg_heading",
+      "label": "Sub Heading"
+    },
     {
       "type": "select",
       "id": "heading_size",
@@ -524,11 +524,11 @@
       "default": false,
       "label": "t:sections.featured-collection.settings.swipe_on_mobile.label"
     },
-      {
-        "type": "image_picker",
-        "id": "icon",
-        "label": "icon image"
-      },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "icon image"
+    },
     {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"

@@ -81,7 +81,7 @@
               style="--animation-order: {{ forloop.index }};"
             {% endif %}
           >
-            <div class="multicolumn-card content-container">
+            <div class="multicolumn-card content-container{% if block.settings.color_scheme != section.settings.color_scheme %} color-{{ block.settings.color_scheme }} gradient{% endif %}">
               {%- if block.settings.image != blank -%}
                 {% if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' %}
                   {% assign spaced_image = true %}
@@ -127,7 +127,9 @@
               <div class="multicolumn-card__info">
                 {%- if block.settings.title != blank -%}
                   {% assign column_heading_tag = block.settings.heading_tag | default: 'h3' %}
-                  <{{ column_heading_tag }} class="inline-richtext">{{ block.settings.title }}</{{ column_heading_tag }}>
+                  <{{ column_heading_tag }} class="inline-richtext">
+                    {{- block.settings.title -}}
+                  </{{ column_heading_tag }}>
                 {%- endif -%}
                 {%- if block.settings.text != blank -%}
                   <div class="rte">{{ block.settings.text }}</div>
@@ -460,6 +462,12 @@
           "type": "url",
           "id": "link",
           "label": "t:sections.multicolumn.blocks.column.settings.link.label"
+        },
+        {
+          "type": "color_scheme",
+          "id": "color_scheme",
+          "label": "t:sections.all.colors.label",
+          "default": "scheme-1"
         }
       ]
     }

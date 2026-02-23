@@ -12,25 +12,58 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  {%- assign shadow_color = section.settings.shadow_color -%}
+  {%- assign shadow_opacity = section.settings.shadow_opacity | divided_by: 100.0 -%}
+  .section-{{ section.id }}-shadow {
+    {%- capture shadow_mobile -%}
+      {%- if section.settings.shadow_top_mobile -%}
+        0 -1px 0 0 rgba({{ shadow_color.red }}, {{ shadow_color.green }}, {{ shadow_color.blue }}, {{ shadow_opacity }})
+      {%- endif -%}
+      {%- if section.settings.shadow_bottom_mobile -%}
+        {%- if section.settings.shadow_top_mobile -%}, {% endif -%}
+        inset 0 -1px 0 0 rgba({{ shadow_color.red }}, {{ shadow_color.green }}, {{ shadow_color.blue }}, {{ shadow_opacity }})
+      {%- endif -%}
+    {%- endcapture -%}
+    box-shadow: {{ shadow_mobile | strip | default: 'none' }};
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-shadow {
+      {%- capture shadow_desktop -%}
+        {%- if section.settings.shadow_top_desktop -%}
+          0 -1px 0 0 rgba({{ shadow_color.red }}, {{ shadow_color.green }}, {{ shadow_color.blue }}, {{ shadow_opacity }})
+        {%- endif -%}
+        {%- if section.settings.shadow_bottom_desktop -%}
+          {%- if section.settings.shadow_top_desktop -%}, {% endif -%}
+          inset 0 -1px 0 0 rgba({{ shadow_color.red }}, {{ shadow_color.green }}, {{ shadow_color.blue }}, {{ shadow_opacity }})
+        {%- endif -%}
+      {%- endcapture -%}
+      box-shadow: {{ shadow_desktop | strip | default: 'none' }};
+    }
+  }
 {%- endstyle -%}
 
 <div class="isolate{% unless section.settings.full_width %} page-width{% endunless %}">
-  <div class="rich-text content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding">
+  <div class="rich-text content-container color-{{ section.settings.color_scheme }} gradient{% if section.settings.full_width %} rich-text--full-width content-container--full-width{% endif %} section-{{ section.id }}-padding section-{{ section.id }}-shadow">
     <div class="rich-text__wrapper rich-text__wrapper--{{ section.settings.desktop_content_position }}{% if section.settings.full_width %} page-width{% endif %}">
-      <div class="rich-text__blocks {{ section.settings.content_alignment }}">
+      <div class="rich-text__blocks {{ section.settings.content_alignment }}{% if section.settings.full_width_content %} rich-text__blocks--full-width{% endif %}">
         {%- for block in section.blocks -%}
           {%- case block.type -%}
             {%- when 'heading' -%}
               {% assign heading_tag = block.settings.heading_tag %}
               <{{ heading_tag }}
-                class="rich-text__heading rte inline-richtext {%  if block.settings.heading_uppercase %}uppercase{% endif %} {{ block.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+                class="rich-text__heading rte inline-richtext {% if block.settings.heading_uppercase %}uppercase{% endif %} {{ block.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} section_header text-center"
                 {{ block.shopify_attributes }}
                 {% if settings.animations_reveal_on_scroll %}
                   data-cascade
                   style="--animation-order: {{ forloop.index }};"
                 {% endif %}
               >
-                {{ block.settings.heading }}
+                <span class="main_heading">{{ block.settings.heading }}</span>
+                {% if block.settings.bg_heading != blank %}
+                  <span class="bg_heading rich-text__bg-heading">{{ block.settings.bg_heading }}</span>
+                {% endif %}
               </{{ heading_tag }}>
             {%- when 'caption' -%}
               <p
@@ -52,7 +85,12 @@
                   style="--animation-order: {{ forloop.index }};"
                 {% endif %}
               >
-                {{ block.settings.text }}
+                {%- if block.settings.text_mobile != blank -%}
+                  <div class="small-hide">{{ block.settings.text }}</div>
+                  <div class="medium-hide large-up-hide">{{ block.settings.text_mobile }}</div>
+                {%- else -%}
+                  {{ block.settings.text }}
+                {%- endif -%}
               </div>
             {%- when 'button' -%}
               <div
@@ -158,6 +196,56 @@
       "label": "t:sections.rich-text.settings.full_width.label"
     },
     {
+      "type": "checkbox",
+      "id": "full_width_content",
+      "default": false,
+      "label": "Full width content"
+    },
+    {
+      "type": "header",
+      "content": "Section Shadow"
+    },
+    {
+      "type": "color",
+      "id": "shadow_color",
+      "label": "Shadow Color",
+      "default": "#020202"
+    },
+    {
+      "type": "range",
+      "id": "shadow_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Shadow Opacity",
+      "default": 8
+    },
+    {
+      "type": "checkbox",
+      "id": "shadow_top_desktop",
+      "default": false,
+      "label": "Show Shadow Top (Desktop)"
+    },
+    {
+      "type": "checkbox",
+      "id": "shadow_bottom_desktop",
+      "default": false,
+      "label": "Show Shadow Bottom (Desktop)"
+    },
+    {
+      "type": "checkbox",
+      "id": "shadow_top_mobile",
+      "default": false,
+      "label": "Show Shadow Top (Mobile)"
+    },
+    {
+      "type": "checkbox",
+      "id": "shadow_bottom_mobile",
+      "default": false,
+      "label": "Show Shadow Bottom (Mobile)"
+    },
+    {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"
     },
@@ -193,6 +281,11 @@
           "id": "heading",
           "default": "Talk about your brand",
           "label": "t:sections.rich-text.blocks.heading.settings.heading.label"
+        },
+        {
+          "type": "textarea",
+          "id": "bg_heading",
+          "label": "Sub Heading"
         },
         {
           "type": "select",
@@ -309,6 +402,11 @@
           "id": "text",
           "default": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>",
           "label": "t:sections.rich-text.blocks.text.settings.text.label"
+        },
+        {
+          "type": "richtext",
+          "id": "text_mobile",
+          "label": "Text (mobile)"
         },
         {
           "type": "select",
