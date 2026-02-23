@@ -65,7 +65,11 @@ input {
 .f_14 {
   font-size: 14px;
 }
-.f_16 {
+.f_15 {
+  font-size: 15px;
+}
+.f_16,
+.f_16 p {
   font-size: 16px;
   line-height: 27px;
 }
@@ -553,6 +557,12 @@ input {
 }
 .collection_sec .collection__description {
   padding-bottom: 2rem;
+}
+.collection__title.title-first .title {
+  margin-bottom: 2rem;
+}
+.collection__title.title-first .collection__description {
+  padding-bottom: 0;
 }
 .card_add_to_cart .quick-add__submit {
   min-width: max-content;
@@ -1489,10 +1499,39 @@ body .description-container p {
   }
 }
 
-.page #MainContent a {
+/* .page #MainContent a {
   color: inherit;
-}
+} */
 
 .rich-text__text.rte.f_14 {
   margin-top: 0;
+}
+
+.media.media--icon > img {
+  object-fit: contain;
+  object-position: left;
+}
+
+.section_boxed_1260 {
+  max-width: 1260px;
+  margin: 0 auto;
+}
+
+.collection__description p {
+  margin: 0;
+}
+
+.custom-font {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+}
+
+.collapsible-content__bg-heading {
+  font-family: Arial, sans-serif !important;
+  font-size: 4rem !important; /* 40px */
+}
+
+@media screen and (min-width: 750px) {
+  .collapsible-content__bg-heading {
+    font-size: 9rem !important; /* 90px */
+  }
 }

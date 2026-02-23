@@ -91,11 +91,11 @@
 
 .rich-text__bg-heading {
   font-family: Arial, sans-serif !important;
-  font-size: 4rem; /* 40px */
+  font-size: 4rem !important; /* 40px */
 }
 
 @media screen and (min-width: 750px) {
   .rich-text__bg-heading {
-    font-size: 9rem; /* 90px */
+    font-size: 9rem !important; /* 90px */
   }
 }

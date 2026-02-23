@@ -13,6 +13,13 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  {% if section.settings.enable_border %}
+    .section-{{ section.id }}-padding .accordion {
+      border: 0.8px solid #E5E7EB !important;
+      border-radius: 10px;
+    }
+  {% endif %}
 {%- endstyle -%}
 
 <div class="color-{{ section.settings.color_scheme }} gradient">
@@ -29,8 +36,13 @@
             </p>
           {% endif %}
           {%- if section.settings.heading != blank -%}
-            <h2 class="collapsible-content__heading inline-richtext {{ section.settings.heading_size }}">
-              {{ section.settings.heading }}
+            <h2 class="collapsible-content__heading inline-richtext section_header {{ section.settings.heading_size }}">
+              <span class="main_heading">{{ section.settings.heading }}</span>
+              {% if section.settings.bg_heading != blank %}
+                <span class="bg_heading collapsible-content__bg-heading {{ section.settings.title_font_size }} {% if section.settings.title_font_family == 'body' %}custom-font font_700{% endif %}">
+                  {{- section.settings.bg_heading -}}
+                </span>
+              {% endif %}
             </h2>
           {%- else -%}
             <h2 class="visually-hidden">{{ 'accessibility.collapsible_content_title' | t }}</h2>
@@ -82,7 +94,7 @@
                 >
                   <summary id="Summary-{{ block.id }}-{{ section.id }}">
                     {% render 'icon-accordion', icon: block.settings.icon %}
-                    <h3 class="accordion__title inline-richtext h4">
+                    <h3 class="accordion__title inline-richtext {{ section.settings.title_font_size }} {% if section.settings.title_font_family == 'body' %}custom-font font_700{% endif %}">
                       {{ block.settings.heading | default: block.settings.page.title }}
                     </h3>
                     {% render 'icon-caret' %}
@@ -125,6 +137,11 @@
       "id": "heading",
       "label": "t:sections.collapsible_content.settings.heading.label",
       "default": "Collapsible content"
+    },
+    {
+      "type": "textarea",
+      "id": "bg_heading",
+      "label": "Sub Heading"
     },
     {
       "type": "select",
@@ -204,6 +221,48 @@
       "id": "open_first_collapsible_row",
       "default": false,
       "label": "t:sections.collapsible_content.settings.open_first_collapsible_row.label"
+    },
+    {
+      "type": "select",
+      "id": "title_font_size",
+      "label": "Title font size",
+      "options": [
+        {
+          "value": "f_15",
+          "label": "Small"
+        },
+        {
+          "value": "f_18",
+          "label": "Medium"
+        },
+        {
+          "value": "f_20",
+          "label": "Large"
+        }
+      ],
+      "default": "f_15"
+    },
+    {
+      "type": "select",
+      "id": "title_font_family",
+      "label": "Title font family",
+      "options": [
+        {
+          "value": "heading",
+          "label": "Heading"
+        },
+        {
+          "value": "body",
+          "label": "Body"
+        }
+      ],
+      "default": "heading"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_border",
+      "label": "Enable border and border radius",
+      "default": false
     },
     {
       "type": "header",

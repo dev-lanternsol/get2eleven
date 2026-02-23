@@ -80,50 +80,91 @@
         padding-bottom: {{ section.settings.padding_bottom }}px;
       }
     }
-  }
   @media screen and (min-width: 750px) and (max-width: 1200px) {
-  .section-{{ section.id }}-padding {
-        padding-top: 60px;
-        padding-bottom: 60px;
-  }
+    .section-{{ section.id }}-padding {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
   }
   @media screen and (max-width: 1200px) {
-  .collection.section-{{ section.id }}-padding::before {
+    .collection.section-{{ section.id }}-padding::before {
       top: 0;
       background-size: 100%;
       width: 70px;
       height: 72px;
       flex-shrink: 0;
       transform: translateY(-50%);
-  }
-      .collection.section-{{ section.id }}-padding::after{
+    }
+    .collection.section-{{ section.id }}-padding::after{
       bottom: 0;
       background-size: 100%;
       width: 70px;
       height: 72px;
       flex-shrink: 0;
       transform: translateY(50%);
-
     }
     @keyframes roll {
-    0% {left: 9rem}
-    100% {left: calc(100% - 16rem);}
-  }
-  @keyframes roll-two {
-    0% {right: 9rem}
-    100% {right: calc(100% - 16rem);}
-  }
+      0% {left: 9rem}
+      100% {left: calc(100% - 16rem);}
     }
+    @keyframes roll-two {
+      0% {right: 9rem}
+      100% {right: calc(100% - 16rem);}
+    }
+  }
   @media screen and (max-width: 989px) {
-      @keyframes roll {
-    0% {left: 2rem}
-    100% {left: calc(100% - 9rem);}
-  }
-  @keyframes roll-two {
-    0% {right: 2rem}
-    100% {right: calc(100% - 9rem);}
-  }
+    @keyframes roll {
+      0% {left: 2rem}
+      100% {left: calc(100% - 9rem);}
     }
+    @keyframes roll-two {
+      0% {right: 2rem}
+      100% {right: calc(100% - 9rem);}
+    }
+  }
+
+  {%- liquid
+    assign column_gap = section.settings.column_gap | append: 'px'
+    if section.settings.column_gap == 0
+      assign column_gap = 'var(--grid-desktop-horizontal-spacing)'
+    endif
+    assign row_gap = section.settings.row_gap | append: 'px'
+    if section.settings.row_gap == 0
+      assign row_gap = 'var(--grid-desktop-vertical-spacing)'
+    endif
+
+    assign column_gap_mobile = section.settings.column_gap_mobile | append: 'px'
+    if section.settings.column_gap_mobile == 0
+      assign column_gap_mobile = 'var(--grid-mobile-horizontal-spacing)'
+    endif
+    assign row_gap_mobile = section.settings.row_gap_mobile | append: 'px'
+    if section.settings.row_gap_mobile == 0
+      assign row_gap_mobile = 'var(--grid-mobile-vertical-spacing)'
+    endif
+  -%}
+
+  .section-{{ section.id }}-padding {
+    --grid-desktop-horizontal-spacing: {{ column_gap }};
+    --grid-desktop-vertical-spacing: {{ row_gap }};
+    --grid-mobile-horizontal-spacing: {{ column_gap_mobile }};
+    --grid-mobile-vertical-spacing: {{ row_gap_mobile }};
+  }
+
+  .section-{{ section.id }}-padding .product-grid {
+    column-gap: var(--grid-desktop-horizontal-spacing) !important;
+    row-gap: var(--grid-desktop-vertical-spacing) !important;
+  }
+
+  @media screen and (max-width: 749px) {
+    .section-{{ section.id }}-padding .product-grid {
+      column-gap: var(--grid-mobile-horizontal-spacing) !important;
+      row-gap: var(--grid-mobile-vertical-spacing) !important;
+    }
+  }
+
+  .section-{{ section.id }}-padding .collection__view-all a:not(.link) {
+    margin-top: {{ section.settings.button_margin_top }}px !important;
+  }
 {%- endstyle -%}
 
 {%- liquid
@@ -147,26 +188,44 @@
 -%}
 <div class="color-{{ section.settings.color_scheme }} isolate gradient {% if section.settings.icon != blank %}section_icon_src{% endif %}">
   <div class="page-width collection_sec collection section-{{ section.id }}-padding{% if section.settings.full_width %} collection--full-width{% endif %}">
-    <div class="collection__title title-wrapper title-wrapper--no-top-margin container{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}">
-      {%- if section.settings.description != blank
-        or section.settings.show_description
-        and section.settings.collection.description != empty
-      -%}
-        <div class="jakarta f_16 font_500 text-center text_uppercase clr_blue  collection__description {{ section.settings.description_style }} rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-          {%- if section.settings.show_description -%}
-            {{ section.settings.collection.description }}
-          {%- else -%}
-            {{ section.settings.description -}}
-          {%- endif %}
-        </div>
-      {%- endif -%}
-      {%- if section.settings.title != blank -%}
-        <h2 class="text-center clr_drk_blue font_600 text_uppercase section_header title heading-bg-{{ section.id }} inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
-          <span class="main_heading">{{ section.settings.title }}</span>
-          {% if section.settings.bg_heading != blank %}
-            <span class="bg_heading">{{ section.settings.bg_heading }}</span>
-          {% endif %}
-        </h2>
+    <div class="collection__title title-wrapper title-wrapper--no-top-margin container{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}{% if section.settings.show_title_first %} title-first{% endif %}">
+      {%- capture description -%}
+        {%- if section.settings.description != blank
+          or section.settings.show_description
+          and section.settings.collection.description != empty
+        -%}
+          <div class="jakarta f_16 font_500 text-center {% if section.settings.description_uppercase %}text_uppercase{% endif %}  collection__description {{ section.settings.description_style }} rte{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}" style="color: {{ section.settings.description_color }};">
+            {%- if section.settings.show_description -%}
+              {{ section.settings.collection.description }}
+            {%- else -%}
+              {%- if section.settings.description_mobile != blank -%}
+                <div class="small-hide">{{ section.settings.description }}</div>
+                <div class="medium-hide large-up-hide">{{ section.settings.description_mobile }}</div>
+              {%- else -%}
+                {{ section.settings.description -}}
+              {%- endif -%}
+            {%- endif %}
+          </div>
+        {%- endif -%}
+      {%- endcapture -%}
+
+      {%- capture title -%}
+        {%- if section.settings.title != blank -%}
+          <h2 class="text-center clr_drk_blue font_600 text_uppercase section_header title heading-bg-{{ section.id }} inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
+            <span class="main_heading">{{ section.settings.title }}</span>
+            {% if section.settings.bg_heading != blank %}
+              <span class="bg_heading">{{ section.settings.bg_heading }}</span>
+            {% endif %}
+          </h2>
+        {%- endif -%}
+      {%- endcapture -%}
+
+      {%- if section.settings.show_title_first -%}
+        {{ title }}
+        {{ description }}
+      {%- else -%}
+        {{ description }}
+        {{ title }}
       {%- endif -%}
     </div>
     <slider-component class="slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} container{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop_{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
@@ -259,7 +318,11 @@
           class="{% if section.settings.view_all_style == 'link' %}link underlined-link{% elsif section.settings.view_all_style == 'solid' %}button{% else %}button button--secondary{% endif %}"
           aria-label="{{ 'sections.featured_collection.view_all_label' | t: collection_name: section.settings.collection.title }}"
         >
-          {{ 'sections.featured_collection.view_all' | t }}
+          {%- if section.settings.button_label != blank -%}
+            {{ section.settings.button_label | escape }}
+          {%- else -%}
+            {{ 'sections.featured_collection.view_all' | t }}
+          {%- endif -%}
         </a>
       </div>
     {%- endif -%}
@@ -283,6 +346,12 @@
       "id": "title",
       "default": "Featured collection",
       "label": "t:sections.featured-collection.settings.title.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_title_first",
+      "label": "Show Title First",
+      "default": false
     },
     {
       "type": "textarea",
@@ -310,15 +379,32 @@
       "label": "t:sections.all.heading_size.label"
     },
     {
-      "type": "textarea",
+      "type": "richtext",
       "id": "description",
       "label": "t:sections.featured-collection.settings.description.label"
+    },
+    {
+      "type": "richtext",
+      "id": "description_mobile",
+      "label": "Description (mobile)"
     },
     {
       "type": "checkbox",
       "id": "show_description",
       "label": "t:sections.featured-collection.settings.show_description.label",
       "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "description_uppercase",
+      "label": "Description Uppercase",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description Color",
+      "default": "#33a9fe"
     },
     {
       "type": "select",
@@ -394,6 +480,22 @@
         }
       ],
       "default": "solid"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button Label",
+      "info": "Leave blank to use default text"
+    },
+    {
+      "type": "range",
+      "id": "button_margin_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Button margin top",
+      "default": 10
     },
     {
       "type": "checkbox",
@@ -528,6 +630,54 @@
       "type": "image_picker",
       "id": "icon",
       "label": "icon image"
+    },
+    {
+      "type": "header",
+      "content": "Grid Settings"
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Column gap",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "row_gap",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Row gap",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Mobile gap"
+    },
+    {
+      "type": "range",
+      "id": "column_gap_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Column gap mobile",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "row_gap_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Row gap mobile",
+      "default": 0
     },
     {
       "type": "header",

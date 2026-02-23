@@ -13,6 +13,30 @@
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
+
+  {%- liquid
+    assign column_gap = section.settings.column_gap | append: 'px'
+    if section.settings.column_gap == 0
+      assign column_gap = 'var(--grid-desktop-horizontal-spacing)'
+    endif
+    assign row_gap = section.settings.row_gap | append: 'px'
+    if section.settings.row_gap == 0
+      assign row_gap = 'var(--grid-desktop-vertical-spacing)'
+    endif
+  -%}
+
+  .section-{{ section.id }}-padding {
+    --grid-desktop-horizontal-spacing: {{ column_gap }};
+    --grid-desktop-vertical-spacing: {{ row_gap }};
+    --grid-mobile-horizontal-spacing: {{ column_gap }};
+    --grid-mobile-vertical-spacing: {{ row_gap }};
+  }
+
+  .section-{{ section.id }}-padding .multicolumn-list {
+    column-gap: var(--grid-desktop-horizontal-spacing) !important;
+    row-gap: var(--grid-desktop-vertical-spacing) !important;
+    justify-content: {{ section.settings.horizontal_alignment }} !important;
+  }
 {%- endstyle -%}
 
 {%- liquid
@@ -25,7 +49,7 @@
 
 <div class="multicolumn color-{{ section.settings.color_scheme }} gradient{% unless section.settings.background_style == 'none' and settings.text_boxes_border_thickness > 0 or settings.text_boxes_shadow_opacity > 0 %} background-{{ section.settings.background_style }}{% endunless %}{% if section.settings.title == blank %} no-heading{% endif %}">
   <div
-    class="page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+    class="{% if section.settings.section_width == 'boxed' %}section_boxed_1260{% else %}page-width{% endif %} section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
     {% if settings.animations_reveal_on_scroll %}
       data-cascade
     {% endif %}
@@ -83,14 +107,19 @@
           >
             <div class="multicolumn-card content-container{% if block.settings.color_scheme != section.settings.color_scheme %} color-{{ block.settings.color_scheme }} gradient{% endif %}">
               {%- if block.settings.image != blank -%}
-                {% if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' %}
-                  {% assign spaced_image = true %}
-                {% endif %}
+                {%- liquid
+                  assign spaced_image = false
+                  if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' or section.settings.image_ratio == 'icon'
+                    assign spaced_image = true
+                  endif
+                -%}
                 <div class="multicolumn-card__image-wrapper multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} multicolumn-card-spacing{% endif %}">
                   <div
                     class="media media--transparent media--{{ section.settings.image_ratio }}"
                     {% if section.settings.image_ratio == 'adapt' %}
                       style="padding-bottom: {{ 1 | divided_by: highest_ratio | times: 100 }}%;"
+                    {% elsif section.settings.image_ratio == 'icon' %}
+                      style="padding-bottom: 40px;"
                     {% endif %}
                   >
                     {%- liquid
@@ -297,6 +326,10 @@
         {
           "value": "circle",
           "label": "t:sections.multicolumn.settings.image_ratio.options__4.label"
+        },
+        {
+          "value": "icon",
+          "label": "Icon"
         }
       ],
       "default": "adapt",
@@ -389,6 +422,62 @@
     {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "options": [
+        {
+          "value": "full-width",
+          "label": "Full width"
+        },
+        {
+          "value": "boxed",
+          "label": "Boxed"
+        }
+      ],
+      "default": "full-width",
+      "label": "Section width"
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Column gap",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "row_gap",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Row gap",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "horizontal_alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Start"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "flex-end",
+          "label": "End"
+        }
+      ],
+      "default": "center",
+      "label": "Horizontal alignment"
     },
     {
       "type": "range",

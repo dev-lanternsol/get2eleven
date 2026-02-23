@@ -10,6 +10,10 @@
       background-color: {{ section.settings.card_background }};
     }
   {% endif %}
+  .review-carousel-section-{{ section.id }} .review-card {
+    border-radius: {{ section.settings.card_border_radius }}px;
+    border: {{ section.settings.card_border_width }}px solid {{ section.settings.card_border_color }};
+  }
   {% if section.settings.text_color != blank %}
     .review-carousel-section-{{ section.id }} .review-text p,
     .review-carousel-section-{{ section.id }} .review-author-name {
@@ -27,48 +31,97 @@
       color: #FFFFFF;
     }
   {% endif %}
+
+  {% for block in section.blocks %}
+    {% if block.settings.title_color != blank %}
+      .review-card-{{ block.id }} .review-card-title { color: {{ block.settings.title_color }}; }
+    {% endif %}
+    {% if block.settings.text_color != blank %}
+      .review-card-{{ block.id }} .review-text p { color: {{ block.settings.text_color }}; }
+    {% endif %}
+    {% if block.settings.author_color != blank %}
+      .review-card-{{ block.id }} .review-author-name { color: {{ block.settings.author_color }}; }
+    {% endif %}
+  {% endfor %}
 </style>
 
-<div class="review-carousel-section review-carousel-section-{{ section.id }}">
+<div class="review-carousel-section review-carousel-section-{{ section.id }} color-{{ section.settings.color_scheme }} gradient {% if section.settings.description != blank %}review-carousel-section--has-description{% endif %} {% unless section.settings.show_box_shadow %}review-carousel--no-shadow{% endunless %} {% if section.blocks.size <= 3 %}review-carousel--not-sliding{% endif %} {% unless section.settings.show_arrows_desktop %}review-carousel--hide-arrows-desktop{% endunless %} {% unless section.settings.show_arrows_mobile %}review-carousel--hide-arrows-mobile{% endunless %} {% unless section.settings.show_dots_desktop %}review-carousel--hide-dots-desktop{% endunless %} {% unless section.settings.show_dots_mobile %}review-carousel--hide-dots-mobile{% endunless %}">
   <div class="page-width">
-    {% if section.settings.title != blank %}
-      <div class="title-wrapper-with-link title-wrapper--self-padded-mobile">
-        <h2 class="title inline-richtext {{ section.settings.heading_size }}">
-          {{ section.settings.title }}
-        </h2>
+    {% if section.settings.title != blank
+      or section.settings.bg_heading != blank
+      or section.settings.description != blank
+    %}
+      <div class="title-wrapper--self-padded-mobile title-wrapper--center">
+        {% if section.settings.title != blank or section.settings.bg_heading != blank %}
+          <h2 class="title inline-richtext section_header {{ section.settings.heading_size }}">
+            {% if section.settings.title != blank %}
+              <span class="main_heading text-center">{{ section.settings.title }}</span>
+            {% endif %}
+            {% if section.settings.bg_heading != blank %}
+              <span class="bg_heading review-carousel__bg-heading">
+                {{- section.settings.bg_heading -}}
+              </span>
+            {% endif %}
+          </h2>
+        {% endif %}
+        {% if section.settings.description != blank %}
+          <div class="review-carousel__description rte f_16 text-center">
+            {{ section.settings.description }}
+          </div>
+        {% endif %}
       </div>
     {% endif %}
 
     <div class="review-carousel-wrapper">
-      <button type="button" class="review-carousel-button review-carousel-button--prev" aria-label="Previous reviews">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
+      {% if section.blocks.size > 3 %}
+        <button type="button" class="review-carousel-button review-carousel-button--prev" aria-label="Previous reviews">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      {% endif %}
 
       <div class="review-carousel-overflow-wrapper">
         <div class="review-carousel-container">
           <div class="review-carousel-track">
             {% for block in section.blocks %}
-              <div class="review-card" {{ block.shopify_attributes }}>
+              <div class="review-card review-card-{{ block.id }}" {{ block.shopify_attributes }}>
                 <div class="review-card-content">
                   <div class="review-stars">
                     {% for i in (1..5) %}
-                      <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M10 0L12.2451 7.40983H20L13.8779 11.9803L16.1229 19.3902L10 14.8197L3.87705 19.3902L6.12205 11.9803L0 7.40983H7.75486L10 0Z"/>
-                      </svg>
+                      {% if section.settings.use_custom_stars %}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
+                          <path d="M8.77237 1.07912C8.80889 1.00534 8.86531 0.943229 8.93525 0.899806C9.00519 0.856384 9.08588 0.833374 9.16821 0.833374C9.25053 0.833374 9.33122 0.856384 9.40116 0.899806C9.47111 0.943229 9.52752 1.00534 9.56404 1.07912L11.489 4.97829C11.6159 5.23492 11.8031 5.45696 12.0346 5.62533C12.2661 5.7937 12.535 5.90338 12.8182 5.94495L17.1232 6.57495C17.2048 6.58677 17.2814 6.62118 17.3444 6.67428C17.4075 6.72739 17.4544 6.79708 17.4799 6.87546C17.4075 6.95384 17.5084 7.03779 17.4887 7.11782C17.469 7.19784 17.4272 7.27075 17.3682 7.32829L14.2549 10.36C14.0496 10.56 13.8959 10.807 13.8072 11.0796C13.7185 11.3523 13.6974 11.6424 13.7457 11.925L14.4807 16.2083C14.4951 16.2898 14.4863 16.3738 14.4553 16.4505C14.4243 16.5273 14.3723 16.5938 14.3053 16.6424C14.2383 16.6911 14.159 16.72 14.0764 16.7257C13.9938 16.7314 13.9113 16.7139 13.8382 16.675L9.98987 14.6516C9.73631 14.5185 9.45419 14.4489 9.16779 14.4489C8.88139 14.4489 8.59928 14.5185 8.34571 14.6516L4.49821 16.675C4.42515 16.7136 4.34271 16.731 4.26025 16.7252C4.17779 16.7193 4.09864 16.6904 4.03179 16.6418C3.96493 16.5932 3.91307 16.5268 3.88209 16.4501C3.85111 16.3735 3.84226 16.2897 3.85654 16.2083L4.59071 11.9258C4.6392 11.6431 4.61819 11.3528 4.52949 11.08C4.44078 10.8072 4.28705 10.5601 4.08154 10.36L0.968207 7.32912C0.908702 7.27165 0.866535 7.19862 0.846509 7.11835C0.826483 7.03808 0.829405 6.9538 0.854939 6.87511C0.880474 6.79642 0.927596 6.72649 0.990938 6.67327C1.05428 6.62006 1.13129 6.5857 1.21321 6.57412L5.51737 5.94495C5.80092 5.9037 6.0702 5.79417 6.30203 5.62577C6.53386 5.45738 6.72129 5.23518 6.84821 4.97829L8.77237 1.07912Z" fill="currentColor" stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      {% else %}
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M10 0L12.2451 7.40983H20L13.8779 11.9803L16.1229 19.3902L10 14.8197L3.87705 19.3902L6.12205 11.9803L0 7.40983H7.75486L10 0Z"/>
+                        </svg>
+                      {% endif %}
                     {% endfor %}
                   </div>
-                  
+
+                  {% if block.settings.review_title != blank %}
+                    <h3 class="review-card-title {{ block.settings.title_size }}">{{ block.settings.review_title }}</h3>
+                  {% endif %}
+
                   {% if block.settings.review_text != blank %}
                     <div class="review-text">
-                      <p>{{ block.settings.review_text }}</p>
+                      <p class="{{ block.settings.text_size }}">{{ block.settings.review_text }}</p>
                     </div>
                   {% endif %}
-                  
+
                   {% if block.settings.customer_name != blank %}
-                    <div class="review-author">
-                      <p class="review-author-name">{{ block.settings.customer_name }}</p>
+                    <div class="review-author {% unless section.settings.show_author_border %}review-author--no-border{% endunless %}">
+                      <p class="review-author-name {{ block.settings.author_size }}">
+                        {{ block.settings.customer_name }}
+                      </p>
                     </div>
                   {% endif %}
                 </div>
@@ -78,29 +131,33 @@
         </div>
       </div>
 
-      <button type="button" class="review-carousel-button review-carousel-button--next" aria-label="Next reviews">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </button>
+      {% if section.blocks.size > 3 %}
+        <button type="button" class="review-carousel-button review-carousel-button--next" aria-label="Next reviews">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      {% endif %}
     </div>
 
-    <div class="review-carousel-dots"></div>
+    {% if section.blocks.size > 1 %}
+      <div class="review-carousel-dots"></div>
+    {% endif %}
   </div>
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const wrapper = document.querySelector('.review-carousel-wrapper');
+  document.addEventListener('DOMContentLoaded', function () {
+    const wrapper = document.querySelector('.review-carousel-section-{{ section.id }} .review-carousel-wrapper');
     if (!wrapper) return;
 
     const track = wrapper.querySelector('.review-carousel-track');
     const cards = wrapper.querySelectorAll('.review-card');
     const prevButton = wrapper.querySelector('.review-carousel-button--prev');
     const nextButton = wrapper.querySelector('.review-carousel-button--next');
-    const dotsContainer = wrapper.querySelector('.review-carousel-dots');
+    const dotsContainer = document.querySelector('.review-carousel-section-{{ section.id }} .review-carousel-dots');
     const container = wrapper.querySelector('.review-carousel-container');
-    
+
     let currentIndex = 0;
     let isDragging = false;
     let startPos = 0;
@@ -116,9 +173,10 @@
     }
 
     function createDots() {
+      if (!dotsContainer) return;
       dotsContainer.innerHTML = '';
       const totalPages = getTotalPages();
-      
+
       for (let i = 0; i < totalPages; i++) {
         const dot = document.createElement('button');
         dot.classList.add('review-carousel-dot');
@@ -126,7 +184,7 @@
         if (i === currentIndex) {
           dot.classList.add('active');
         }
-        dot.addEventListener('click', function() {
+        dot.addEventListener('click', function () {
           goToPage(i);
         });
         dotsContainer.appendChild(dot);
@@ -135,10 +193,10 @@
 
     function updateCarousel() {
       if (cards.length === 0) return;
-      
+
       const itemsPerPage = getItemsPerPage();
       const isMobile = window.innerWidth < 750;
-      
+
       // Calculate gap from actual rendered distance between cards
       let gap;
       if (cards.length > 1) {
@@ -148,40 +206,42 @@
       } else {
         gap = isMobile ? 16 : 32;
       }
-      
+
       // Use getBoundingClientRect for more precise measurements
       const cardWidth = cards[0].getBoundingClientRect().width;
-      
+
       // On mobile (1 card), calculate using full card width + gap
       // On desktop (3 cards), calculate width of cards + gaps between visible cards
       let offset;
-      
+
       if (isMobile) {
         // Mobile: 1 card per page
         offset = -(currentIndex * (cardWidth + gap));
       } else {
         // Desktop: 3 cards per page, move by 3 cards + 2 gaps
-        const moveDistance = (cardWidth * 3) + (gap * 2);
+        const moveDistance = cardWidth * 3 + gap * 2;
         offset = -(currentIndex * moveDistance);
       }
-      
+
       track.style.transform = 'translateX(' + offset + 'px)';
       currentTranslate = offset;
       prevTranslate = offset;
-      
+
       updateButtons();
       updateDots();
     }
 
     function updateButtons() {
+      if (!prevButton || !nextButton) return;
       const totalPages = getTotalPages();
       prevButton.disabled = currentIndex === 0;
       nextButton.disabled = currentIndex >= totalPages - 1;
     }
 
     function updateDots() {
+      if (!dotsContainer) return;
       const dots = dotsContainer.querySelectorAll('.review-carousel-dot');
-      dots.forEach(function(dot, index) {
+      dots.forEach(function (dot, index) {
         if (index === currentIndex) {
           dot.classList.add('active');
         } else {
@@ -209,14 +269,16 @@
     }
 
     function touchStart(event) {
+      const itemsPerPage = getItemsPerPage();
+      if (cards.length <= itemsPerPage) return;
       isDragging = true;
       startPos = getPositionX(event);
-      container.style.cursor = 'grabbing';
+      {% comment %} container.style.cursor = 'grabbing'; {% endcomment %}
     }
 
     function touchMove(event) {
       if (!isDragging) return;
-      
+
       const currentPosition = getPositionX(event);
       const diff = currentPosition - startPos;
       currentTranslate = prevTranslate + diff;
@@ -224,12 +286,17 @@
 
     function touchEnd() {
       if (!isDragging) return;
-      
+
       isDragging = false;
-      container.style.cursor = 'grab';
-      
+      const itemsPerPage = getItemsPerPage();
+      if (cards.length > itemsPerPage) {
+        container.style.cursor = 'grab';
+      } else {
+        container.style.cursor = 'default';
+      }
+
       const movedBy = currentTranslate - prevTranslate;
-      
+
       // Swipe threshold - determine if should change page
       if (movedBy < -75 && currentIndex < getTotalPages() - 1) {
         nextPage();
@@ -242,27 +309,35 @@
     }
 
     // Event listeners
-    prevButton.addEventListener('click', prevPage);
-    nextButton.addEventListener('click', nextPage);
+    if (prevButton) prevButton.addEventListener('click', prevPage);
+    if (nextButton) nextButton.addEventListener('click', nextPage);
 
-    container.addEventListener('touchstart', touchStart);
-    container.addEventListener('touchmove', touchMove);
-    container.addEventListener('touchend', touchEnd);
+    if (container) {
+      container.addEventListener('touchstart', touchStart);
+      container.addEventListener('touchmove', touchMove);
+      container.addEventListener('touchend', touchEnd);
 
-    container.addEventListener('mousedown', touchStart);
-    container.addEventListener('mousemove', touchMove);
-    container.addEventListener('mouseup', touchEnd);
-    container.addEventListener('mouseleave', touchEnd);
+      container.addEventListener('mousedown', touchStart);
+      container.addEventListener('mousemove', touchMove);
+      container.addEventListener('mouseup', touchEnd);
+      container.addEventListener('mouseleave', touchEnd);
+    }
 
     // Initialize
+    const itemsPerPage = getItemsPerPage();
+    if (cards.length <= itemsPerPage) {
+      container.style.cursor = 'default';
+    } else {
+      container.style.cursor = 'grab';
+    }
     createDots();
     updateCarousel();
 
     // Resize handler
     let resizeTimer;
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', function () {
       clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(function() {
+      resizeTimer = setTimeout(function () {
         updateCarousel();
         createDots();
       }, 250);
@@ -283,6 +358,16 @@
       "default": "What Our Customers Say"
     },
     {
+      "type": "textarea",
+      "id": "bg_heading",
+      "label": "Background Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
       "type": "select",
       "id": "heading_size",
       "label": "Heading size",
@@ -301,6 +386,42 @@
         }
       ],
       "default": "h1"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_custom_stars",
+      "label": "Use custom stars icon",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows_desktop",
+      "label": "Show arrows on desktop",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows_mobile",
+      "label": "Show arrows on mobile",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots_desktop",
+      "label": "Show dots on desktop",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots_mobile",
+      "label": "Show dots on mobile",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
     },
     {
       "type": "header",
@@ -329,6 +450,48 @@
       "id": "button_color",
       "label": "Button color",
       "default": "#000000"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_author_border",
+      "label": "Show author border top",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Card settings"
+    },
+    {
+      "type": "range",
+      "id": "card_border_radius",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Card border radius",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "card_border_width",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "Card border width",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Card border color",
+      "default": "#000000"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_box_shadow",
+      "label": "Show box shadow",
+      "default": true
     },
     {
       "type": "header",
@@ -367,10 +530,71 @@
           "default": "John Doe"
         },
         {
+          "type": "inline_richtext",
+          "id": "review_title",
+          "label": "Review Title"
+        },
+        {
           "type": "textarea",
           "id": "review_text",
           "label": "Review",
           "default": "Amazing product! Highly recommend to everyone."
+        },
+        {
+          "type": "header",
+          "content": "Colors"
+        },
+        {
+          "type": "color",
+          "id": "title_color",
+          "label": "Title Color"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color"
+        },
+        {
+          "type": "color",
+          "id": "author_color",
+          "label": "Author Color"
+        },
+        {
+          "type": "header",
+          "content": "Font sizes"
+        },
+        {
+          "type": "select",
+          "id": "title_size",
+          "label": "Title size",
+          "options": [
+            { "value": "f_14", "label": "Small" },
+            { "value": "f_16", "label": "Medium" },
+            { "value": "f_18", "label": "Large" }
+          ],
+          "default": "f_18"
+        },
+        {
+          "type": "select",
+          "id": "text_size",
+          "label": "Text size",
+          "options": [
+            { "value": "f_14", "label": "Small" },
+            { "value": "f_16", "label": "Medium" },
+            { "value": "f_18", "label": "Large" }
+          ],
+          "default": "f_16"
+        },
+        {
+          "type": "select",
+          "id": "author_size",
+          "label": "Author size",
+          "options": [
+            { "value": "f_14", "label": "Small" },
+            { "value": "f_16", "label": "Medium" },
+            { "value": "f_18", "label": "Large" }
+          ],
+          "default": "f_16"
         }
       ]
     }
@@ -402,4 +626,3 @@
   ]
 }
 {% endschema %}
-
