@@ -72,7 +72,7 @@
         "desktop_content_position": "middle-left",
         "show_text_box": false,
         "desktop_content_alignment": "left",
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-6e3e0efb-fc1c-40e3-b805-ba971c1f9983",
         "section_width": "full-width",
         "image_behavior": "none",
         "mobile_content_alignment": "left",
@@ -131,7 +131,9 @@
             "bg_heading": "",
             "heading_size": "f_14",
             "heading_tag": "h2",
-            "heading_uppercase": true
+            "heading_uppercase": true,
+            "title_font_size": "f_15",
+            "title_font_family": "heading"
           }
         },
         "text_JryGW9": {
@@ -174,7 +176,9 @@
             "bg_heading": "SHOP IN PERSON",
             "heading_size": "h2",
             "heading_tag": "h2",
-            "heading_uppercase": true
+            "heading_uppercase": true,
+            "title_font_size": "f_15",
+            "title_font_family": "heading"
           }
         },
         "text_MmGdUc": {
@@ -316,7 +320,7 @@
         "heading_size": "h2",
         "heading_tag": "h2",
         "image_width": "half",
-        "image_ratio": "adapt",
+        "image_ratio": "icon",
         "columns_desktop": 3,
         "column_alignment": "left",
         "background_style": "primary",
@@ -325,6 +329,10 @@
         "color_scheme": "scheme-392a3b94-919d-4d6f-ba3a-c760b278a857",
         "columns_mobile": "1",
         "swipe_on_mobile": true,
+        "section_width": "boxed",
+        "column_gap": 16,
+        "row_gap": 16,
+        "horizontal_alignment": "flex-start",
         "padding_top": 100,
         "padding_bottom": 100
       }
@@ -336,63 +344,73 @@
           "type": "review",
           "settings": {
             "customer_name": "Sarah Martinez",
-            "review_text": "The team at Get2Eleven helped me find the perfect paddle for my playing style. The in-store experience was great - I could actually test different weights and grips before buying."
+            "review_title": "Perfect Paddle Match",
+            "review_text": "The team at Get2Eleven helped me find the perfect paddle for my playing style. The in-store experience was great - I could actually test different weights and grips before buying.",
+            "title_color": "#020202",
+            "text_color": "#020202",
+            "author_color": "#6a7282",
+            "title_size": "f_16",
+            "text_size": "f_14",
+            "author_size": "f_14"
           }
         },
         "review_DpRpe9": {
           "type": "review",
           "settings": {
-            "customer_name": "John Doe",
-            "review_text": "Amazing product! Highly recommend to everyone."
+            "customer_name": "Mike Thompson",
+            "review_title": "Great Selection",
+            "review_text": "Amazing selection of top brands like Selkirk and JOOLA. They really know their paddles and helped me understand the difference between 14mm and 16mm cores.",
+            "title_color": "#020202",
+            "text_color": "#020202",
+            "author_color": "#6a7282",
+            "title_size": "f_16",
+            "text_size": "f_14",
+            "author_size": "f_14"
           }
         },
         "review_3ai9mH": {
           "type": "review",
           "settings": {
-            "customer_name": "John Doe",
-            "review_text": "Amazing product! Highly recommend to everyone."
-          }
-        },
-        "review_NaQzGF": {
-          "type": "review",
-          "settings": {
-            "customer_name": "John Doe",
-            "review_text": "Amazing product! Highly recommend to everyone."
-          }
-        },
-        "review_RHTbiz": {
-          "type": "review",
-          "settings": {
-            "customer_name": "John Doe",
-            "review_text": "Amazing product! Highly recommend to everyone."
-          }
-        },
-        "review_ixNjdp": {
-          "type": "review",
-          "settings": {
-            "customer_name": "John Doe",
-            "review_text": "Amazing product! Highly recommend to everyone."
+            "customer_name": "Jessica Chen",
+            "review_title": "Fast Pickup Service",
+            "review_text": "Ordered online and picked up the same day at their Encinitas location. Super convenient and the staff was really helpful with grip sizing!",
+            "title_color": "#020202",
+            "text_color": "#020202",
+            "author_color": "#6a7282",
+            "title_size": "f_16",
+            "text_size": "f_14",
+            "author_size": "f_14"
           }
         }
       },
       "block_order": [
         "review_4f8Btc",
         "review_DpRpe9",
-        "review_3ai9mH",
-        "review_NaQzGF",
-        "review_RHTbiz",
-        "review_ixNjdp"
+        "review_3ai9mH"
       ],
       "name": "Review Carousel",
       "settings": {
         "title": "WHAT OUR PLAYERS SAY",
+        "bg_heading": "Reviews",
+        "description": "<p>Real feedback from players who shop Get2Eleven for quality gear and reliable service.</p>",
         "heading_size": "h2",
+        "use_custom_stars": true,
+        "show_arrows_desktop": false,
+        "show_arrows_mobile": false,
+        "show_dots_desktop": false,
+        "show_dots_mobile": true,
+        "color_scheme": "scheme-392a3b94-919d-4d6f-ba3a-c760b278a857",
         "card_background": "#f9fafb",
-        "text_color": "#000000",
-        "star_color": "#ffd700",
+        "text_color": "#020202",
+        "star_color": "#fdc700",
         "button_color": "#000000",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "show_author_border": false,
+        "card_border_radius": 10,
+        "card_border_width": 1,
+        "card_border_color": "#e5e7eb",
+        "show_box_shadow": false,
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "featured_collection_ViU9DT": {
@@ -400,10 +418,14 @@
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
         "title": "Best-Selling Paddles",
+        "show_title_first": true,
         "bg_heading": "",
         "heading_size": "h2",
-        "description": "Get2Eleven offers the best pickleball paddles for San Diego County and the Greater San Diego Area, along with shoes, balls, bags, grips, and court-ready accessories.",
+        "description": "<p>Get2Eleven offers the best pickleball paddles for San Diego County and the Greater San Diego Area, along with<br/>shoes, balls, bags, grips, and court-ready accessories.</p>",
+        "description_mobile": "<p>Get2Eleven offers the best pickleball paddles for San Diego County and the Greater San Diego Area, along with shoes, balls, bags, grips, and court-ready accessories.</p>",
         "show_description": false,
+        "description_uppercase": false,
+        "description_color": "#000000",
         "description_style": "body",
         "collection": "paddles",
         "products_to_show": 3,
@@ -411,17 +433,23 @@
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
+        "button_label": "VIEW ALL PADDLES",
+        "button_margin_top": 25,
         "enable_desktop_slider": false,
-        "color_scheme": "scheme-1c404e86-08ac-4782-bd5c-9a4c16085fbe",
+        "color_scheme": "scheme-83b6fd50-9312-4c73-8c98-fe060c403093",
         "image_ratio": "adapt",
         "image_shape": "default",
         "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
         "enable_quick_add": false,
-        "columns_mobile": "2",
+        "columns_mobile": "1",
         "swipe_on_mobile": false,
-        "padding_top": 36,
+        "column_gap": 16,
+        "row_gap": 0,
+        "column_gap_mobile": 0,
+        "row_gap_mobile": 30,
+        "padding_top": 0,
         "padding_bottom": 36
       }
     },
@@ -494,15 +522,19 @@
       "settings": {
         "caption": "",
         "heading": "SAN DIEGO PICKLEBALL PADDLE FAQS",
+        "bg_heading": "FAQs",
         "heading_size": "h2",
         "heading_alignment": "center",
         "layout": "row",
         "color_scheme": "scheme-392a3b94-919d-4d6f-ba3a-c760b278a857",
         "container_color_scheme": "scheme-fcfdf58c-be6e-4e3b-9f84-c4cd6e9eeb19",
         "open_first_collapsible_row": false,
+        "title_font_size": "f_18",
+        "title_font_family": "body",
+        "enable_border": true,
         "image_ratio": "adapt",
         "desktop_layout": "image_second",
-        "padding_top": 36,
+        "padding_top": 100,
         "padding_bottom": 100
       }
     },
@@ -546,36 +578,6 @@
         "stack_images_on_mobile": false,
         "show_text_below": false
       }
-    },
-    "featured_collection_XNjGQd": {
-      "type": "featured-collection",
-      "name": "t:sections.featured-collection.presets.name",
-      "settings": {
-        "title": "Featured collection",
-        "bg_heading": "asdasd",
-        "heading_size": "h1",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "",
-        "products_to_show": 4,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
@@ -589,7 +591,6 @@
     "review_carousel_9n7GFY",
     "featured_collection_ViU9DT",
     "collapsible_content_hhmzfw",
-    "image_banner_TBHnFT",
-    "featured_collection_XNjGQd"
+    "image_banner_TBHnFT"
   ]
 }
