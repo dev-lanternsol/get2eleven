@@ -166,6 +166,88 @@
         "padding_bottom": 0
       }
     },
+    "brands_block_9EcGrz": {
+      "type": "brands-block",
+      "blocks": {
+        "brand_GCHxdf": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/Selkirk_Sport_1.png",
+            "url": "",
+            "heading": ""
+          }
+        },
+        "brand_LAAFq6": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/joola_1.png",
+            "url": "",
+            "heading": ""
+          }
+        },
+        "brand_kWfWj8": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/paddle-tek_1.png",
+            "url": "",
+            "heading": ""
+          }
+        },
+        "brand_74DngY": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/ronbus_1.png",
+            "url": "",
+            "heading": ""
+          }
+        },
+        "brand_kJhBtw": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/Gearbox_1.png",
+            "url": "",
+            "heading": ""
+          }
+        },
+        "brand_7KrXYX": {
+          "type": "brand",
+          "settings": {
+            "image": "shopify://shop_images/ronbus_2.png",
+            "url": "",
+            "heading": ""
+          }
+        }
+      },
+      "block_order": [
+        "brand_GCHxdf",
+        "brand_LAAFq6",
+        "brand_kWfWj8",
+        "brand_74DngY",
+        "brand_kJhBtw",
+        "brand_7KrXYX"
+      ],
+      "name": "brands",
+      "settings": {
+        "columns_desktop": 6,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "column_gap": 70,
+        "row_gap": 0,
+        "image_padding": 0,
+        "image_border": false,
+        "image_border_width": 0,
+        "image_border_color": "#000000",
+        "image_border_radius": 0,
+        "shadow_color": "#020202",
+        "shadow_opacity": 8,
+        "shadow_top_desktop": false,
+        "shadow_bottom_desktop": true,
+        "shadow_top_mobile": false,
+        "shadow_bottom_mobile": true,
+        "padding_top": 50,
+        "padding_bottom": 30
+      }
+    },
     "rich_text_zefEiE": {
       "type": "rich-text",
       "blocks": {
@@ -585,6 +667,7 @@
     "image_banner_rwCjqm",
     "image_with_text_UkCYUU",
     "rich_text_N94YyK",
+    "brands_block_9EcGrz",
     "rich_text_zefEiE",
     "image_banner_cRbgrE",
     "multicolumn_7dqW4A",
