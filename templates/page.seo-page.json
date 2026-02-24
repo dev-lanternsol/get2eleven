@@ -108,14 +108,25 @@
           "type": "heading",
           "settings": {
             "heading": "{{ page.metafields.custom.h2_text_1.value }}",
+            "bg_heading": "",
             "heading_size": "h1",
-            "heading_tag": "h2"
+            "heading_size_mobile": "f_22",
+            "heading_tag": "h2",
+            "heading_uppercase": false,
+            "title_font_size": "f_15",
+            "title_font_family": "heading",
+            "margin_bottom": 0,
+            "margin_bottom_mobile": 0
           }
         },
         "text_ngEXze": {
           "type": "text",
           "settings": {
-            "text": "<p></p>{{ page.metafields.custom.p_text_1 | metafield_tag }}"
+            "text": "<p></p>{{ page.metafields.custom.p_text_1 | metafield_tag }}",
+            "text_mobile": "",
+            "text_size": "medium",
+            "margin_bottom": 0,
+            "margin_bottom_mobile": 0
           }
         }
       },
@@ -129,6 +140,13 @@
         "content_alignment": "center",
         "color_scheme": "scheme-3e8b1b9d-efbc-4c58-82da-f1e933938f88",
         "full_width": true,
+        "full_width_content": false,
+        "shadow_color": "#020202",
+        "shadow_opacity": 8,
+        "shadow_top_desktop": false,
+        "shadow_bottom_desktop": false,
+        "shadow_top_mobile": false,
+        "shadow_bottom_mobile": false,
         "padding_top": 40,
         "padding_bottom": 52
       }
@@ -151,14 +169,25 @@
           "type": "heading",
           "settings": {
             "heading": "{{ page.metafields.custom.h3_text_3.value }}",
+            "bg_heading": "",
             "heading_size": "h1",
-            "heading_tag": "h3"
+            "heading_size_mobile": "f_22",
+            "heading_tag": "h3",
+            "heading_uppercase": false,
+            "title_font_size": "f_15",
+            "title_font_family": "heading",
+            "margin_bottom": 0,
+            "margin_bottom_mobile": 0
           }
         },
         "text_8NQjVw": {
           "type": "text",
           "settings": {
-            "text": "{{ page.metafields.custom.p_text_3 | metafield_tag }}"
+            "text": "{{ page.metafields.custom.p_text_3 | metafield_tag }}",
+            "text_mobile": "",
+            "text_size": "medium",
+            "margin_bottom": 0,
+            "margin_bottom_mobile": 0
           }
         }
       },
@@ -172,6 +201,13 @@
         "content_alignment": "center",
         "color_scheme": "scheme-3e8b1b9d-efbc-4c58-82da-f1e933938f88",
         "full_width": true,
+        "full_width_content": false,
+        "shadow_color": "#020202",
+        "shadow_opacity": 8,
+        "shadow_top_desktop": false,
+        "shadow_bottom_desktop": false,
+        "shadow_top_mobile": false,
+        "shadow_bottom_mobile": false,
         "padding_top": 40,
         "padding_bottom": 52
       }
@@ -186,7 +222,8 @@
             "heading_tag": "h3",
             "text": "<p>{{ page.metafields.custom.p_text_5 | metafield_tag }}</p>",
             "link_label": "",
-            "link": ""
+            "link": "",
+            "color_scheme": ""
           }
         },
         "column_rCxMte": {
@@ -196,7 +233,8 @@
             "heading_tag": "h3",
             "text": "{{ page.metafields.custom.p_text_6 | metafield_tag }}",
             "link_label": "",
-            "link": ""
+            "link": "",
+            "color_scheme": ""
           }
         },
         "column_WVRVkf": {
@@ -206,7 +244,8 @@
             "heading_tag": "h3",
             "text": "{{ page.metafields.custom.p_text_7 | metafield_tag }}",
             "link_label": "",
-            "link": ""
+            "link": "",
+            "color_scheme": ""
           }
         }
       },
@@ -217,9 +256,12 @@
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
-        "title": "{{ page.metafields.custom.h2_text_4.value }}",
+        "title": "<p>{{ page.metafields.custom.h2_text_4.value }}</p>",
+        "margin_bottom": 0,
+        "margin_bottom_mobile": 0,
         "description": "<p>{{ page.metafields.custom.p_text_4 | metafield_tag }}</p>",
         "heading_size": "h1",
+        "heading_size_mobile": "f_22",
         "heading_tag": "h2",
         "image_width": "third",
         "image_ratio": "adapt",
@@ -231,6 +273,10 @@
         "color_scheme": "",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
+        "section_width": "full-width",
+        "column_gap": 0,
+        "row_gap": 0,
+        "horizontal_alignment": "center",
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -242,35 +288,70 @@
           "type": "review",
           "settings": {
             "customer_name": "Doodlin' Social Club",
-            "review_text": "Love Bobby Riggs! So much fun! So glad we have this facility near home!"
+            "review_title": "",
+            "review_text": "Love Bobby Riggs! So much fun! So glad we have this facility near home!",
+            "title_color": "",
+            "text_color": "",
+            "author_color": "",
+            "title_size": "f_18",
+            "text_size": "f_16",
+            "author_size": "f_16"
           }
         },
         "review_GANjHD": {
           "type": "review",
           "settings": {
             "customer_name": "Claire EcoArtist",
-            "review_text": "HUGE SELECTION of best PB Paddles !!! U will find what I want here."
+            "review_title": "",
+            "review_text": "HUGE SELECTION of best PB Paddles !!! U will find what I want here.",
+            "title_color": "",
+            "text_color": "",
+            "author_color": "",
+            "title_size": "f_18",
+            "text_size": "f_16",
+            "author_size": "f_16"
           }
         },
         "review_k8iwfr": {
           "type": "review",
           "settings": {
             "customer_name": "Miami Tennis Pro",
-            "review_text": "Get2Eleven has all the best Pickleball paddles and gear available to choose from. Tony and his team are super knowledgeable with the details you need to identify the best paddle for your game. The team is Very responsive and attentive to handle your needs and talk you through any questions you may have. I personally have been very impressed with this company and highly recommend them!"
+            "review_title": "",
+            "review_text": "Get2Eleven has all the best Pickleball paddles and gear available to choose from. Tony and his team are super knowledgeable with the details you need to identify the best paddle for your game. The team is Very responsive and attentive to handle your needs and talk you through any questions you may have. I personally have been very impressed with this company and highly recommend them!",
+            "title_color": "",
+            "text_color": "",
+            "author_color": "",
+            "title_size": "f_18",
+            "text_size": "f_16",
+            "author_size": "f_16"
           }
         },
         "review_EeYBnD": {
           "type": "review",
           "settings": {
             "customer_name": "Nalini R",
-            "review_text": "This place offers an outstanding experience for players of all levels! Their paddles are high-quality, well-balanced, and provide excellent control and power. Whether you’re a beginner or a seasoned player, their gear enhances gameplay and improves performance. The customer service is also top-notch, ensuring you get the right paddle for your playing style. The durability and design of their products make them a great investment for any pickleball enthusiast. Highly recommended!"
+            "review_title": "",
+            "review_text": "This place offers an outstanding experience for players of all levels! Their paddles are high-quality, well-balanced, and provide excellent control and power. Whether you’re a beginner or a seasoned player, their gear enhances gameplay and improves performance. The customer service is also top-notch, ensuring you get the right paddle for your playing style. The durability and design of their products make them a great investment for any pickleball enthusiast. Highly recommended!",
+            "title_color": "",
+            "text_color": "",
+            "author_color": "",
+            "title_size": "f_18",
+            "text_size": "f_16",
+            "author_size": "f_16"
           }
         },
         "review_mV3gzd": {
           "type": "review",
           "settings": {
             "customer_name": "Armando Garza",
-            "review_text": "Great selection at affordable prices…staff was very knowledgeable to guide me through my paddle upgrade!!! Thank you!!!!"
+            "review_title": "",
+            "review_text": "Great selection at affordable prices…staff was very knowledgeable to guide me through my paddle upgrade!!! Thank you!!!!",
+            "title_color": "",
+            "text_color": "",
+            "author_color": "",
+            "title_size": "f_18",
+            "text_size": "f_16",
+            "author_size": "f_16"
           }
         }
       },
@@ -284,11 +365,32 @@
       "name": "Review Carousel",
       "settings": {
         "title": "<strong>Reviews from Our Players</strong>",
+        "bg_heading": "",
+        "description": "",
+        "margin_bottom": 0,
+        "margin_bottom_mobile": 0,
+        "desc_margin_bottom": 0,
+        "desc_margin_bottom_mobile": 0,
         "heading_size": "h1",
+        "heading_size_mobile": "f_22",
+        "use_custom_stars": false,
+        "show_arrows_desktop": true,
+        "show_arrows_mobile": true,
+        "show_dots_desktop": true,
+        "show_dots_mobile": true,
+        "custom_dots_style": false,
+        "mobile_offset_mode": false,
+        "enable_custom_card_width": false,
+        "color_scheme": "",
         "card_background": "#ffffff",
         "text_color": "#000000",
         "star_color": "#ffd700",
         "button_color": "#000000",
+        "show_author_border": true,
+        "card_border_radius": 12,
+        "card_border_width": 0,
+        "card_border_color": "#000000",
+        "show_box_shadow": true,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -299,10 +401,14 @@
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
         "title": "<strong>Best-Selling Paddles</strong>",
+        "show_title_first": false,
         "bg_heading": "",
         "heading_size": "h1",
         "description": "",
+        "description_mobile": "",
         "show_description": false,
+        "description_uppercase": true,
+        "description_color": "#33a9fe",
         "description_style": "body",
         "collection": "100-200",
         "products_to_show": 3,
@@ -310,6 +416,8 @@
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "solid",
+        "button_label": "",
+        "button_margin_top": 10,
         "enable_desktop_slider": false,
         "color_scheme": "",
         "image_ratio": "adapt",
@@ -320,6 +428,10 @@
         "enable_quick_add": false,
         "columns_mobile": "2",
         "swipe_on_mobile": false,
+        "column_gap": 0,
+        "row_gap": 0,
+        "column_gap_mobile": 0,
+        "row_gap_mobile": 0,
         "padding_top": 36,
         "padding_bottom": 88
       }

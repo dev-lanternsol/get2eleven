@@ -1,3 +1,7 @@
+/* ============================================================
+   ORIGINAL CODE — unchanged from first commit
+   ============================================================ */
+
 .review-carousel-section {
   overflow: hidden;
 }
@@ -8,68 +12,15 @@
   padding: 0 5rem;
 }
 
-@media screen and (min-width: 750px) {
-  .review-carousel--hide-arrows-desktop .review-carousel-wrapper {
-    padding: 0;
-  }
-  .review-carousel--hide-arrows-desktop .review-carousel-button,
-  .review-carousel--hide-dots-desktop .review-carousel-dots {
-    display: none !important;
-  }
-}
-
-@media screen and (max-width: 749px) {
-  .review-carousel--hide-arrows-mobile .review-carousel-wrapper {
-    padding: 0;
-  }
-  .review-carousel--hide-arrows-mobile .review-carousel-button {
-    display: none !important;
-  }
-  .review-carousel--hide-dots-mobile .review-carousel-dots {
-    display: none !important;
-  }
-}
-
-@media screen and (min-width: 750px) {
-  .review-carousel--not-sliding .review-carousel-wrapper {
-    padding: 0;
-  }
-
-  .review-carousel--not-sliding .review-carousel-track {
-    justify-content: center;
-  }
-}
-
-.review-carousel-section--has-description .section_header {
-  margin-bottom: 0 !important;
-}
-
-.review-carousel-section--has-description .review-carousel-wrapper {
-  margin-top: 2.5rem;
-}
-
-.review-author--no-border {
-  border-top: none !important;
-  padding-top: 0 !important;
-}
-
 .review-carousel-overflow-wrapper {
   overflow: hidden;
-  padding-block: 1rem;
-}
-
-@media screen and (min-width: 750px) {
-  .review-carousel-overflow-wrapper {
-    max-width: calc(
-      341px * 3 + 6.4rem
-    ); /* 3 items of 341px + 2 gaps of 3.2rem */
-    margin: 0 auto;
-  }
+  padding: 1rem 1rem 2rem 1rem;
 }
 
 .review-carousel-container {
   position: relative;
   overflow: visible;
+  cursor: grab;
   user-select: none;
   margin: 0 -1rem;
   padding: 0 1rem;
@@ -81,20 +32,13 @@
 
 .review-carousel-track {
   display: flex;
-  gap: 2.4rem;
+  gap: 2rem;
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-@media screen and (min-width: 750px) {
-  .review-carousel-track {
-    gap: 3.2rem;
-  }
-}
-
 .review-card {
-  flex: 0 0 calc((100% - 4.8rem) / 3);
-  min-width: calc((100% - 4.8rem) / 3);
-  max-width: 341px;
+  flex: 0 0 calc((100% - 4rem) / 3);
+  min-width: calc((100% - 4rem) / 3);
   background-color: rgb(var(--color-background));
   border-radius: 12px;
   padding: 3rem 2.5rem 3.5rem 2.5rem;
@@ -104,21 +48,9 @@
     box-shadow 0.3s ease;
 }
 
-@media screen and (min-width: 750px) {
-  .review-card {
-    flex: 0 0 341px;
-    min-width: 341px;
-  }
-}
-
 .review-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-}
-
-.review-carousel--no-shadow .review-card,
-.review-carousel--no-shadow .review-card:hover {
-  box-shadow: none !important;
 }
 
 .review-card-content {
@@ -331,6 +263,70 @@
   }
 }
 
+/* ============================================================
+   FEATURE ADDITIONS — scoped to modifier classes
+   ============================================================ */
+
+/* --- Hide arrows / dots on desktop --- */
+@media screen and (min-width: 750px) {
+  .review-carousel--hide-arrows-desktop .review-carousel-wrapper {
+    padding: 0;
+  }
+  .review-carousel--hide-arrows-desktop .review-carousel-button,
+  .review-carousel--hide-dots-desktop .review-carousel-dots {
+    display: none !important;
+  }
+}
+
+/* --- Hide arrows / dots on mobile --- */
+@media screen and (max-width: 749px) {
+  .review-carousel--hide-arrows-mobile .review-carousel-wrapper {
+    padding: 0;
+  }
+  .review-carousel--hide-arrows-mobile .review-carousel-button {
+    display: none !important;
+  }
+  .review-carousel--hide-dots-mobile .review-carousel-dots {
+    display: none !important;
+  }
+}
+
+/* --- Not sliding (≤ 3 items) — center cards on desktop --- */
+@media screen and (min-width: 750px) {
+  .review-carousel--not-sliding .review-carousel-wrapper {
+    padding: 0;
+  }
+
+  .review-carousel--not-sliding .review-carousel-track {
+    justify-content: center;
+  }
+}
+
+/* --- Section has description spacing --- */
+.review-carousel-section--has-description .section_header {
+  margin-bottom: 0 !important;
+}
+
+.review-carousel-section--has-description .review-carousel-wrapper {
+  margin-top: 2.5rem;
+}
+
+/* --- Author border toggle --- */
+.review-author--no-border {
+  border-top: none !important;
+  padding-top: 0 !important;
+}
+
+/* --- No box shadow --- */
+.review-carousel--no-shadow .review-card,
+.review-carousel--no-shadow .review-card:hover {
+  box-shadow: none !important;
+}
+
+/* --- Custom button hover color (set via inline style in liquid) --- */
+/* Handled via inline CSS in the section */
+
+/* --- Background heading --- */
 .review-carousel__bg-heading {
   font-size: 4rem !important; /* 40px */
   font-family: Arial, Helvetica, sans-serif !important;
@@ -340,12 +336,91 @@
     font-size: 9rem !important; /* 90px */
   }
 }
+
 .review-carousel__description {
   margin: 0;
 }
 
+/* --- Review card title --- */
 .review-card-title {
   font-weight: 600;
   margin: 0;
   font-family: "Plus Jakarta Sans" !important;
+}
+
+/* --- Custom dots style (checkbox: Use custom dots style) --- */
+.review-carousel-dots--custom {
+  gap: 8px !important;
+}
+
+.review-carousel-dots--custom .review-carousel-dot {
+  background-color: #e5e7eb !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+}
+
+.review-carousel-dots--custom .review-carousel-dot.active {
+  background-color: #33a9fe !important;
+  width: 10px !important;
+}
+
+/* --- Custom card width layout (checkbox: Enable custom card width) ---
+   Overrides fluid card widths to fixed 341px per card on desktop,
+   and constrains the overflow wrapper to exactly 3 cards wide.
+   Only applied when .review-carousel--custom-card-width class is present.
+*/
+@media screen and (min-width: 750px) {
+  .review-carousel--custom-card-width .review-carousel-overflow-wrapper {
+    max-width: calc(341px * 3 + 6.4rem); /* 3 × 341px + 2 gaps of 3.2rem */
+    margin: 0 auto;
+  }
+
+  .review-carousel--custom-card-width .review-carousel-track {
+    gap: 3.2rem;
+  }
+
+  .review-carousel--custom-card-width .review-card {
+    flex: 0 0 341px;
+    min-width: 341px;
+    max-width: 341px;
+  }
+}
+
+/* --- Mobile offset mode (checkbox: Enable mobile offset mode) ---
+   Makes the slider full-width on mobile and shows a peek of the
+   next card on the right. Gap between items is 8px.
+   Only applied when .review-carousel--offset-mobile class is present.
+*/
+@media screen and (max-width: 749px) {
+  .review-carousel--offset-mobile .page-width {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .review-carousel--offset-mobile .review-carousel-wrapper {
+    padding: 0 !important;
+    margin: 2rem 0 !important;
+  }
+
+  .review-carousel--offset-mobile .review-carousel-overflow-wrapper {
+    overflow: visible !important;
+  }
+
+  .review-carousel--offset-mobile .review-carousel-container {
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .review-carousel--offset-mobile .review-carousel-track {
+    gap: 8px !important;
+    padding-left: 2rem !important;
+  }
+
+  .review-carousel--offset-mobile .review-card {
+    flex: 0 0 calc(100vw - 6rem) !important;
+    min-width: calc(100vw - 6rem) !important;
+    margin: 0 !important;
+  }
 }

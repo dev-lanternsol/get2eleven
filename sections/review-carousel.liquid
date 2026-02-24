@@ -32,6 +32,32 @@
     }
   {% endif %}
 
+  .review-carousel-section-{{ section.id }} .title-wrapper--center .title {
+    margin-bottom: {{ section.settings.margin_bottom_mobile }}px !important;
+  }
+  {% if section.settings.heading_size_mobile contains 'f_' %}
+    .review-carousel-section-{{ section.id }} .title-wrapper--center .title {
+      font-size: {{ section.settings.heading_size_mobile | replace: 'f_', '' | append: 'px' }} !important;
+    }
+  {% endif %}
+  .review-carousel-section-{{ section.id }} .title-wrapper--center .review-carousel__description {
+    margin-bottom: {{ section.settings.desc_margin_bottom_mobile }}px !important;
+  }
+
+  @media screen and (min-width: 750px) {
+    .review-carousel-section-{{ section.id }} .title-wrapper--center .title {
+      margin-bottom: {{ section.settings.margin_bottom }}px !important;
+    }
+    {% if section.settings.heading_size contains 'f_' %}
+      .review-carousel-section-{{ section.id }} .title-wrapper--center .title {
+        font-size: {{ section.settings.heading_size | replace: 'f_', '' | append: 'px' }} !important;
+      }
+    {% endif %}
+    .review-carousel-section-{{ section.id }} .title-wrapper--center .review-carousel__description {
+      margin-bottom: {{ section.settings.desc_margin_bottom }}px !important;
+    }
+  }
+
   {% for block in section.blocks %}
     {% if block.settings.title_color != blank %}
       .review-card-{{ block.id }} .review-card-title { color: {{ block.settings.title_color }}; }
@@ -45,7 +71,7 @@
   {% endfor %}
 </style>
 
-<div class="review-carousel-section review-carousel-section-{{ section.id }} color-{{ section.settings.color_scheme }} gradient {% if section.settings.description != blank %}review-carousel-section--has-description{% endif %} {% unless section.settings.show_box_shadow %}review-carousel--no-shadow{% endunless %} {% if section.blocks.size <= 3 %}review-carousel--not-sliding{% endif %} {% unless section.settings.show_arrows_desktop %}review-carousel--hide-arrows-desktop{% endunless %} {% unless section.settings.show_arrows_mobile %}review-carousel--hide-arrows-mobile{% endunless %} {% unless section.settings.show_dots_desktop %}review-carousel--hide-dots-desktop{% endunless %} {% unless section.settings.show_dots_mobile %}review-carousel--hide-dots-mobile{% endunless %}">
+<div class="review-carousel-section review-carousel-section-{{ section.id }} color-{{ section.settings.color_scheme }} gradient {% if section.settings.description != blank %}review-carousel-section--has-description{% endif %} {% unless section.settings.show_box_shadow %}review-carousel--no-shadow{% endunless %} {% if section.blocks.size <= 3 %}review-carousel--not-sliding{% endif %} {% unless section.settings.show_arrows_desktop %}review-carousel--hide-arrows-desktop{% endunless %} {% unless section.settings.show_arrows_mobile %}review-carousel--hide-arrows-mobile{% endunless %} {% unless section.settings.show_dots_desktop %}review-carousel--hide-dots-desktop{% endunless %} {% unless section.settings.show_dots_mobile %}review-carousel--hide-dots-mobile{% endunless %} {% if section.settings.mobile_offset_mode %}review-carousel--offset-mobile{% endif %} {% if section.settings.enable_custom_card_width %}review-carousel--custom-card-width{% endif %}">
   <div class="page-width">
     {% if section.settings.title != blank
       or section.settings.bg_heading != blank
@@ -141,7 +167,9 @@
     </div>
 
     {% if section.blocks.size > 1 %}
-      <div class="review-carousel-dots"></div>
+      <div
+        class="review-carousel-dots{% if section.settings.custom_dots_style %} review-carousel-dots--custom{% endif %}"
+      ></div>
     {% endif %}
   </div>
 </div>
@@ -368,24 +396,100 @@
       "label": "Description"
     },
     {
+      "type": "header",
+      "content": "Margin Bottom"
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading Margin Bottom (Desktop)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading Margin Bottom (Mobile)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "desc_margin_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Description Margin Bottom (Desktop)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "desc_margin_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Description Margin Bottom (Mobile)",
+      "default": 0
+    },
+    {
       "type": "select",
       "id": "heading_size",
-      "label": "Heading size",
       "options": [
         {
+          "value": "f_28",
+          "label": "Headline Large"
+        },
+        {
           "value": "h2",
-          "label": "Small"
+          "label": "t:sections.all.heading_size.options__1.label"
         },
         {
           "value": "h1",
-          "label": "Medium"
+          "label": "t:sections.all.heading_size.options__2.label"
         },
         {
           "value": "h0",
-          "label": "Large"
+          "label": "t:sections.all.heading_size.options__3.label"
         }
       ],
-      "default": "h1"
+      "default": "h1",
+      "label": "Heading size (Desktop)"
+    },
+    {
+      "type": "select",
+      "id": "heading_size_mobile",
+      "options": [
+        {
+          "value": "f_14",
+          "label": "Extra Compact Mobile"
+        },
+        {
+          "value": "f_18",
+          "label": "Compact Mobile"
+        },
+        {
+          "value": "f_22",
+          "label": "Standard Mobile"
+        },
+        {
+          "value": "f_28",
+          "label": "Headline Large Mobile"
+        },
+        {
+          "value": "h2",
+          "label": "Heading H2 Mobile"
+        }
+      ],
+      "default": "f_22",
+      "label": "Heading size (Mobile)"
     },
     {
       "type": "checkbox",
@@ -416,6 +520,28 @@
       "id": "show_dots_mobile",
       "label": "Show dots on mobile",
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "custom_dots_style",
+      "label": "Use custom dots style",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_offset_mode",
+      "label": "Enable mobile offset mode",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Custom Layout"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_custom_card_width",
+      "label": "Enable custom card width",
+      "default": false
     },
     {
       "type": "color_scheme",

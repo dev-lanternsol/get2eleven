@@ -26,23 +26,34 @@
             "subheading": "<strong>Trying to decide which pickleball paddle fits your game?</strong>",
             "subheading_uppercase": true,
             "subheading_tag": "p",
-            "subheading_size": "f_14"
+            "subheading_size_desktop": "f_14",
+            "subheading_size_mobile": "f_12",
+            "margin_bottom": 12,
+            "margin_bottom_mobile": 12
           }
         },
         "heading_fTU3WU": {
           "type": "heading",
           "settings": {
-            "heading": "Pickleball Paddles and Gear</br>in the Greater San Diego Area",
+            "heading": "<p>Pickleball Paddles and Gear<br/>in the Greater San Diego Area</p>",
+            "heading_mobile": "<p>Pickleball Paddles and Gear in the Greater San Diego Area</p>",
             "heading_size": "h2",
             "heading_font_size": "f_36",
-            "heading_uppercase": false
+            "heading_font_size_mobile": "f_24",
+            "heading_uppercase": false,
+            "margin_bottom": 15,
+            "margin_bottom_mobile": 10
           }
         },
         "text_bqj9xC": {
           "type": "text",
           "settings": {
             "text": "<p>At <strong>Get2Eleven</strong>, we carry top pickleball paddles from <strong>Selkirk, JOOLA, Gearbox, Ronbus, Paddletek, and more</strong>, so players across San Diego County can find the right paddle for their skill level and playing style. We serve the Greater San Diego Area with <strong>nationwide shipping (free over $69)</strong> plus <strong>in-store pickup</strong> for local players who want paddles, balls, and gear built for control, spin, and power.</p>",
-            "text_style": "body"
+            "text_style": "body",
+            "font_size_desktop": "f_16",
+            "font_size_mobile": "f_14",
+            "margin_bottom": 0,
+            "margin_bottom_mobile": 0
           }
         },
         "buttons_kYVrmF": {
@@ -53,7 +64,10 @@
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
-            "button_style_secondary_2": false
+            "button_style_secondary_2": false,
+            "button_full_width_mobile": true,
+            "margin_bottom": 0,
+            "margin_bottom_mobile": 0
           }
         }
       },
@@ -76,8 +90,79 @@
         "section_width": "full-width",
         "image_behavior": "none",
         "mobile_content_alignment": "left",
+        "box_max_width": 730,
         "stack_images_on_mobile": false,
         "show_text_below": false
+      }
+    },
+    "quick_links_FQ7zVU": {
+      "type": "quick-links",
+      "blocks": {
+        "link_AxMiLK": {
+          "type": "link",
+          "settings": {
+            "label": "Leucadia",
+            "url": "shopify://pages/pickleball-paddles-leucadia-ca"
+          }
+        },
+        "link_pfVFV9": {
+          "type": "link",
+          "settings": {
+            "label": "Encinitas",
+            "url": "shopify://pages/pickleball-paddles-encinitas-ca"
+          }
+        },
+        "link_L3fkWj": {
+          "type": "link",
+          "settings": {
+            "label": "Cardiff-by-the-Sea",
+            "url": "shopify://pages/pickleball-paddles-cardiff-by-the-sea"
+          }
+        },
+        "link_KtFkq9": {
+          "type": "link",
+          "settings": {
+            "label": "Solana Beach",
+            "url": "shopify://pages/pickleball-paddles-solana-beach-ca"
+          }
+        },
+        "link_yNcqGj": {
+          "type": "link",
+          "settings": {
+            "label": "Olivenhain",
+            "url": "shopify://pages/pickleball-paddles-olivenhain-ca"
+          }
+        },
+        "link_bnrpTE": {
+          "type": "link",
+          "settings": {
+            "label": "Rancho Santa Fe",
+            "url": "shopify://pages/pickleball-paddles-rancho-santa-fe"
+          }
+        }
+      },
+      "block_order": [
+        "link_AxMiLK",
+        "link_pfVFV9",
+        "link_L3fkWj",
+        "link_KtFkq9",
+        "link_yNcqGj",
+        "link_bnrpTE"
+      ],
+      "name": "Quick Links",
+      "settings": {
+        "title": "<h2>Areas we serve in California (quick links):</h2>",
+        "title_mobile": "<h2>Areas we serve in California<br/>(quick links):</h2>",
+        "link_label": "See All Local Pages",
+        "link_url": "#",
+        "section_width": "boxed",
+        "gap_desktop": 10,
+        "gap_mobile": 6,
+        "padding_top_desktop": 36,
+        "padding_bottom_desktop": 24,
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 20,
+        "color_scheme": "scheme-a8e976bf-4118-4867-83fa-3bad9f1892b6"
       }
     },
     "image_with_text_UkCYUU": {
@@ -130,10 +215,13 @@
             "heading": "Top Pickleball Paddle Brands We Carry",
             "bg_heading": "",
             "heading_size": "f_14",
+            "heading_size_mobile": "f_14",
             "heading_tag": "h2",
             "heading_uppercase": true,
             "title_font_size": "f_15",
-            "title_font_family": "heading"
+            "title_font_family": "heading",
+            "margin_bottom": 2,
+            "margin_bottom_mobile": 2
           }
         },
         "text_JryGW9": {
@@ -141,7 +229,9 @@
           "settings": {
             "text": "<p>Get2Eleven carries trusted <a href=\"/pages/brands\" title=\"brands\">paddle brands</a> used by everyday players and pro-level competitors.</p>",
             "text_mobile": "",
-            "text_size": "f_14"
+            "text_size": "f_14",
+            "margin_bottom": 0,
+            "margin_bottom_mobile": 0
           }
         }
       },
@@ -156,6 +246,7 @@
         "color_scheme": "scheme-1c404e86-08ac-4782-bd5c-9a4c16085fbe",
         "full_width": true,
         "full_width_content": false,
+        "disable_wrapper_padding_mobile": false,
         "shadow_color": "#020202",
         "shadow_opacity": 8,
         "shadow_top_desktop": true,
@@ -245,7 +336,9 @@
         "shadow_top_mobile": false,
         "shadow_bottom_mobile": true,
         "padding_top": 50,
-        "padding_bottom": 30
+        "padding_bottom": 30,
+        "padding_top_mobile": 15,
+        "padding_bottom_mobile": 15
       }
     },
     "rich_text_zefEiE": {
@@ -256,11 +349,14 @@
           "settings": {
             "heading": "Shop Pickleball Paddles and Gear Near San Diego",
             "bg_heading": "SHOP IN PERSON",
-            "heading_size": "h2",
+            "heading_size": "f_28",
+            "heading_size_mobile": "f_18",
             "heading_tag": "h2",
             "heading_uppercase": true,
-            "title_font_size": "f_15",
-            "title_font_family": "heading"
+            "title_font_size": "f_18",
+            "title_font_family": "heading",
+            "margin_bottom": 0,
+            "margin_bottom_mobile": 0
           }
         },
         "text_MmGdUc": {
@@ -268,7 +364,9 @@
           "settings": {
             "text": "<p>Get2Eleven offers the <a href=\"/collections/paddles\" title=\"Pickleball Paddles\">best pickleball paddles</a> for San Diego County and the Greater San Diego Area, along with<br/>shoes, balls, bags, grips, and court-ready accessories.</p>",
             "text_mobile": "<p>Get2Eleven offers the <a href=\"/collections/paddles\" title=\"Pickleball Paddles\">best pickleball paddles</a> for San Diego County and the Greater San Diego Area, along with shoes, balls, bags, grips, and court-ready accessories.</p>",
-            "text_size": "medium"
+            "text_size": "medium",
+            "margin_bottom": 25,
+            "margin_bottom_mobile": 25
           }
         }
       },
@@ -283,14 +381,15 @@
         "color_scheme": "scheme-392a3b94-919d-4d6f-ba3a-c760b278a857",
         "full_width": true,
         "full_width_content": true,
+        "disable_wrapper_padding_mobile": true,
         "shadow_color": "#020202",
         "shadow_opacity": 8,
         "shadow_top_desktop": false,
         "shadow_bottom_desktop": false,
         "shadow_top_mobile": false,
         "shadow_bottom_mobile": false,
-        "padding_top": 100,
-        "padding_bottom": 52
+        "padding_top": 60,
+        "padding_bottom": 0
       }
     },
     "image_banner_cRbgrE": {
@@ -300,7 +399,11 @@
           "type": "text",
           "settings": {
             "text": "<p>Whether you’re buying your first pickleball paddle or upgrading to a pro-level option, you’ll find paddles built for control, spin, and power. Each paddle is chosen to feel comfortable in your hand and dependable during longer matches.<br/><br/>If you want a simple setup for casual play or group use, <a href=\"#\" title=\"#\">paddle sets and bundles</a> make it easy to get started without overthinking every detail. You can add overgrips, edge tape, and other upgrades through our <a href=\"#\" title=\"#\">pickleball accessories</a> collection so your setup fits your playing style.</p>",
-            "text_style": "body"
+            "text_style": "body",
+            "font_size_desktop": "f_16",
+            "font_size_mobile": "f_16",
+            "margin_bottom": 0,
+            "margin_bottom_mobile": 0
           }
         }
       },
@@ -320,6 +423,7 @@
         "section_width": "full-width",
         "image_behavior": "none",
         "mobile_content_alignment": "center",
+        "box_max_width": 530,
         "stack_images_on_mobile": false,
         "show_text_below": false
       }
@@ -332,7 +436,11 @@
           "settings": {
             "caption": "PREFER SHOPPING IN PERSON?",
             "text_style": "caption-with-letter-spacing",
-            "text_size": "large"
+            "text_size": "large",
+            "caption_color": "#33a9fe",
+            "caption_bold": true,
+            "margin_bottom": 5,
+            "margin_bottom_mobile": 5
           }
         },
         "heading_j46hxG": {
@@ -340,11 +448,14 @@
           "settings": {
             "heading": "Visit Us at Bobby Riggs in Encinitas!",
             "bg_heading": "",
-            "heading_size": "h2",
+            "heading_size": "f_28",
+            "heading_size_mobile": "f_18",
             "heading_tag": "h2",
             "heading_uppercase": true,
-            "title_font_size": "f_15",
-            "title_font_family": "heading"
+            "title_font_size": "f_18",
+            "title_font_family": "heading",
+            "margin_bottom": 8,
+            "margin_bottom_mobile": 8
           }
         },
         "text_4V8HKy": {
@@ -352,7 +463,9 @@
           "settings": {
             "text": "<p>Visit Get2Eleven at Bobby Riggs in Encinitas at <strong>875 Santa Fe Dr, Encinitas, CA 92024</strong>. This is our one physical<br/>pro shop location serving the Greater San Diego pickleball community, so you can compare paddles side by<br/>side and check grip size, paddle weight, swing feel, and surface texture before choosing what you’ll take to the<br/>court. Our staff is happy to assist and help you narrow down the best option for your playing style.</p>",
             "text_mobile": "<p>Visit Get2Eleven at Bobby Riggs in Encinitas at 875 Santa Fe Dr, Encinitas, CA 92024. This is our one physical pro shop location serving the Greater San Diego pickleball community, so you can compare paddles side by side and check grip size, paddle weight, swing feel, and surface texture before choosing what you’ll take to the court. Our staff is happy to assist and help you narrow down the best option for your playing style.</p>",
-            "text_size": "medium"
+            "text_size": "medium",
+            "margin_bottom": 0,
+            "margin_bottom_mobile": 0
           }
         }
       },
@@ -368,6 +481,7 @@
         "color_scheme": "scheme-392a3b94-919d-4d6f-ba3a-c760b278a857",
         "full_width": true,
         "full_width_content": true,
+        "disable_wrapper_padding_mobile": true,
         "shadow_color": "#020202",
         "shadow_opacity": 8,
         "shadow_top_desktop": false,
@@ -431,10 +545,10 @@
             "padding_right_desktop": 55,
             "padding_bottom_desktop": 25,
             "padding_left_desktop": 55,
-            "padding_top_mobile": 15,
-            "padding_right_mobile": 15,
-            "padding_bottom_mobile": 15,
-            "padding_left_mobile": 15,
+            "padding_top_mobile": 25,
+            "padding_right_mobile": 25,
+            "padding_bottom_mobile": 25,
+            "padding_left_mobile": 25,
             "item_1_icon": "shopify://shop_images/Group_2.svg",
             "item_1_title": "<p><strong>Address</strong></p>",
             "item_1_description": "<p>875 Santa Fe Dr, Encinitas, CA 92024</p>",
@@ -469,10 +583,10 @@
             "padding_right_desktop": 65,
             "padding_bottom_desktop": 50,
             "padding_left_desktop": 65,
-            "padding_top_mobile": 15,
-            "padding_right_mobile": 15,
-            "padding_bottom_mobile": 15,
-            "padding_left_mobile": 15,
+            "padding_top_mobile": 50,
+            "padding_right_mobile": 25,
+            "padding_bottom_mobile": 50,
+            "padding_left_mobile": 25,
             "item_1_icon": "shopify://shop_images/Group_97.svg",
             "item_1_title": "<p><strong>ORDER ONLINE ANYTIME</strong></p>",
             "item_1_description": "<p>Ship to your door with free shipping on orders over $69.</p>",
@@ -498,8 +612,8 @@
       "name": "Location",
       "settings": {
         "title": "",
-        "heading_size_desktop": "f_32",
-        "heading_size_mobile": "f_24",
+        "heading_size_desktop": "f_18",
+        "heading_size_mobile": "f_18",
         "description": "",
         "description_size_desktop": "f_16",
         "description_size_mobile": "f_14",
@@ -592,9 +706,12 @@
       ],
       "name": "t:sections.multicolumn.presets.name",
       "settings": {
-        "title": "WHY LOCAL PLAYERS CHOOSE GET2ELEVEN",
+        "title": "<p>WHY LOCAL PLAYERS<br/>CHOOSE GET2ELEVEN</p>",
+        "margin_bottom": 0,
+        "margin_bottom_mobile": 0,
         "description": "",
-        "heading_size": "h2",
+        "heading_size": "f_28",
+        "heading_size_mobile": "f_18",
         "heading_tag": "h2",
         "image_width": "half",
         "image_ratio": "icon",
@@ -610,8 +727,8 @@
         "column_gap": 16,
         "row_gap": 16,
         "horizontal_alignment": "flex-start",
-        "padding_top": 100,
-        "padding_bottom": 100
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
     "review_carousel_9n7GFY": {
@@ -670,12 +787,20 @@
         "title": "WHAT OUR PLAYERS SAY",
         "bg_heading": "Reviews",
         "description": "<p>Real feedback from players who shop Get2Eleven for quality gear and reliable service.</p>",
-        "heading_size": "h2",
+        "margin_bottom": 0,
+        "margin_bottom_mobile": 0,
+        "desc_margin_bottom": 0,
+        "desc_margin_bottom_mobile": 0,
+        "heading_size": "f_28",
+        "heading_size_mobile": "f_18",
         "use_custom_stars": true,
         "show_arrows_desktop": false,
         "show_arrows_mobile": false,
         "show_dots_desktop": false,
         "show_dots_mobile": true,
+        "custom_dots_style": true,
+        "mobile_offset_mode": true,
+        "enable_custom_card_width": true,
         "color_scheme": "scheme-392a3b94-919d-4d6f-ba3a-c760b278a857",
         "card_background": "#f9fafb",
         "text_color": "#020202",
@@ -692,6 +817,9 @@
     },
     "featured_collection_ViU9DT": {
       "type": "featured-collection",
+      "custom_css": [
+        ".collection__title.title-wrapper {margin-bottom: 2.5rem;}"
+      ],
       "name": "t:sections.featured-collection.presets.name",
       "settings": {
         "title": "Best-Selling Paddles",
@@ -712,6 +840,7 @@
         "view_all_style": "solid",
         "button_label": "VIEW ALL PADDLES",
         "button_margin_top": 25,
+        "button_full_width_mobile": true,
         "enable_desktop_slider": false,
         "color_scheme": "scheme-83b6fd50-9312-4c73-8c98-fe060c403093",
         "image_ratio": "adapt",
@@ -728,6 +857,216 @@
         "row_gap_mobile": 30,
         "padding_top": 0,
         "padding_bottom": 36
+      }
+    },
+    "rich_text_XMAkzi": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_hRXgTt": {
+          "type": "heading",
+          "settings": {
+            "heading": "Explore Our Local Pages",
+            "bg_heading": "Areas We Serve",
+            "heading_size": "f_28",
+            "heading_size_mobile": "f_18",
+            "heading_tag": "h2",
+            "heading_uppercase": true,
+            "title_font_size": "f_18",
+            "title_font_family": "heading",
+            "margin_bottom": 0,
+            "margin_bottom_mobile": 0
+          }
+        },
+        "text_H4gQzW": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Get paddles designed for control, power, and spin, along with bags and accessories for match-ready setups.<br/>Order online for delivery or select pickup for convenience.</p>",
+            "text_mobile": "<p>Get paddles designed for control, power, and spin, along with bags and accessories for match-ready setups. Order online for delivery or select pickup for convenience.</p>",
+            "text_size": "medium",
+            "margin_bottom": 25,
+            "margin_bottom_mobile": 25
+          }
+        }
+      },
+      "block_order": [
+        "heading_hRXgTt",
+        "text_H4gQzW"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-392a3b94-919d-4d6f-ba3a-c760b278a857",
+        "full_width": true,
+        "full_width_content": true,
+        "disable_wrapper_padding_mobile": true,
+        "shadow_color": "#020202",
+        "shadow_opacity": 8,
+        "shadow_top_desktop": false,
+        "shadow_bottom_desktop": false,
+        "shadow_top_mobile": false,
+        "shadow_bottom_mobile": false,
+        "padding_top": 72,
+        "padding_bottom": 0
+      }
+    },
+    "local_pages_VzLGEH": {
+      "type": "local-pages",
+      "blocks": {
+        "item_nCU7np": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Group_2.svg",
+            "icon_bg_color": "#ffffff",
+            "icon_padding": 8,
+            "icon_radius": 5,
+            "title": "Leucadia, CA",
+            "item_1": "<p>Get paddles designed for control, power, and spin.</p>",
+            "item_2": "<p>Free shipping on orders over $69 or pickup in Encinitas.</p>",
+            "item_3": "",
+            "item_4": "",
+            "item_5": "",
+            "item_6": "",
+            "button_label": "VIEW LEUCADIA PAGE",
+            "button_link": "shopify://collections/size-10",
+            "padding_top": 30,
+            "padding_bottom": 28,
+            "padding_left": 24,
+            "padding_right": 24
+          }
+        },
+        "item_jnffcR": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Group_2.svg",
+            "icon_bg_color": "#ffffff",
+            "icon_padding": 8,
+            "icon_radius": 5,
+            "title": "ENCINITAS, CA",
+            "item_1": "<p>Test paddles in-person at Bobby Riggs (875 Santa Fe Dr).</p>",
+            "item_2": "<p>Expert fitting help for grip size, paddle weight, and feel.</p>",
+            "item_3": "",
+            "item_4": "",
+            "item_5": "",
+            "item_6": "",
+            "button_label": "VIEW ENCINITAS PAGE",
+            "button_link": "shopify://collections/size-10",
+            "padding_top": 30,
+            "padding_bottom": 28,
+            "padding_left": 24,
+            "padding_right": 24
+          }
+        },
+        "item_xLap7H": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Group_2.svg",
+            "icon_bg_color": "#ffffff",
+            "icon_padding": 8,
+            "icon_radius": 5,
+            "title": "Cardiff-by-the-Sea, CA",
+            "item_1": "<p>Shop top brands including Selkirk, JOOLA, and Gearbox.</p>",
+            "item_2": "<p>Order online and select in-store pickup for convenience.</p>",
+            "item_3": "",
+            "item_4": "",
+            "item_5": "",
+            "item_6": "",
+            "button_label": "VIEW CARDIFF-BY-THE-SEA PAGE",
+            "button_link": "shopify://collections/size-10",
+            "padding_top": 30,
+            "padding_bottom": 28,
+            "padding_left": 24,
+            "padding_right": 24
+          }
+        },
+        "item_Ax3kxh": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Group_2.svg",
+            "icon_bg_color": "#ffffff",
+            "icon_padding": 8,
+            "icon_radius": 5,
+            "title": "SOLANA BEACH, CA",
+            "item_1": "<p>Full selection of paddles, balls, bags, and accessories.</p>",
+            "item_2": "<p>Nationwide shipping plus local pickup option.</p>",
+            "item_3": "",
+            "item_4": "",
+            "item_5": "",
+            "item_6": "",
+            "button_label": "VIEW SOLANA BEACH PAGE",
+            "button_link": "shopify://collections/size-10",
+            "padding_top": 30,
+            "padding_bottom": 28,
+            "padding_left": 24,
+            "padding_right": 24
+          }
+        },
+        "item_4XfDwJ": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Group_2.svg",
+            "icon_bg_color": "#ffffff",
+            "icon_padding": 8,
+            "icon_radius": 5,
+            "title": "OLIVENHAIN, CA",
+            "item_1": "<p>Paddles for every skill level and playing style.</p>",
+            "item_2": "<p>Fast delivery or same-day pickup at our Encinitas location.</p>",
+            "item_3": "",
+            "item_4": "",
+            "item_5": "",
+            "item_6": "",
+            "button_label": "VIEW OLIVENHAIN PAGE",
+            "button_link": "shopify://collections/size-10",
+            "padding_top": 30,
+            "padding_bottom": 28,
+            "padding_left": 24,
+            "padding_right": 24
+          }
+        },
+        "item_CfBpMK": {
+          "type": "item",
+          "settings": {
+            "icon": "shopify://shop_images/Group_2.svg",
+            "icon_bg_color": "#ffffff",
+            "icon_padding": 8,
+            "icon_radius": 5,
+            "title": "RANCHO SANTA FE, CA",
+            "item_1": "<p>Pro-level paddles and complete gear setups.</p>",
+            "item_2": "<p>Get help choosing the right paddle for your game.</p>",
+            "item_3": "",
+            "item_4": "",
+            "item_5": "",
+            "item_6": "",
+            "button_label": "VIEW RANCHO SANTA FE PAGE",
+            "button_link": "shopify://collections/size-10",
+            "padding_top": 30,
+            "padding_bottom": 28,
+            "padding_left": 24,
+            "padding_right": 24
+          }
+        }
+      },
+      "block_order": [
+        "item_nCU7np",
+        "item_jnffcR",
+        "item_xLap7H",
+        "item_Ax3kxh",
+        "item_4XfDwJ",
+        "item_CfBpMK"
+      ],
+      "name": "Local Pages",
+      "settings": {
+        "section_width": "boxed",
+        "columns_desktop": 3,
+        "column_gap_desktop": 20,
+        "row_gap_desktop": 16,
+        "content_gap_desktop": 15,
+        "column_gap_mobile": 20,
+        "row_gap_mobile": 20,
+        "content_gap_mobile": 20,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "color_scheme": "scheme-392a3b94-919d-4d6f-ba3a-c760b278a857"
       }
     },
     "collapsible_content_hhmzfw": {
@@ -800,7 +1139,10 @@
         "caption": "",
         "heading": "SAN DIEGO PICKLEBALL PADDLE FAQS",
         "bg_heading": "FAQs",
-        "heading_size": "h2",
+        "margin_bottom": 8,
+        "margin_bottom_mobile": 8,
+        "heading_size": "f_28",
+        "heading_size_mobile": "f_18",
         "heading_alignment": "center",
         "layout": "row",
         "color_scheme": "scheme-392a3b94-919d-4d6f-ba3a-c760b278a857",
@@ -812,7 +1154,7 @@
         "image_ratio": "adapt",
         "desktop_layout": "image_second",
         "padding_top": 100,
-        "padding_bottom": 100
+        "padding_bottom": 52
       }
     },
     "image_banner_TBHnFT": {
@@ -821,17 +1163,25 @@
         "heading_k4CFgW": {
           "type": "heading",
           "settings": {
-            "heading": "Ready to Upgrade Your Gear?",
-            "heading_size": "h1",
-            "heading_font_size": "f_32",
-            "heading_uppercase": true
+            "heading": "<p>Ready to Upgrade Your Gear?</p>",
+            "heading_mobile": "",
+            "heading_size": "h2",
+            "heading_font_size": "f_28",
+            "heading_font_size_mobile": "f_18",
+            "heading_uppercase": true,
+            "margin_bottom": 6,
+            "margin_bottom_mobile": 6
           }
         },
         "text_JWBe4F": {
           "type": "text",
           "settings": {
             "text": "<p>Pickleball paddles are not one-size-fits-all. The best choice comes down to how you play, what feels comfortable in your hand, and what helps you stay consistent on the court. A paddle that fits your style makes the game more fun, more confident, and easier to improve.<br/><br/>Get2Eleven makes it simple to find your next paddle and gear. Shop online anytime, or visit our pro shop for help choosing the right setup based on grip size, paddle weight, and overall feel.</p>",
-            "text_style": "body"
+            "text_style": "body",
+            "font_size_desktop": "f_16",
+            "font_size_mobile": "f_16",
+            "margin_bottom": 0,
+            "margin_bottom_mobile": 0
           }
         }
       },
@@ -851,7 +1201,8 @@
         "color_scheme": "scheme-1",
         "section_width": "full-width",
         "image_behavior": "none",
-        "mobile_content_alignment": "center",
+        "mobile_content_alignment": "left",
+        "box_max_width": 620,
         "stack_images_on_mobile": false,
         "show_text_below": false
       }
@@ -860,6 +1211,7 @@
   "order": [
     "main",
     "image_banner_rwCjqm",
+    "quick_links_FQ7zVU",
     "image_with_text_UkCYUU",
     "rich_text_N94YyK",
     "brands_block_9EcGrz",
@@ -870,6 +1222,8 @@
     "multicolumn_7dqW4A",
     "review_carousel_9n7GFY",
     "featured_collection_ViU9DT",
+    "rich_text_XMAkzi",
+    "local_pages_VzLGEH",
     "collapsible_content_hhmzfw",
     "image_banner_TBHnFT"
   ]

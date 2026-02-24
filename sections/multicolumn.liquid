@@ -35,6 +35,26 @@
     row-gap: var(--grid-desktop-vertical-spacing) !important;
     justify-content: {{ section.settings.horizontal_alignment }} !important;
   }
+
+  .section-{{ section.id }}-padding .title-wrapper-with-link .title {
+    margin-bottom: {{ section.settings.margin_bottom_mobile }}px !important;
+  }
+  {%- if section.settings.heading_size_mobile contains 'f_' -%}
+    .section-{{ section.id }}-padding .title-wrapper-with-link .title {
+      font-size: {{ section.settings.heading_size_mobile | replace: 'f_', '' | append: 'px' }} !important;
+    }
+  {%- endif -%}
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding .title-wrapper-with-link .title {
+      margin-bottom: {{ section.settings.margin_bottom }}px !important;
+    }
+    {%- if section.settings.heading_size contains 'f_' -%}
+      .section-{{ section.id }}-padding .title-wrapper-with-link .title {
+        font-size: {{ section.settings.heading_size | replace: 'f_', '' | append: 'px' }} !important;
+      }
+    {%- endif -%}
+  }
 {%- endstyle -%}
 
 {%- liquid
@@ -55,8 +75,11 @@
     {%- unless section.settings.title == blank -%}
       <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin">
         {% assign heading_tag = section.settings.heading_tag | default: 'h2' %}
-        <{{ heading_tag }} class="title inline-richtext {{ section.settings.heading_size }}">
-          {{ section.settings.title }}
+        {%- liquid
+          assign heading_content = section.settings.title | replace: '<p>', '' | replace: '</p>', ''
+        -%}
+        <{{ heading_tag }} class="title {{ section.settings.heading_size }}">
+          {{ heading_content }}
         </{{ heading_tag }}>
         {%- if section.settings.description != blank -%}
           <div class="multicolumn__description rte">
@@ -234,10 +257,34 @@
   },
   "settings": [
     {
-      "type": "inline_richtext",
+      "type": "richtext",
       "id": "title",
-      "default": "Multicolumn",
+      "default": "<p>Multicolumn</p>",
       "label": "t:sections.multicolumn.settings.title.label"
+    },
+    {
+      "type": "header",
+      "content": "Margin Bottom"
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Margin Bottom (Desktop)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Margin Bottom (Mobile)",
+      "default": 0
     },
     {
       "type": "richtext",
@@ -249,6 +296,10 @@
       "type": "select",
       "id": "heading_size",
       "options": [
+        {
+          "value": "f_28",
+          "label": "Headline Large"
+        },
         {
           "value": "h2",
           "label": "t:sections.all.heading_size.options__1.label"
@@ -263,7 +314,35 @@
         }
       ],
       "default": "h1",
-      "label": "t:sections.all.heading_size.label"
+      "label": "Heading Size (Desktop)"
+    },
+    {
+      "type": "select",
+      "id": "heading_size_mobile",
+      "options": [
+        {
+          "value": "f_14",
+          "label": "Extra Compact Mobile"
+        },
+        {
+          "value": "f_18",
+          "label": "Compact Mobile"
+        },
+        {
+          "value": "f_22",
+          "label": "Standard Mobile"
+        },
+        {
+          "value": "f_28",
+          "label": "Headline Large Mobile"
+        },
+        {
+          "value": "h2",
+          "label": "Heading H2 Mobile"
+        }
+      ],
+      "default": "f_22",
+      "label": "Heading Size (Mobile)"
     },
     {
       "type": "select",

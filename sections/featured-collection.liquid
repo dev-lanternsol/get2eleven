@@ -160,6 +160,18 @@
   .section-{{ section.id }}-padding .collection__view-all a:not(.link) {
     margin-top: {{ section.settings.button_margin_top }}px !important;
   }
+
+  {%- if section.settings.button_full_width_mobile -%}
+    @media screen and (max-width: 749px) {
+      .section-{{ section.id }}-padding .banner__buttons {
+        width: 100%;
+        max-width: 100%;
+      }
+      .section-{{ section.id }}-padding .collection__view-all a:not(.link) {
+        width: 100%;
+      }
+    }
+  {%- endif -%}
 {%- endstyle -%}
 
 {%- liquid
@@ -491,6 +503,12 @@
       "unit": "px",
       "label": "Button margin top",
       "default": 10
+    },
+    {
+      "type": "checkbox",
+      "id": "button_full_width_mobile",
+      "default": false,
+      "label": "Full width button (Mobile)"
     },
     {
       "type": "checkbox",
