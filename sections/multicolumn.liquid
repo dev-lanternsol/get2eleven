@@ -55,6 +55,46 @@
       }
     {%- endif -%}
   }
+
+  /* Multicolumn slider: hide arrows */
+  .multicolumn--hide-arrows .slider-buttons .slider-button {
+    display: none;
+  }
+  /* Multicolumn slider: hide dots */
+  .multicolumn--hide-dots .multicolumn-slider-dots {
+    display: none;
+  }
+  /* Multicolumn slider: hide counter */
+  .multicolumn--hide-counter .slider-buttons .slider-counter {
+    display: none;
+  }
+
+  /* Multicolumn slider buttons: remove margin */
+  .section-{{ section.id }}-padding .slider-buttons {
+    margin-top: 0 !important;
+  }
+
+  /* Multicolumn slider dots */
+  .multicolumn-slider-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.4rem 0 0;
+  }
+  .multicolumn-slider-dot {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: none;
+    background: #E5E7EB;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  .multicolumn-slider-dot.active {
+    background-color: #33A9FE;
+  }
 {%- endstyle -%}
 
 {%- liquid
@@ -93,7 +133,10 @@
         {%- endif -%}
       </div>
     {%- endunless -%}
-    <slider-component class="slider-mobile-gutter">
+    <slider-component
+      class="slider-mobile-gutter{% unless section.settings.show_arrows %} multicolumn--hide-arrows{% endunless %}{% unless section.settings.show_dots %} multicolumn--hide-dots{% endunless %}{% unless section.settings.show_counter %} multicolumn--hide-counter{% endunless %}"
+      data-section-id="{{ section.id }}"
+    >
       <ul
         class="multicolumn-list contains-content-container grid grid--{{ section.settings.columns_mobile }}-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop{% if show_mobile_slider %} slider slider--tablet grid--peek{% endif %}"
         id="Slider-{{ section.id }}"
@@ -228,6 +271,7 @@
             {% render 'icon-caret' %}
           </button>
         </div>
+        <div class="multicolumn-slider-dots no-js-hidden large-up-hide" data-slider-dots="{{ section.id }}"></div>
       {%- endif -%}
     </slider-component>
     <div class="center{% if show_mobile_slider %} small-hide medium-hide{% endif %}">
@@ -246,6 +290,81 @@
     </div>
   </div>
 </div>
+
+{%- if show_mobile_slider -%}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const sectionId = '{{ section.id }}';
+      const sliderEl = document.getElementById('Slider-' + sectionId);
+      const dotsContainer = document.querySelector('[data-slider-dots="' + sectionId + '"]');
+      if (!sliderEl || !dotsContainer) return;
+
+      const slides = sliderEl.querySelectorAll('[id^="Slide-' + sectionId + '-"]');
+      if (slides.length < 2) return;
+
+      function getSlidesPerPage() {
+        if (slides.length < 2) return 1;
+        var offset = slides[1].offsetLeft - slides[0].offsetLeft;
+        return Math.floor(sliderEl.clientWidth / offset) || 1;
+      }
+
+      function getTotalPages() {
+        return slides.length - getSlidesPerPage() + 1;
+      }
+
+      function getCurrentPage() {
+        if (slides.length < 2) return 1;
+        var offset = slides[1].offsetLeft - slides[0].offsetLeft;
+        return Math.round(sliderEl.scrollLeft / offset) + 1;
+      }
+
+      function createDots() {
+        dotsContainer.innerHTML = '';
+        var totalPages = getTotalPages();
+        if (totalPages < 2) {
+          dotsContainer.innerHTML = '';
+          return;
+        }
+        var currentPage = getCurrentPage();
+        for (var i = 1; i <= totalPages; i++) {
+          var dot = document.createElement('button');
+          dot.classList.add('multicolumn-slider-dot');
+          dot.setAttribute('aria-label', 'Go to slide ' + i);
+          if (i === currentPage) dot.classList.add('active');
+          (function (page) {
+            dot.addEventListener('click', function () {
+              var offset = slides[1].offsetLeft - slides[0].offsetLeft;
+              sliderEl.scrollTo({ left: (page - 1) * offset, behavior: 'smooth' });
+            });
+          })(i);
+          dotsContainer.appendChild(dot);
+        }
+      }
+
+      function updateDots() {
+        var dots = dotsContainer.querySelectorAll('.multicolumn-slider-dot');
+        var currentPage = getCurrentPage();
+        dots.forEach(function (dot, index) {
+          dot.classList.toggle('active', index + 1 === currentPage);
+        });
+      }
+
+      sliderEl.addEventListener('scroll', function () {
+        requestAnimationFrame(updateDots);
+      });
+
+      createDots();
+
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function () {
+          createDots();
+        }, 250);
+      });
+    });
+  </script>
+{%- endif -%}
 
 {% schema %}
 {
@@ -495,6 +614,24 @@
       "id": "swipe_on_mobile",
       "default": false,
       "label": "t:sections.multicolumn.settings.swipe_on_mobile.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "default": true,
+      "label": "Show slider arrows"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "default": true,
+      "label": "Show slider dots"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_counter",
+      "default": true,
+      "label": "Show slider counter"
     },
     {
       "type": "header",
