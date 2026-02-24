@@ -1,0 +1,626 @@
+{{ 'section-location.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .section-{{ section.id }}-padding .grid {
+    column-gap: {{ section.settings.column_gap }}px;
+    row-gap: {{ section.settings.row_gap }}px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+
+  .section-target-{{ section.id }}.section_boxed_1048 {
+    max-width: 1048px;
+    margin: 0 auto;
+  }
+
+  {%- for block in section.blocks -%}
+    {%- liquid
+      assign border_opacity = block.settings.border_opacity | divided_by: 100.0
+      assign border_rgb = block.settings.border_color | color_to_rgb | remove: 'rgb(' | remove: ')'
+    -%}
+    .block-{{ block.id }} .location-column__content {
+      border: {{ block.settings.border_width_mobile }}px solid rgba({{ border_rgb }}, {{ border_opacity }});
+      padding-top: {{ block.settings.padding_top_mobile }}px;
+      padding-right: {{ block.settings.padding_right_mobile }}px;
+      padding-bottom: {{ block.settings.padding_bottom_mobile }}px;
+      padding-left: {{ block.settings.padding_left_mobile }}px;
+      justify-content: {{ block.settings.vertical_alignment }};
+    }
+
+    @media screen and (min-width: 750px) {
+      .block-{{ block.id }} .location-column__content {
+        border-width: {{ block.settings.border_width_desktop }}px;
+        padding-top: {{ block.settings.padding_top_desktop }}px;
+        padding-right: {{ block.settings.padding_right_desktop }}px;
+        padding-bottom: {{ block.settings.padding_bottom_desktop }}px;
+        padding-left: {{ block.settings.padding_left_desktop }}px;
+      }
+
+      {%- if block.settings.full_width -%}
+        .item-{{ block.id }} {
+          flex-basis: 100%;
+          width: 100%;
+        }
+      {%- else -%}
+        .item-{{ block.id }} {
+          flex-basis: calc(50% - ({{ section.settings.column_gap }}px / 2));
+          width: calc(50% - ({{ section.settings.column_gap }}px / 2));
+        }
+      {%- endif -%}
+    }
+  {%- endfor -%}
+{%- endstyle -%}
+
+<div class="section-location color-{{ section.settings.color_scheme }} gradient">
+  <div class="section-{{ section.id }}-padding {% if section.settings.section_width == 'boxed' %}section-target-{{ section.id }} section_boxed_1048{% else %}page-width{% endif %}">
+    {%- if section.settings.title != blank or section.settings.description != blank -%}
+      <div class="title-wrapper-with-link title-wrapper--no-top-margin center">
+        {%- if section.settings.title != blank -%}
+          <h2 class="title inline-richtext {{ section.settings.heading_size_mobile }} {{ section.settings.heading_size_desktop }}">
+            {{ section.settings.title }}
+          </h2>
+        {%- endif -%}
+        {%- if section.settings.description != blank -%}
+          <div class="location__description rte {{ section.settings.description_size_mobile }} {{ section.settings.description_size_desktop }}">
+            {{ section.settings.description }}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <ul class="grid" role="list">
+      {%- for block in section.blocks -%}
+        <li class="location-column item-{{ block.id }} block-{{ block.id }}" {{ block.shopify_attributes }}>
+          <div class="location-column__content">
+            <div class="location-column__main-info">
+              {%- if block.settings.heading != blank -%}
+                <h3 class="location-column__heading inline-richtext {{ section.settings.col_heading_size_mobile }} {{ section.settings.col_heading_size_desktop }}">
+                  {{ block.settings.heading }}
+                </h3>
+              {%- endif -%}
+
+              {%- if block.settings.description != blank -%}
+                <div class="location-column__description rte {{ section.settings.col_description_size_mobile }} {{ section.settings.col_description_size_desktop }}">
+                  {{ block.settings.description }}
+                </div>
+              {%- endif -%}
+            </div>
+
+            {%- if block.settings.html_content != blank -%}
+              <div class="location-column__html">
+                {{ block.settings.html_content }}
+              </div>
+            {%- endif -%}
+
+            <div class="location-items-list">
+              {%- for i in (1..6) -%}
+                {%- capture icon_id -%}item_{{ i }}_icon{%- endcapture -%}
+                {%- capture title_id -%}item_{{ i }}_title{%- endcapture -%}
+                {%- capture desc_id -%}item_{{ i }}_description{%- endcapture -%}
+                {%- assign icon = block.settings[icon_id] -%}
+                {%- assign title = block.settings[title_id] -%}
+                {%- assign description = block.settings[desc_id] -%}
+
+                {%- if icon != blank or title != blank or description != blank -%}
+                  <div class="location-item">
+                    {%- if icon != blank -%}
+                      <div class="location-item__icon">
+                        {{ icon | image_url: width: 48 | image_tag: loading: 'lazy' }}
+                      </div>
+                    {%- endif -%}
+                    <div class="location-item__text">
+                      {%- if title != blank -%}
+                        <div class="location-item__title rte {{ section.settings.item_title_size_mobile }} {{ section.settings.item_title_size_desktop }}">
+                          {{ title }}
+                        </div>
+                      {%- endif -%}
+                      {%- if description != blank -%}
+                        <div class="location-item__description rte {{ section.settings.item_description_size_mobile }} {{ section.settings.item_description_size_desktop }}">
+                          {{ description }}
+                        </div>
+                      {%- endif -%}
+                    </div>
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          </div>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Location",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "default": "Our Locations",
+      "label": "Heading"
+    },
+    {
+      "type": "select",
+      "id": "heading_size_desktop",
+      "label": "Heading Font Size (Desktop)",
+      "options": [
+        { "value": "f_18", "label": "Small" },
+        { "value": "f_24", "label": "Medium" },
+        { "value": "f_32", "label": "Large" },
+        { "value": "f_36", "label": "Extra Large" },
+        { "value": "f_42", "label": "Huge" }
+      ],
+      "default": "f_32"
+    },
+    {
+      "type": "select",
+      "id": "heading_size_mobile",
+      "label": "Heading Font Size (Mobile)",
+      "options": [
+        { "value": "f_18", "label": "Small" },
+        { "value": "f_24", "label": "Medium" },
+        { "value": "f_32", "label": "Large" },
+        { "value": "f_36", "label": "Extra Large" },
+        { "value": "f_42", "label": "Huge" }
+      ],
+      "default": "f_24"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "select",
+      "id": "description_size_desktop",
+      "label": "Description Font Size (Desktop)",
+      "options": [
+        { "value": "f_14", "label": "Small" },
+        { "value": "f_16", "label": "Medium" },
+        { "value": "f_18", "label": "Large" },
+        { "value": "f_20", "label": "Extra Large" }
+      ],
+      "default": "f_16"
+    },
+    {
+      "type": "select",
+      "id": "description_size_mobile",
+      "label": "Description Font Size (Mobile)",
+      "options": [
+        { "value": "f_14", "label": "Small" },
+        { "value": "f_16", "label": "Medium" },
+        { "value": "f_18", "label": "Large" },
+        { "value": "f_20", "label": "Extra Large" }
+      ],
+      "default": "f_14"
+    },
+    {
+      "type": "header",
+      "content": "Column Typing"
+    },
+    {
+      "type": "select",
+      "id": "col_heading_size_desktop",
+      "label": "Col Heading Font Size (Desktop)",
+      "options": [
+        { "value": "f_12", "label": "Extra Small" },
+        { "value": "f_14", "label": "Small" },
+        { "value": "f_16", "label": "Medium" },
+        { "value": "f_18", "label": "Large" },
+        { "value": "f_20", "label": "Extra Large" }
+      ],
+      "default": "f_18"
+    },
+    {
+      "type": "select",
+      "id": "col_heading_size_mobile",
+      "label": "Col Heading Font Size (Mobile)",
+      "options": [
+        { "value": "f_12", "label": "Extra Small" },
+        { "value": "f_14", "label": "Small" },
+        { "value": "f_16", "label": "Medium" },
+        { "value": "f_18", "label": "Large" },
+        { "value": "f_20", "label": "Extra Large" }
+      ],
+      "default": "f_16"
+    },
+    {
+      "type": "header",
+      "content": "Column Description Size"
+    },
+    {
+      "type": "select",
+      "id": "col_description_size_desktop",
+      "label": "Col Description Font Size (Desktop)",
+      "options": [
+        { "value": "f_12", "label": "Extra Small" },
+        { "value": "f_14", "label": "Small" },
+        { "value": "f_16", "label": "Medium" },
+        { "value": "f_18", "label": "Large" }
+      ],
+      "default": "f_16"
+    },
+    {
+      "type": "select",
+      "id": "col_description_size_mobile",
+      "label": "Col Description Font Size (Mobile)",
+      "options": [
+        { "value": "f_12", "label": "Extra Small" },
+        { "value": "f_14", "label": "Small" },
+        { "value": "f_16", "label": "Medium" },
+        { "value": "f_18", "label": "Large" }
+      ],
+      "default": "f_14"
+    },
+    {
+      "type": "header",
+      "content": "List Item Typography"
+    },
+    {
+      "type": "select",
+      "id": "item_title_size_desktop",
+      "label": "Item Title Font Size (Desktop)",
+      "options": [
+        { "value": "f_12", "label": "Extra Small" },
+        { "value": "f_14", "label": "Small" },
+        { "value": "f_16", "label": "Medium" },
+        { "value": "f_18", "label": "Large" },
+        { "value": "f_20", "label": "Extra Large" }
+      ],
+      "default": "f_16"
+    },
+    {
+      "type": "select",
+      "id": "item_title_size_mobile",
+      "label": "Item Title Font Size (Mobile)",
+      "options": [
+        { "value": "f_12", "label": "Extra Small" },
+        { "value": "f_14", "label": "Small" },
+        { "value": "f_16", "label": "Medium" },
+        { "value": "f_18", "label": "Large" },
+        { "value": "f_20", "label": "Extra Large" }
+      ],
+      "default": "f_14"
+    },
+    {
+      "type": "select",
+      "id": "item_description_size_desktop",
+      "label": "Item Description Font Size (Desktop)",
+      "options": [
+        { "value": "f_12", "label": "Extra Small" },
+        { "value": "f_14", "label": "Small" },
+        { "value": "f_16", "label": "Medium" },
+        { "value": "f_18", "label": "Large" },
+        { "value": "f_20", "label": "Extra Large" }
+      ],
+      "default": "f_14"
+    },
+    {
+      "type": "select",
+      "id": "item_description_size_mobile",
+      "label": "Item Description Font Size (Mobile)",
+      "options": [
+        { "value": "f_12", "label": "Extra Small" },
+        { "value": "f_14", "label": "Small" },
+        { "value": "f_16", "label": "Medium" },
+        { "value": "f_18", "label": "Large" },
+        { "value": "f_20", "label": "Extra Large" }
+      ],
+      "default": "f_12"
+    },
+    {
+      "type": "header",
+      "content": "Layout Settings"
+    },
+    {
+      "type": "select",
+      "id": "section_width",
+      "options": [
+        { "value": "full-width", "label": "Full width" },
+        { "value": "boxed", "label": "Boxed (1048px)" }
+      ],
+      "default": "boxed",
+      "label": "Section width"
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Column gap",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "row_gap",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Row gap",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 36
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Column",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "full_width",
+          "label": "Full width (100%)",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "vertical_alignment",
+          "label": "Vertical alignment",
+          "options": [
+            { "value": "flex-start", "label": "Top" },
+            { "value": "center", "label": "Middle" },
+            { "value": "flex-end", "label": "Bottom" },
+            { "value": "space-between", "label": "Space between" }
+          ],
+          "default": "flex-start"
+        },
+        {
+          "type": "header",
+          "content": "Main Content"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "default": "Location Name",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "default": "<p>General info description.</p>",
+          "label": "Description"
+        },
+        {
+          "type": "html",
+          "id": "html_content",
+          "label": "Custom HTML / Google Map",
+          "info": "Paste your Google Map embed code here."
+        },
+        {
+          "type": "header",
+          "content": "Column Style"
+        },
+        {
+          "type": "range",
+          "id": "border_width_desktop",
+          "min": 0,
+          "max": 20,
+          "step": 1,
+          "unit": "px",
+          "label": "Border width (desktop)",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "border_width_mobile",
+          "min": 0,
+          "max": 20,
+          "step": 1,
+          "unit": "px",
+          "label": "Border width (mobile)",
+          "default": 0
+        },
+        {
+          "type": "color",
+          "id": "border_color",
+          "label": "Border color",
+          "default": "#000000"
+        },
+        {
+          "type": "range",
+          "id": "border_opacity",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "label": "Border opacity",
+          "default": 100
+        },
+        {
+          "type": "header",
+          "content": "Padding (Desktop)"
+        },
+        {
+          "type": "range",
+          "id": "padding_top_desktop",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "px",
+          "label": "Top",
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "padding_right_desktop",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "px",
+          "label": "Right",
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom_desktop",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "px",
+          "label": "Bottom",
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "padding_left_desktop",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "px",
+          "label": "Left",
+          "default": 20
+        },
+        {
+          "type": "header",
+          "content": "Padding (Mobile)"
+        },
+        {
+          "type": "range",
+          "id": "padding_top_mobile",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "px",
+          "label": "Top",
+          "default": 15
+        },
+        {
+          "type": "range",
+          "id": "padding_right_mobile",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "px",
+          "label": "Right",
+          "default": 15
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom_mobile",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "px",
+          "label": "Bottom",
+          "default": 15
+        },
+        {
+          "type": "range",
+          "id": "padding_left_mobile",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "px",
+          "label": "Left",
+          "default": 15
+        },
+        {
+          "type": "header",
+          "content": "List Items"
+        },
+        { "type": "image_picker", "id": "item_1_icon", "label": "Item 1 Icon" },
+        { "type": "richtext", "id": "item_1_title", "label": "Item 1 Title" },
+        { "type": "richtext", "id": "item_1_description", "label": "Item 1 Description" },
+        { "type": "image_picker", "id": "item_2_icon", "label": "Item 2 Icon" },
+        { "type": "richtext", "id": "item_2_title", "label": "Item 2 Title" },
+        { "type": "richtext", "id": "item_2_description", "label": "Item 2 Description" },
+        { "type": "image_picker", "id": "item_3_icon", "label": "Item 3 Icon" },
+        { "type": "richtext", "id": "item_3_title", "label": "Item 3 Title" },
+        { "type": "richtext", "id": "item_3_description", "label": "Item 3 Description" },
+        { "type": "image_picker", "id": "item_4_icon", "label": "Item 4 Icon" },
+        { "type": "richtext", "id": "item_4_title", "label": "Item 4 Title" },
+        { "type": "richtext", "id": "item_4_description", "label": "Item 4 Description" },
+        { "type": "image_picker", "id": "item_5_icon", "label": "Item 5 Icon" },
+        { "type": "richtext", "id": "item_5_title", "label": "Item 5 Title" },
+        { "type": "richtext", "id": "item_5_description", "label": "Item 5 Description" },
+        { "type": "image_picker", "id": "item_6_icon", "label": "Item 6 Icon" },
+        { "type": "richtext", "id": "item_6_title", "label": "Item 6 Title" },
+        { "type": "richtext", "id": "item_6_description", "label": "Item 6 Description" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Location",
+      "blocks": [
+        {
+          "type": "column",
+          "settings": {
+            "full_width": true,
+            "heading": "Our Main Office",
+            "description": "<p>123 Business St, City, Country</p>"
+          }
+        },
+        {
+          "type": "column",
+          "settings": {
+            "full_width": false,
+            "heading": "Store 1",
+            "description": "<p>456 Retail Ave, City, Country</p>"
+          }
+        },
+        {
+          "type": "column",
+          "settings": {
+            "full_width": false,
+            "heading": "Store 2",
+            "description": "<p>789 Shop Blvd, City, Country</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

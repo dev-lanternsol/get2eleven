@@ -11,6 +11,15 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "text_with_ball_PGV7CU": {
+      "type": "text-with-ball",
+      "name": "text with ball",
+      "settings": {
+        "text-1": "Make Your",
+        "image": "shopify://shop_images/Screenshot_2024-01-03_at_1.48_4.png",
+        "text-2": "Game"
+      }
+    },
     "170730775325ad2756": {
       "type": "apps",
       "blocks": {
@@ -42,14 +51,14 @@
     },
     "footer_banner_ndrTQg": {
       "type": "footer_banner",
-      "disabled": true,
       "settings": {
-        "heading": "Ready to Upgrade Your Gear?",
-        "caption": "<p>Pickleball paddles are not one-size-fits-all. The best choice comes down to how you play, what feels comfortable in your hand, and what helps you stay consistent on the court. A paddle that fits your style makes the game more fun, more confident, and easier to improve.<br/><br/>Get2Eleven makes it simple to find your next paddle and gear. Shop online anytime, or visit our pro shop for help choosing the right setup based on grip size, paddle weight, and overall feel.</p>",
-        "btn": "",
-        "url": "",
-        "bg": "shopify://shop_images/Rectangle_42.png",
-        "bg_mobile": "shopify://shop_images/Rectangle_42_1.png"
+        "heading": "Take your PickleBall game to the next level with us",
+        "caption": "<p>At Get2Eleven, we're not just about gear. We're about the thrill of the game, the camaraderie, and the excitement of each rally. Whether you're a seasoned pro or just getting started, our store is designed with you in mind. We've got everything you need to elevate your game and look good doing it!</p>",
+        "btn": "Shop Now",
+        "url": "shopify://collections/paddles",
+        "image": "shopify://shop_images/Group_344.png",
+        "bg": "shopify://shop_images/undefined_-_Imgur_e2092f1e-5dce-4c30-b6dd-b6b590f67544.png",
+        "bg_mobile": "shopify://shop_images/Rectangle_84.png"
       }
     },
     "image_banner_fMVUnr": {
@@ -59,7 +68,9 @@
           "type": "heading",
           "settings": {
             "heading": "Take your PickleBall game to the next level with us",
-            "heading_size": "h1"
+            "heading_size": "h1",
+            "heading_font_size": "f_32",
+            "heading_uppercase": false
           }
         },
         "text_kRxNgz": {
@@ -96,6 +107,7 @@
         "show_text_box": false,
         "desktop_content_alignment": "left",
         "color_scheme": "scheme-4",
+        "section_width": "boxed",
         "image_behavior": "none",
         "mobile_content_alignment": "left",
         "stack_images_on_mobile": false,
@@ -201,6 +213,7 @@
     }
   },
   "order": [
+    "text_with_ball_PGV7CU",
     "170730775325ad2756",
     "footer_banner_ndrTQg",
     "image_banner_fMVUnr",

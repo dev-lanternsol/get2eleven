@@ -324,6 +324,201 @@
         "show_text_below": false
       }
     },
+    "rich_text_gVeLrK": {
+      "type": "rich-text",
+      "blocks": {
+        "caption_6PTNgG": {
+          "type": "caption",
+          "settings": {
+            "caption": "PREFER SHOPPING IN PERSON?",
+            "text_style": "caption-with-letter-spacing",
+            "text_size": "large"
+          }
+        },
+        "heading_j46hxG": {
+          "type": "heading",
+          "settings": {
+            "heading": "Visit Us at Bobby Riggs in Encinitas!",
+            "bg_heading": "",
+            "heading_size": "h2",
+            "heading_tag": "h2",
+            "heading_uppercase": true,
+            "title_font_size": "f_15",
+            "title_font_family": "heading"
+          }
+        },
+        "text_4V8HKy": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Visit Get2Eleven at Bobby Riggs in Encinitas at <strong>875 Santa Fe Dr, Encinitas, CA 92024</strong>. This is our one physical<br/>pro shop location serving the Greater San Diego pickleball community, so you can compare paddles side by<br/>side and check grip size, paddle weight, swing feel, and surface texture before choosing what you’ll take to the<br/>court. Our staff is happy to assist and help you narrow down the best option for your playing style.</p>",
+            "text_mobile": "<p>Visit Get2Eleven at Bobby Riggs in Encinitas at 875 Santa Fe Dr, Encinitas, CA 92024. This is our one physical pro shop location serving the Greater San Diego pickleball community, so you can compare paddles side by side and check grip size, paddle weight, swing feel, and surface texture before choosing what you’ll take to the court. Our staff is happy to assist and help you narrow down the best option for your playing style.</p>",
+            "text_size": "medium"
+          }
+        }
+      },
+      "block_order": [
+        "caption_6PTNgG",
+        "heading_j46hxG",
+        "text_4V8HKy"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-392a3b94-919d-4d6f-ba3a-c760b278a857",
+        "full_width": true,
+        "full_width_content": true,
+        "shadow_color": "#020202",
+        "shadow_opacity": 8,
+        "shadow_top_desktop": false,
+        "shadow_bottom_desktop": false,
+        "shadow_top_mobile": false,
+        "shadow_bottom_mobile": false,
+        "padding_top": 100,
+        "padding_bottom": 24
+      }
+    },
+    "location_hUKczx": {
+      "type": "location",
+      "blocks": {
+        "column_VKEK6e": {
+          "type": "column",
+          "settings": {
+            "full_width": true,
+            "vertical_alignment": "flex-start",
+            "heading": "",
+            "description": "",
+            "html_content": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d26758.2804132022!2d-117.27339899999998!3d33.035793!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dc0c0ecb417c63%3A0xab73394055f111fa!2sBobby%20Riggs%20Racket%20%26%20Paddle%20-%20get2eleven%20Pickleball%20proShop!5e0!3m2!1sen!2sco!4v1771934364184!5m2!1sen!2sco\" width=\"600\" height=\"478\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"no-referrer-when-downgrade\"></iframe>",
+            "border_width_desktop": 1,
+            "border_width_mobile": 1,
+            "border_color": "#020202",
+            "border_opacity": 20,
+            "padding_top_desktop": 15,
+            "padding_right_desktop": 15,
+            "padding_bottom_desktop": 15,
+            "padding_left_desktop": 15,
+            "padding_top_mobile": 15,
+            "padding_right_mobile": 15,
+            "padding_bottom_mobile": 15,
+            "padding_left_mobile": 15,
+            "item_1_title": "",
+            "item_1_description": "",
+            "item_2_title": "",
+            "item_2_description": "",
+            "item_3_title": "",
+            "item_3_description": "",
+            "item_4_title": "",
+            "item_4_description": "",
+            "item_5_title": "",
+            "item_5_description": "",
+            "item_6_title": "",
+            "item_6_description": ""
+          }
+        },
+        "column_78YYwG": {
+          "type": "column",
+          "settings": {
+            "full_width": false,
+            "vertical_alignment": "flex-start",
+            "heading": "STORE LOCATION",
+            "description": "<p><strong>BOBBY RIGGS RACKET & PADDLE - GET2ELEVEN PICKLEBALL PROSHOP, SAN DIEGO COUNTY</strong></p>",
+            "html_content": "",
+            "border_width_desktop": 1,
+            "border_width_mobile": 1,
+            "border_color": "#e5e7eb",
+            "border_opacity": 100,
+            "padding_top_desktop": 25,
+            "padding_right_desktop": 55,
+            "padding_bottom_desktop": 25,
+            "padding_left_desktop": 55,
+            "padding_top_mobile": 15,
+            "padding_right_mobile": 15,
+            "padding_bottom_mobile": 15,
+            "padding_left_mobile": 15,
+            "item_1_icon": "shopify://shop_images/Group_2.svg",
+            "item_1_title": "<p><strong>Address</strong></p>",
+            "item_1_description": "<p>875 Santa Fe Dr, Encinitas, CA 92024</p>",
+            "item_2_icon": "shopify://shop_images/surface1.svg",
+            "item_2_title": "<p><strong>Phone</strong></p>",
+            "item_2_description": "<p>+17604732672</p>",
+            "item_3_icon": "shopify://shop_images/Group_103.svg",
+            "item_3_title": "<p><strong>Email</strong></p>",
+            "item_3_description": "<p>get@get2eleven.com</p>",
+            "item_4_icon": "shopify://shop_images/Group_104.svg",
+            "item_4_title": "<p><strong>Hours</strong></p>",
+            "item_4_description": "<p>Mon-Fri: 8 a.m. - 9 p.m.<br/>Sat-Sun: 8 a.m. - 7 p.m.</p>",
+            "item_5_title": "",
+            "item_5_description": "",
+            "item_6_title": "",
+            "item_6_description": ""
+          }
+        },
+        "column_69Y9C8": {
+          "type": "column",
+          "settings": {
+            "full_width": false,
+            "vertical_alignment": "flex-start",
+            "heading": "DELIVERY AND PICKUP OPTIONS FOR SAN DIEGO PLAYERS",
+            "description": "",
+            "html_content": "",
+            "border_width_desktop": 1,
+            "border_width_mobile": 1,
+            "border_color": "#e5e7eb",
+            "border_opacity": 100,
+            "padding_top_desktop": 50,
+            "padding_right_desktop": 65,
+            "padding_bottom_desktop": 50,
+            "padding_left_desktop": 65,
+            "padding_top_mobile": 15,
+            "padding_right_mobile": 15,
+            "padding_bottom_mobile": 15,
+            "padding_left_mobile": 15,
+            "item_1_icon": "shopify://shop_images/Group_97.svg",
+            "item_1_title": "<p><strong>ORDER ONLINE ANYTIME</strong></p>",
+            "item_1_description": "<p>Ship to your door with free shipping on orders over $69.</p>",
+            "item_2_icon": "shopify://shop_images/Group_100.svg",
+            "item_2_title": "<p><strong>IN-STORE PICKUP</strong></p>",
+            "item_2_description": "<p>Skip delivery wait time and grab your order locally when it’s convenient.</p>",
+            "item_3_title": "",
+            "item_3_description": "",
+            "item_4_title": "",
+            "item_4_description": "",
+            "item_5_title": "",
+            "item_5_description": "",
+            "item_6_title": "",
+            "item_6_description": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_VKEK6e",
+        "column_78YYwG",
+        "column_69Y9C8"
+      ],
+      "name": "Location",
+      "settings": {
+        "title": "",
+        "heading_size_desktop": "f_32",
+        "heading_size_mobile": "f_24",
+        "description": "",
+        "description_size_desktop": "f_16",
+        "description_size_mobile": "f_14",
+        "col_heading_size_desktop": "f_18",
+        "col_heading_size_mobile": "f_16",
+        "col_description_size_desktop": "f_14",
+        "col_description_size_mobile": "f_12",
+        "item_title_size_desktop": "f_16",
+        "item_title_size_mobile": "f_14",
+        "item_description_size_desktop": "f_16",
+        "item_description_size_mobile": "f_16",
+        "section_width": "boxed",
+        "column_gap": 16,
+        "row_gap": 12,
+        "padding_top": 0,
+        "padding_bottom": 36,
+        "color_scheme": "scheme-392a3b94-919d-4d6f-ba3a-c760b278a857"
+      }
+    },
     "multicolumn_7dqW4A": {
       "type": "multicolumn",
       "blocks": {
@@ -670,6 +865,8 @@
     "brands_block_9EcGrz",
     "rich_text_zefEiE",
     "image_banner_cRbgrE",
+    "rich_text_gVeLrK",
+    "location_hUKczx",
     "multicolumn_7dqW4A",
     "review_carousel_9n7GFY",
     "featured_collection_ViU9DT",
