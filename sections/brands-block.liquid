@@ -45,21 +45,19 @@
   }
 
   {%- liquid
-    assign column_gap = section.settings.column_gap | append: 'px'
-    if section.settings.column_gap == 0
-      assign column_gap = 'var(--grid-desktop-horizontal-spacing)'
-    endif
-    assign row_gap = section.settings.row_gap | append: 'px'
-    if section.settings.row_gap == 0
-      assign row_gap = 'var(--grid-desktop-vertical-spacing)'
-    endif
+    assign column_gap = section.settings.column_gap
+    assign row_gap = section.settings.row_gap
   -%}
 
   #BrandsSection-{{ section.id }} {
-    --grid-desktop-horizontal-spacing: {{ column_gap }};
-    --grid-desktop-vertical-spacing: {{ row_gap }};
-    --grid-mobile-horizontal-spacing: {{ column_gap }};
-    --grid-mobile-vertical-spacing: {{ row_gap }};
+    {% if column_gap > 0 %}
+      --grid-desktop-horizontal-spacing: {{ column_gap }}px;
+      --grid-mobile-horizontal-spacing: {{ column_gap }}px;
+    {% endif %}
+    {% if row_gap > 0 %}
+      --grid-desktop-vertical-spacing: {{ row_gap }}px;
+      --grid-mobile-vertical-spacing: {{ row_gap }}px;
+    {% endif %}
   }
 
   #BrandsSection-{{ section.id }} .collection-list {

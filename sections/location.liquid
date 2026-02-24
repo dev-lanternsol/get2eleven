@@ -1,67 +1,122 @@
 {{ 'section-location.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
-  .section-{{ section.id }}-padding {
-    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
-    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
-  }
-
-  @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
-    }
-  }
-
-  .section-{{ section.id }}-padding .grid {
-    column-gap: {{ section.settings.column_gap }}px;
-    row-gap: {{ section.settings.row_gap }}px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
+      padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
   .section-target-{{ section.id }}.section_boxed_1048 {
-    max-width: 1048px;
-    margin: 0 auto;
+    padding-inline: 2rem;
   }
 
-  {%- for block in section.blocks -%}
-    {%- liquid
-      assign border_opacity = block.settings.border_opacity | divided_by: 100.0
-      assign border_rgb = block.settings.border_color | color_to_rgb | remove: 'rgb(' | remove: ')'
-    -%}
-    .block-{{ block.id }} .location-column__content {
-      border: {{ block.settings.border_width_mobile }}px solid rgba({{ border_rgb }}, {{ border_opacity }});
-      padding-top: {{ block.settings.padding_top_mobile }}px;
-      padding-right: {{ block.settings.padding_right_mobile }}px;
-      padding-bottom: {{ block.settings.padding_bottom_mobile }}px;
-      padding-left: {{ block.settings.padding_left_mobile }}px;
-      justify-content: {{ block.settings.vertical_alignment }};
+    @media screen and (min-width: 750px) {
+      .section-{{ section.id }}-padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+      .section-target-{{ section.id }}.section_boxed_1048 {
+        max-width: 1048px;
+        margin: 0 auto;
+      }
     }
 
-    @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding .grid {
+      column-gap: {{ section.settings.column_gap }}px;
+      row-gap: {{ section.settings.row_gap }}px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+    }
+
+
+    {%- for block in section.blocks -%}
+      {%- liquid
+        assign border_opacity = block.settings.border_opacity | divided_by: 100.0
+        assign border_rgb = block.settings.border_color | color_to_rgb | remove: 'rgb(' | remove: ')'
+      -%}
       .block-{{ block.id }} .location-column__content {
-        border-width: {{ block.settings.border_width_desktop }}px;
-        padding-top: {{ block.settings.padding_top_desktop }}px;
-        padding-right: {{ block.settings.padding_right_desktop }}px;
-        padding-bottom: {{ block.settings.padding_bottom_desktop }}px;
-        padding-left: {{ block.settings.padding_left_desktop }}px;
+        border: {{ block.settings.border_width_mobile }}px solid rgba({{ border_rgb }}, {{ border_opacity }});
+        padding-top: {{ block.settings.padding_top_mobile }}px;
+        padding-right: {{ block.settings.padding_right_mobile }}px;
+        padding-bottom: {{ block.settings.padding_bottom_mobile }}px;
+        padding-left: {{ block.settings.padding_left_mobile }}px;
+        justify-content: {{ block.settings.vertical_alignment }};
       }
 
-      {%- if block.settings.full_width -%}
-        .item-{{ block.id }} {
-          flex-basis: 100%;
-          width: 100%;
+      @media screen and (min-width: 750px) {
+        .block-{{ block.id }} .location-column__content {
+          border-width: {{ block.settings.border_width_desktop }}px;
+          padding-top: {{ block.settings.padding_top_desktop }}px;
+          padding-right: {{ block.settings.padding_right_desktop }}px;
+          padding-bottom: {{ block.settings.padding_bottom_desktop }}px;
+          padding-left: {{ block.settings.padding_left_desktop }}px;
         }
-      {%- else -%}
-        .item-{{ block.id }} {
-          flex-basis: calc(50% - ({{ section.settings.column_gap }}px / 2));
-          width: calc(50% - ({{ section.settings.column_gap }}px / 2));
-        }
-      {%- endif -%}
+
+        {%- if block.settings.full_width -%}
+          .item-{{ block.id }} {
+            flex-basis: 100%;
+            width: 100%;
+          }
+        {%- else -%}
+          .item-{{ block.id }} {
+            flex-basis: calc(50% - ({{ section.settings.column_gap }}px / 2));
+            width: calc(50% - ({{ section.settings.column_gap }}px / 2));
+          }
+        {%- endif -%}
+      }
+    {%- endfor -%}
+  .section-{{ section.id }}-padding .title,
+  .section-{{ section.id }}-padding .title p {
+    font-size: {{ section.settings.heading_size_mobile | replace: 'f_', '' | append: 'px' }} !important;
+  }
+  .section-{{ section.id }}-padding .location__description,
+  .section-{{ section.id }}-padding .location__description p {
+    font-size: {{ section.settings.description_size_mobile | replace: 'f_', '' | append: 'px' }} !important;
+  }
+  .section-{{ section.id }}-padding .location-column__heading,
+  .section-{{ section.id }}-padding .location-column__heading p {
+    font-size: {{ section.settings.col_heading_size_mobile | replace: 'f_', '' | append: 'px' }} !important;
+  }
+  .section-{{ section.id }}-padding .location-column__description,
+  .section-{{ section.id }}-padding .location-column__description p {
+    font-size: {{ section.settings.col_description_size_mobile | replace: 'f_', '' | append: 'px' }} !important;
+  }
+  .section-{{ section.id }}-padding .location-item__title,
+  .section-{{ section.id }}-padding .location-item__title p {
+    font-size: {{ section.settings.item_title_size_mobile | replace: 'f_', '' | append: 'px' }} !important;
+  }
+  .section-{{ section.id }}-padding .location-item__description,
+  .section-{{ section.id }}-padding .location-item__description p {
+    font-size: {{ section.settings.item_description_size_mobile | replace: 'f_', '' | append: 'px' }} !important;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding .title,
+    .section-{{ section.id }}-padding .title p {
+      font-size: {{ section.settings.heading_size_desktop | replace: 'f_', '' | append: 'px' }} !important;
     }
-  {%- endfor -%}
+    .section-{{ section.id }}-padding .location__description,
+    .section-{{ section.id }}-padding .location__description p {
+      font-size: {{ section.settings.description_size_desktop | replace: 'f_', '' | append: 'px' }} !important;
+    }
+    .section-{{ section.id }}-padding .location-column__heading,
+    .section-{{ section.id }}-padding .location-column__heading p {
+      font-size: {{ section.settings.col_heading_size_desktop | replace: 'f_', '' | append: 'px' }} !important;
+    }
+    .section-{{ section.id }}-padding .location-column__description,
+    .section-{{ section.id }}-padding .location-column__description p {
+      font-size: {{ section.settings.col_description_size_desktop | replace: 'f_', '' | append: 'px' }} !important;
+    }
+    .section-{{ section.id }}-padding .location-item__title,
+    .section-{{ section.id }}-padding .location-item__title p {
+      font-size: {{ section.settings.item_title_size_desktop | replace: 'f_', '' | append: 'px' }} !important;
+    }
+    .section-{{ section.id }}-padding .location-item__description,
+    .section-{{ section.id }}-padding .location-item__description p {
+      font-size: {{ section.settings.item_description_size_desktop | replace: 'f_', '' | append: 'px' }} !important;
+    }
+  }
 {%- endstyle -%}
 
 <div class="section-location color-{{ section.settings.color_scheme }} gradient">
@@ -69,12 +124,12 @@
     {%- if section.settings.title != blank or section.settings.description != blank -%}
       <div class="title-wrapper-with-link title-wrapper--no-top-margin center">
         {%- if section.settings.title != blank -%}
-          <h2 class="title inline-richtext {{ section.settings.heading_size_mobile }} {{ section.settings.heading_size_desktop }}">
+          <h2 class="title inline-richtext">
             {{ section.settings.title }}
           </h2>
         {%- endif -%}
         {%- if section.settings.description != blank -%}
-          <div class="location__description rte {{ section.settings.description_size_mobile }} {{ section.settings.description_size_desktop }}">
+          <div class="location__description rte">
             {{ section.settings.description }}
           </div>
         {%- endif -%}
@@ -87,13 +142,13 @@
           <div class="location-column__content">
             <div class="location-column__main-info">
               {%- if block.settings.heading != blank -%}
-                <h3 class="location-column__heading inline-richtext {{ section.settings.col_heading_size_mobile }} {{ section.settings.col_heading_size_desktop }}">
+                <h3 class="location-column__heading inline-richtext">
                   {{ block.settings.heading }}
                 </h3>
               {%- endif -%}
 
               {%- if block.settings.description != blank -%}
-                <div class="location-column__description rte {{ section.settings.col_description_size_mobile }} {{ section.settings.col_description_size_desktop }}">
+                <div class="location-column__description rte">
                   {{ block.settings.description }}
                 </div>
               {%- endif -%}
@@ -123,12 +178,12 @@
                     {%- endif -%}
                     <div class="location-item__text">
                       {%- if title != blank -%}
-                        <div class="location-item__title rte {{ section.settings.item_title_size_mobile }} {{ section.settings.item_title_size_desktop }}">
+                        <div class="location-item__title rte">
                           {{ title }}
                         </div>
                       {%- endif -%}
                       {%- if description != blank -%}
-                        <div class="location-item__description rte {{ section.settings.item_description_size_mobile }} {{ section.settings.item_description_size_desktop }}">
+                        <div class="location-item__description rte">
                           {{ description }}
                         </div>
                       {%- endif -%}
@@ -223,11 +278,10 @@
       "id": "col_heading_size_desktop",
       "label": "Col Heading Font Size (Desktop)",
       "options": [
-        { "value": "f_12", "label": "Extra Small" },
-        { "value": "f_14", "label": "Small" },
-        { "value": "f_16", "label": "Medium" },
-        { "value": "f_18", "label": "Large" },
-        { "value": "f_20", "label": "Extra Large" }
+        { "value": "f_12", "label": "Small" },
+        { "value": "f_14", "label": "Medium" },
+        { "value": "f_16", "label": "Large" },
+        { "value": "f_18", "label": "Extra Large" }
       ],
       "default": "f_18"
     },
@@ -236,11 +290,10 @@
       "id": "col_heading_size_mobile",
       "label": "Col Heading Font Size (Mobile)",
       "options": [
-        { "value": "f_12", "label": "Extra Small" },
-        { "value": "f_14", "label": "Small" },
-        { "value": "f_16", "label": "Medium" },
-        { "value": "f_18", "label": "Large" },
-        { "value": "f_20", "label": "Extra Large" }
+        { "value": "f_12", "label": "Small" },
+        { "value": "f_14", "label": "Medium" },
+        { "value": "f_16", "label": "Large" },
+        { "value": "f_18", "label": "Extra Large" }
       ],
       "default": "f_16"
     },
@@ -253,10 +306,10 @@
       "id": "col_description_size_desktop",
       "label": "Col Description Font Size (Desktop)",
       "options": [
-        { "value": "f_12", "label": "Extra Small" },
-        { "value": "f_14", "label": "Small" },
-        { "value": "f_16", "label": "Medium" },
-        { "value": "f_18", "label": "Large" }
+        { "value": "f_12", "label": "Small" },
+        { "value": "f_14", "label": "Medium" },
+        { "value": "f_16", "label": "Large" },
+        { "value": "f_18", "label": "Extra Large" }
       ],
       "default": "f_16"
     },
@@ -265,10 +318,10 @@
       "id": "col_description_size_mobile",
       "label": "Col Description Font Size (Mobile)",
       "options": [
-        { "value": "f_12", "label": "Extra Small" },
-        { "value": "f_14", "label": "Small" },
-        { "value": "f_16", "label": "Medium" },
-        { "value": "f_18", "label": "Large" }
+        { "value": "f_12", "label": "Small" },
+        { "value": "f_14", "label": "Medium" },
+        { "value": "f_16", "label": "Large" },
+        { "value": "f_18", "label": "Extra Large" }
       ],
       "default": "f_14"
     },
@@ -281,11 +334,10 @@
       "id": "item_title_size_desktop",
       "label": "Item Title Font Size (Desktop)",
       "options": [
-        { "value": "f_12", "label": "Extra Small" },
-        { "value": "f_14", "label": "Small" },
-        { "value": "f_16", "label": "Medium" },
-        { "value": "f_18", "label": "Large" },
-        { "value": "f_20", "label": "Extra Large" }
+        { "value": "f_12", "label": "Small" },
+        { "value": "f_14", "label": "Medium" },
+        { "value": "f_16", "label": "Large" },
+        { "value": "f_18", "label": "Extra Large" }
       ],
       "default": "f_16"
     },
@@ -294,11 +346,10 @@
       "id": "item_title_size_mobile",
       "label": "Item Title Font Size (Mobile)",
       "options": [
-        { "value": "f_12", "label": "Extra Small" },
-        { "value": "f_14", "label": "Small" },
-        { "value": "f_16", "label": "Medium" },
-        { "value": "f_18", "label": "Large" },
-        { "value": "f_20", "label": "Extra Large" }
+        { "value": "f_12", "label": "Small" },
+        { "value": "f_14", "label": "Medium" },
+        { "value": "f_16", "label": "Large" },
+        { "value": "f_18", "label": "Extra Large" }
       ],
       "default": "f_14"
     },
@@ -307,11 +358,10 @@
       "id": "item_description_size_desktop",
       "label": "Item Description Font Size (Desktop)",
       "options": [
-        { "value": "f_12", "label": "Extra Small" },
-        { "value": "f_14", "label": "Small" },
-        { "value": "f_16", "label": "Medium" },
-        { "value": "f_18", "label": "Large" },
-        { "value": "f_20", "label": "Extra Large" }
+        { "value": "f_12", "label": "Small" },
+        { "value": "f_14", "label": "Medium" },
+        { "value": "f_16", "label": "Large" },
+        { "value": "f_18", "label": "Extra Large" }
       ],
       "default": "f_14"
     },
@@ -320,11 +370,10 @@
       "id": "item_description_size_mobile",
       "label": "Item Description Font Size (Mobile)",
       "options": [
-        { "value": "f_12", "label": "Extra Small" },
-        { "value": "f_14", "label": "Small" },
-        { "value": "f_16", "label": "Medium" },
-        { "value": "f_18", "label": "Large" },
-        { "value": "f_20", "label": "Extra Large" }
+        { "value": "f_12", "label": "Small" },
+        { "value": "f_14", "label": "Medium" },
+        { "value": "f_16", "label": "Large" },
+        { "value": "f_18", "label": "Extra Large" }
       ],
       "default": "f_12"
     },

@@ -1,0 +1,374 @@
+{{ 'section-local-pages.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+    --columns-desktop: {{ section.settings.columns_desktop }};
+    --column-gap-desktop: {{ section.settings.column_gap_desktop }}px;
+    --row-gap-desktop: {{ section.settings.row_gap_desktop }}px;
+    --column-gap-mobile: {{ section.settings.column_gap_mobile }}px;
+    --row-gap-mobile: {{ section.settings.row_gap_mobile }}px;
+    --content-gap-desktop: {{ section.settings.content_gap_desktop }}px;
+    --content-gap-mobile: {{ section.settings.content_gap_mobile }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  {%- for block in section.blocks -%}
+    .block-{{ block.id }} .local-pages-card {
+      padding-top: {{ block.settings.padding_top }}px;
+      padding-bottom: {{ block.settings.padding_bottom }}px;
+      padding-left: {{ block.settings.padding_left }}px;
+      padding-right: {{ block.settings.padding_right }}px;
+    }
+
+    .block-{{ block.id }} .local-pages-card__icon-container {
+      background-color: {{ block.settings.icon_bg_color }};
+      padding: {{ block.settings.icon_padding }}px;
+      border-radius: {{ block.settings.icon_radius }}px;
+    }
+  {%- endfor -%}
+{%- endstyle -%}
+
+<div class="local-pages color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div class="{% if section.settings.section_width == 'boxed' %}section_boxed_1080{% else %}page-width{% endif %}">
+    <ul class="grid" role="list">
+      {%- for block in section.blocks -%}
+        <li class="grid__item block-{{ block.id }}" {{ block.shopify_attributes }}>
+          <div class="local-pages-card color-{{ section.settings.color_scheme }} gradient">
+            <div class="local-pages-card__header">
+              {%- if block.settings.icon != blank -%}
+                <div class="local-pages-card__icon-container">
+                  {{ block.settings.icon | image_url: width: 100 | image_tag: loading: 'lazy' }}
+                </div>
+              {%- endif -%}
+
+              {%- if block.settings.title != blank -%}
+                <h3 class="local-pages-card__title f_16">
+                  {{ block.settings.title }}
+                </h3>
+              {%- endif -%}
+            </div>
+
+            <ul class="local-pages-card__list" role="list">
+              {%- for i in (1..6) -%}
+                {%- capture list_item_id -%}item_{{ i }}{%- endcapture -%}
+                {%- if block.settings[list_item_id] != blank -%}
+                  <li class="local-pages-card__list-item f_14">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <path d="M16.6666 5L7.49992 14.1667L3.33325 10" stroke="#33A9FE" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <div class="rte">{{ block.settings[list_item_id] }}</div>
+                  </li>
+                {%- endif -%}
+              {%- endfor -%}
+            </ul>
+
+            {%- if block.settings.button_label != blank -%}
+              <a
+                {% if block.settings.button_link == blank %}
+                  role="link" aria-disabled="true"
+                {% else %}
+                  href="{{ block.settings.button_link }}"
+                {% endif %}
+                class="button button--primary"
+              >
+                {{ block.settings.button_label | escape }}
+              </a>
+            {%- endif -%}
+          </div>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Local Pages",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "select",
+      "id": "section_width",
+      "options": [
+        {
+          "value": "full-width",
+          "label": "Full width"
+        },
+        {
+          "value": "boxed",
+          "label": "Boxed (1080px)"
+        }
+      ],
+      "default": "boxed",
+      "label": "Section width"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "default": 3,
+      "label": "Columns on desktop"
+    },
+    {
+      "type": "header",
+      "content": "Desktop Gaps"
+    },
+    {
+      "type": "range",
+      "id": "column_gap_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Column gap",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "row_gap_desktop",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Row gap",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "content_gap_desktop",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Gap between elements",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Mobile Gaps"
+    },
+    {
+      "type": "range",
+      "id": "column_gap_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Column gap",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "row_gap_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Row gap",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "content_gap_mobile",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Gap between elements",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Section Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 36
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Local Page Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "header",
+          "content": "Icon Container"
+        },
+        {
+          "type": "color",
+          "id": "icon_bg_color",
+          "label": "Background color",
+          "default": "transparent"
+        },
+        {
+          "type": "range",
+          "id": "icon_padding",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "label": "Padding",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "icon_radius",
+          "min": 0,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "label": "Border radius",
+          "default": 0
+        },
+        {
+          "type": "inline_richtext",
+          "id": "title",
+          "default": "Local Page Title",
+          "label": "Title"
+        },
+        {
+          "type": "header",
+          "content": "List Items"
+        },
+        {
+          "type": "richtext",
+          "id": "item_1",
+          "label": "Item 1"
+        },
+        {
+          "type": "richtext",
+          "id": "item_2",
+          "label": "Item 2"
+        },
+        {
+          "type": "richtext",
+          "id": "item_3",
+          "label": "Item 3"
+        },
+        {
+          "type": "richtext",
+          "id": "item_4",
+          "label": "Item 4"
+        },
+        {
+          "type": "richtext",
+          "id": "item_5",
+          "label": "Item 5"
+        },
+        {
+          "type": "richtext",
+          "id": "item_6",
+          "label": "Item 6"
+        },
+        {
+          "type": "header",
+          "content": "Button"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "default": "View",
+          "label": "Button label"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        },
+        {
+          "type": "header",
+          "content": "Card Padding"
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "px",
+          "label": "Padding top",
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "px",
+          "label": "Padding bottom",
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "padding_left",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "px",
+          "label": "Padding left",
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "padding_right",
+          "min": 0,
+          "max": 100,
+          "step": 2,
+          "unit": "px",
+          "label": "Padding right",
+          "default": 20
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Local Pages",
+      "blocks": [{ "type": "item" }, { "type": "item" }, { "type": "item" }]
+    }
+  ]
+}
+{% endschema %}

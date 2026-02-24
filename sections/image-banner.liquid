@@ -134,10 +134,17 @@
                 </{{ block.settings.subheading_tag }}>
               {%- when 'heading' -%}
                 <{{ block.settings.heading_size }}
-                  class="{{ block.settings.heading_font_size }} font_600 {% if block.settings.heading_uppercase %}text_uppercase {% endif %}banner__heading inline-richtext {{ block.settings.heading_size }}"
+                  class="font_600 {% if block.settings.heading_uppercase %}text_uppercase {% endif %}banner__heading inline-richtext {{ block.settings.heading_size }}"
                   {{ block.shopify_attributes }}
                 >
-                  {{ block.settings.heading }}
+                  {%- if block.settings.heading_mobile != blank -%}
+                    <span class="small-hide {{ block.settings.heading_font_size }}">{{ block.settings.heading }}</span>
+                    <span class="medium-hide large-up-hide {{ block.settings.heading_font_size_mobile | default: block.settings.heading_font_size }}">
+                      {{- block.settings.heading_mobile -}}
+                    </span>
+                  {%- else -%}
+                    <span class="{{ block.settings.heading_font_size }}">{{ block.settings.heading }}</span>
+                  {%- endif -%}
                 </{{ block.settings.heading_size }}>
               {%- when 'text' -%}
                 <div
@@ -406,7 +413,12 @@
           "type": "inline_richtext",
           "id": "heading",
           "default": "Image banner",
-          "label": "t:sections.image-banner.blocks.heading.settings.heading.label"
+          "label": "Heading (Desktop)"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "heading_mobile",
+          "label": "Heading (Mobile)"
         },
         {
           "type": "select",
@@ -446,7 +458,31 @@
             }
           ],
           "default": "f_32",
-          "label": "Font size"
+          "label": "Font size (Desktop)"
+        },
+        {
+          "type": "select",
+          "id": "heading_font_size_mobile",
+          "options": [
+            {
+              "value": "f_20",
+              "label": "20px"
+            },
+            {
+              "value": "f_24",
+              "label": "24px"
+            },
+            {
+              "value": "f_28",
+              "label": "28px"
+            },
+            {
+              "value": "f_32",
+              "label": "32px"
+            }
+          ],
+          "default": "f_24",
+          "label": "Font size (Mobile)"
         },
         {
           "type": "checkbox",

@@ -1486,11 +1486,6 @@ body .description-container p {
   .section_boxed {
     padding-inline: 2rem;
   }
-
-  .f_14 {
-    line-height: 18px;
-    font-size: 12px;
-  }
 }
 
 @media (min-width: 990px) {
@@ -1515,6 +1510,7 @@ body .description-container p {
 .section_boxed_1260 {
   max-width: 1260px;
   margin: 0 auto;
+  padding-inline: 1.5rem;
 }
 
 .collection__description p {
