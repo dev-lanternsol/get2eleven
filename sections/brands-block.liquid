@@ -1,9 +1,129 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
 
-<div class="page-width container brands_sec">
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px !important;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px !important;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px !important;
+      padding-bottom: {{ section.settings.padding_bottom }}px !important;
+    }
+  }
+
+  {%- assign shadow_color = section.settings.shadow_color -%}
+  {%- assign shadow_opacity = section.settings.shadow_opacity | divided_by: 100.0 -%}
+  .section-{{ section.id }}-shadow {
+    {%- capture shadow_mobile -%}
+      {%- if section.settings.shadow_top_mobile -%}
+        0 -1px 0 0 rgba({{ shadow_color.red }}, {{ shadow_color.green }}, {{ shadow_color.blue }}, {{ shadow_opacity }})
+      {%- endif -%}
+      {%- if section.settings.shadow_bottom_mobile -%}
+        {%- if section.settings.shadow_top_mobile -%}, {% endif -%}
+        inset 0 -1px 0 0 rgba({{ shadow_color.red }}, {{ shadow_color.green }}, {{ shadow_color.blue }}, {{ shadow_opacity }})
+      {%- endif -%}
+    {%- endcapture -%}
+    box-shadow: {{ shadow_mobile | strip | default: 'none' }};
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-shadow {
+      {%- capture shadow_desktop -%}
+        {%- if section.settings.shadow_top_desktop -%}
+          0 -1px 0 0 rgba({{ shadow_color.red }}, {{ shadow_color.green }}, {{ shadow_color.blue }}, {{ shadow_opacity }})
+        {%- endif -%}
+        {%- if section.settings.shadow_bottom_desktop -%}
+          {%- if section.settings.shadow_top_desktop -%}, {% endif -%}
+          inset 0 -1px 0 0 rgba({{ shadow_color.red }}, {{ shadow_color.green }}, {{ shadow_color.blue }}, {{ shadow_opacity }})
+        {%- endif -%}
+      {%- endcapture -%}
+      box-shadow: {{ shadow_desktop | strip | default: 'none' }};
+    }
+  }
+
+  {%- liquid
+    assign column_gap = section.settings.column_gap | append: 'px'
+    if section.settings.column_gap == 0
+      assign column_gap = 'var(--grid-desktop-horizontal-spacing)'
+    endif
+    assign row_gap = section.settings.row_gap | append: 'px'
+    if section.settings.row_gap == 0
+      assign row_gap = 'var(--grid-desktop-vertical-spacing)'
+    endif
+  -%}
+
+  #BrandsSection-{{ section.id }} {
+    --grid-desktop-horizontal-spacing: {{ column_gap }};
+    --grid-desktop-vertical-spacing: {{ row_gap }};
+    --grid-mobile-horizontal-spacing: {{ column_gap }};
+    --grid-mobile-vertical-spacing: {{ row_gap }};
+  }
+
+  #BrandsSection-{{ section.id }} .collection-list {
+    column-gap: var(--grid-desktop-horizontal-spacing) !important;
+    row-gap: var(--grid-desktop-vertical-spacing) !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  #BrandsSection-{{ section.id }} .list-box .image img {
+    padding: {{ section.settings.image_padding }}px !important;
+    {% if section.settings.image_border %}
+      border: {{ section.settings.image_border_width }}px solid {{ section.settings.image_border_color }} !important;
+    {% else %}
+      border: none !important;
+    {% endif %}
+    border-radius: {{ section.settings.image_border_radius }}px !important;
+  }
+
+  #BrandsSection-{{ section.id }} .list-box .image {
+    border: none !important;
+    border-radius: 0 !important;
+  }
+
+  @media screen and (max-width: 749px) {
+    #BrandsSection-{{ section.id }} .collection-list.slider-mobile {
+      display: flex !important;
+      flex-wrap: nowrap !important;
+      overflow-x: auto !important;
+      scroll-snap-type: x mandatory !important;
+      scroll-behavior: smooth !important;
+      -webkit-overflow-scrolling: touch !important;
+      scrollbar-width: none;
+    }
+
+    #BrandsSection-{{ section.id }} .collection-list.slider-mobile::-webkit-scrollbar {
+      display: none;
+    }
+
+    #BrandsSection-{{ section.id }} .collection-list.slider-mobile .collection-list__item {
+      scroll-snap-align: center !important;
+      flex-shrink: 0 !important;
+    }
+
+    #BrandsSection-{{ section.id }} .collection-list.slider-mobile .list-box .image {
+      min-height: auto !important;
+    }
+
+    #BrandsSection-{{ section.id }} .slider-mobile + .pagination-container {
+      display: none !important;
+    }
+  }
+{%- endstyle -%}
+
+<div class="brands-block-wrapper section-{{ section.id }}-shadow">
+  <div
+    id="BrandsSection-{{ section.id }}"
+    class="page-width container brands_sec section-{{ section.id }}-padding"
+  >
     <ul
-      class="collection-list grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down" id="paginated-list" data-current-page="1" aria-live="polite"
+      class="collection-list grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down{% if section.settings.swipe_on_mobile %} slider-mobile{% endif %}"
+      id="paginated-list"
+      data-current-page="1"
+      aria-live="polite"
       role="list"
     >
       {%- for block in section.blocks -%}
@@ -14,149 +134,173 @@
             style="--animation-order: {{ forloop.index }};"
           {% endif %}
         >
-<a href="{{ block.settings.url }}" class="list-box">
-  {% if block.settings.image != blank %}
-  <div class="image">
-  <img src="{{ block.settings.image | img_url:'master' }}">
-  </div>
-    {% endif %}
-  {% if block.settings.heading != blank %}
-  <div class="content">
-    <h3 class="f_18 font_600">{{ block.settings.heading }}</h3>
-  </div>
-  {% endif %}
-</a>
+          {%- if block.settings.url != blank -%}
+            <a href="{{ block.settings.url }}" class="list-box">
+          {%- else -%}
+            <div class="list-box">
+          {%- endif -%}
+          {% if block.settings.image != blank %}
+            <div class="image">
+              {%- assign image = block.settings.image -%}
+              <img
+                src="{{ image | image_url: width: 500 }}"
+                alt="{{ image.alt | escape }}"
+                loading="lazy"
+                width="{{ image.width }}"
+                height="{{ image.height }}"
+              >
+            </div>
+          {% endif %}
+          {% if block.settings.heading != blank %}
+            <div class="content">
+              <h3 class="f_18 font_600">{{ block.settings.heading }}</h3>
+            </div>
+          {% endif %}
+          {%- if block.settings.url != blank -%}
+            </a>
+          {%- else -%}
+            </div>
+          {%- endif -%}
         </li>
       {%- endfor -%}
     </ul>
     <nav class="pagination-container">
-    <button class="pagination-button f_17 font_400 clr_blck" id="prev-button" aria-label="Previous page" title="Previous page">
-<span>
-  <svg xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0 0 8 13" fill="none">
-  <path d="M7.1605 1.11898C7.32239 1.2815 7.41333 1.5019 7.41333 1.73171C7.41333 1.96152 7.32239 2.18191 7.1605 2.34444L2.8861 6.6344L7.1605 10.9244C7.3178 11.0878 7.40484 11.3067 7.40287 11.534C7.4009 11.7612 7.31009 11.9786 7.14998 12.1393C6.98988 12.2999 6.7733 12.3911 6.54689 12.3931C6.32048 12.395 6.10235 12.3077 5.93949 12.1498L1.05458 7.24713C0.892699 7.08461 0.801758 6.86421 0.801758 6.6344C0.801758 6.40459 0.892699 6.1842 1.05458 6.02167L5.93949 1.11898C6.10142 0.956507 6.32102 0.865234 6.55 0.865234C6.77897 0.865234 6.99857 0.956507 7.1605 1.11898Z" fill="black"/>
-</svg>
-</span>
-  <span>Previous</span>
-    </button>
+      <button
+        class="pagination-button f_17 font_400 clr_blck"
+        id="prev-button"
+        aria-label="Previous page"
+        title="Previous page"
+      >
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="8" height="13" viewBox="0 0 8 13" fill="none">
+            <path d="M7.1605 1.11898C7.32239 1.2815 7.41333 1.5019 7.41333 1.73171C7.41333 1.96152 7.32239 2.18191 7.1605 2.34444L2.8861 6.6344L7.1605 10.9244C7.3178 11.0878 7.40484 11.3067 7.40287 11.534C7.4009 11.7612 7.31009 11.9786 7.14998 12.1393C6.98988 12.2999 6.7733 12.3911 6.54689 12.3931C6.32048 12.395 6.10235 12.3077 5.93949 12.1498L1.05458 7.24713C0.892699 7.08461 0.801758 6.86421 0.801758 6.6344C0.801758 6.40459 0.892699 6.1842 1.05458 6.02167L5.93949 1.11898C6.10142 0.956507 6.32102 0.865234 6.55 0.865234C6.77897 0.865234 6.99857 0.956507 7.1605 1.11898Z" fill="black"/>
+          </svg>
+        </span>
+        <span>Previous</span>
+      </button>
 
-    <div id="pagination-numbers">
+      <div id="pagination-numbers"></div>
 
-    </div>
-
-    <button class="pagination-button f_17 font_400 clr_blck" id="next-button" aria-label="Next page" title="Next page">
-              <span>Next</span>
-              <span><svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
-  <path d="M0.443014 11.631C0.28113 11.4685 0.190188 11.2481 0.190188 11.0183C0.190188 10.7885 0.28113 10.5681 0.443014 10.4056L4.71742 6.1156L0.443014 1.82564C0.285717 1.66218 0.19868 1.44326 0.200647 1.21603C0.202615 0.988791 0.29343 0.771422 0.453533 0.610737C0.613636 0.450051 0.830216 0.358906 1.05663 0.356932C1.28304 0.354957 1.50116 0.442311 1.66402 0.600181L6.54893 5.50287C6.71082 5.66539 6.80176 5.88579 6.80176 6.1156C6.80176 6.34541 6.71082 6.5658 6.54893 6.72833L1.66402 11.631C1.50209 11.7935 1.28249 11.8848 1.05352 11.8848C0.824546 11.8848 0.604947 11.7935 0.443014 11.631Z" fill="black"/>
-</svg></span>
-    </button>
-  </nav>
+      <button
+        class="pagination-button f_17 font_400 clr_blck"
+        id="next-button"
+        aria-label="Next page"
+        title="Next page"
+      >
+        <span>Next</span>
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" viewBox="0 0 7 12" fill="none">
+            <path d="M0.443014 11.631C0.28113 11.4685 0.190188 11.2481 0.190188 11.0183C0.190188 10.7885 0.28113 10.5681 0.443014 10.4056L4.71742 6.1156L0.443014 1.82564C0.285717 1.66218 0.19868 1.44326 0.200647 1.21603C0.202615 0.988791 0.29343 0.771422 0.453533 0.610737C0.613636 0.450051 0.830216 0.358906 1.05663 0.356932C1.28304 0.354957 1.50116 0.442311 1.66402 0.600181L6.54893 5.50287C6.71082 5.66539 6.80176 5.88579 6.80176 6.1156C6.80176 6.34541 6.71082 6.5658 6.54893 6.72833L1.66402 11.631C1.50209 11.7935 1.28249 11.8848 1.05352 11.8848C0.824546 11.8848 0.604947 11.7935 0.443014 11.631Z" fill="black"/>
+          </svg>
+        </span>
+      </button>
+    </nav>
+  </div>
 </div>
 <script>
-  const paginationNumbers = document.getElementById("pagination-numbers");
-const paginatedList = document.getElementById("paginated-list");
-const listItems = paginatedList.querySelectorAll("li");
-const nextButton = document.getElementById("next-button");
-const prevButton = document.getElementById("prev-button");
-if(listItems.length > 35){
-  $('.pagination-container').show();
-}
-  else{
-   $('.pagination-container').hide(); 
-  }
-const paginationLimit = 35;
-const pageCount = Math.ceil(listItems.length / paginationLimit);
-let currentPage = 1;
-
-const disableButton = (button) => {
-  button.classList.add("disabled");
-  button.setAttribute("disabled", true);
-};
-
-const enableButton = (button) => {
-  button.classList.remove("disabled");
-  button.removeAttribute("disabled");
-};
-
-const handlePageButtonsStatus = () => {
-  if (currentPage === 1) {
-    disableButton(prevButton);
+  const paginationNumbers = document.getElementById('pagination-numbers');
+  const paginatedList = document.getElementById('paginated-list');
+  const listItems = paginatedList.querySelectorAll('li');
+  const nextButton = document.getElementById('next-button');
+  const prevButton = document.getElementById('prev-button');
+  if (listItems.length > 35) {
+    $('.pagination-container').show();
   } else {
-    enableButton(prevButton);
+    $('.pagination-container').hide();
   }
+  const paginationLimit = 35;
+  const pageCount = Math.ceil(listItems.length / paginationLimit);
+  let currentPage = 1;
 
-  if (pageCount === currentPage) {
-    disableButton(nextButton);
-  } else {
-    enableButton(nextButton);
-  }
-};
+  const disableButton = (button) => {
+    button.classList.add('disabled');
+    button.setAttribute('disabled', true);
+  };
 
-const handleActivePageNumber = () => {
-  document.querySelectorAll(".pagination-number").forEach((button) => {
-    button.classList.remove("active");
-    const pageIndex = Number(button.getAttribute("page-index"));
-    if (pageIndex == currentPage) {
-      button.classList.add("active");
+  const enableButton = (button) => {
+    button.classList.remove('disabled');
+    button.removeAttribute('disabled');
+  };
+
+  const handlePageButtonsStatus = () => {
+    if (currentPage === 1) {
+      disableButton(prevButton);
+    } else {
+      enableButton(prevButton);
     }
-  });
-};
 
-const appendPageNumber = (index) => {
-  const pageNumber = document.createElement("button");
-  pageNumber.className = "pagination-number f_17 font_400 clr_blck number";
-  pageNumber.innerHTML = index;
-  pageNumber.setAttribute("page-index", index);
-  pageNumber.setAttribute("aria-label", "Page " + index);
-
-  paginationNumbers.appendChild(pageNumber);
-};
-
-const getPaginationNumbers = () => {
-  for (let i = 1; i <= pageCount; i++) {
-    appendPageNumber(i);
-  }
-};
-
-const setCurrentPage = (pageNum) => {
-  currentPage = pageNum;
-
-  handleActivePageNumber();
-  handlePageButtonsStatus();
-  
-  const prevRange = (pageNum - 1) * paginationLimit;
-  const currRange = pageNum * paginationLimit;
-
-  listItems.forEach((item, index) => {
-    item.classList.add("hidden");
-    if (index >= prevRange && index < currRange) {
-      item.classList.remove("hidden");
+    if (pageCount === currentPage) {
+      disableButton(nextButton);
+    } else {
+      enableButton(nextButton);
     }
-  });
-};
+  };
 
-window.addEventListener("load", () => {
-  getPaginationNumbers();
-  setCurrentPage(1);
+  const handleActivePageNumber = () => {
+    document.querySelectorAll('.pagination-number').forEach((button) => {
+      button.classList.remove('active');
+      const pageIndex = Number(button.getAttribute('page-index'));
+      if (pageIndex == currentPage) {
+        button.classList.add('active');
+      }
+    });
+  };
 
-  prevButton.addEventListener("click", () => {
-    setCurrentPage(currentPage - 1);
-  });
+  const appendPageNumber = (index) => {
+    const pageNumber = document.createElement('button');
+    pageNumber.className = 'pagination-number f_17 font_400 clr_blck number';
+    pageNumber.innerHTML = index;
+    pageNumber.setAttribute('page-index', index);
+    pageNumber.setAttribute('aria-label', 'Page ' + index);
 
-  nextButton.addEventListener("click", () => {
-    setCurrentPage(currentPage + 1);
-  });
+    paginationNumbers.appendChild(pageNumber);
+  };
 
-  document.querySelectorAll(".pagination-number").forEach((button) => {
-    const pageIndex = Number(button.getAttribute("page-index"));
-
-    if (pageIndex) {
-      button.addEventListener("click", () => {
-        setCurrentPage(pageIndex);
-      });
+  const getPaginationNumbers = () => {
+    for (let i = 1; i <= pageCount; i++) {
+      appendPageNumber(i);
     }
-  });
-});
+  };
 
+  const setCurrentPage = (pageNum) => {
+    currentPage = pageNum;
+
+    handleActivePageNumber();
+    handlePageButtonsStatus();
+
+    const prevRange = (pageNum - 1) * paginationLimit;
+    const currRange = pageNum * paginationLimit;
+
+    listItems.forEach((item, index) => {
+      item.classList.add('hidden');
+      if (index >= prevRange && index < currRange) {
+        item.classList.remove('hidden');
+      }
+    });
+  };
+
+  window.addEventListener('load', () => {
+    getPaginationNumbers();
+    setCurrentPage(1);
+
+    prevButton.addEventListener('click', () => {
+      setCurrentPage(currentPage - 1);
+    });
+
+    nextButton.addEventListener('click', () => {
+      setCurrentPage(currentPage + 1);
+    });
+
+    document.querySelectorAll('.pagination-number').forEach((button) => {
+      const pageIndex = Number(button.getAttribute('page-index'));
+
+      if (pageIndex) {
+        button.addEventListener('click', () => {
+          setCurrentPage(pageIndex);
+        });
+      }
+    });
+  });
 </script>
 {% schema %}
 {
@@ -167,7 +311,7 @@ window.addEventListener("load", () => {
       "type": "range",
       "id": "columns_desktop",
       "min": 1,
-      "max": 5,
+      "max": 6,
       "step": 1,
       "default": 3,
       "label": "t:sections.main-list-collections.settings.columns_desktop.label"
@@ -191,6 +335,150 @@ window.addEventListener("load", () => {
       ],
       "default": "2",
       "label": "t:sections.main-list-collections.settings.columns_mobile.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "swipe_on_mobile",
+      "default": false,
+      "label": "Enable swipe on mobile"
+    },
+    {
+      "type": "header",
+      "content": "Layout Settings"
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Column Gap",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "row_gap",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Row Gap",
+      "default": 27
+    },
+    {
+      "type": "header",
+      "content": "Image Settings"
+    },
+    {
+      "type": "range",
+      "id": "image_padding",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Image Padding",
+      "default": 20
+    },
+    {
+      "type": "checkbox",
+      "id": "image_border",
+      "label": "Add Image Border",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "image_border_width",
+      "min": 0,
+      "max": 10,
+      "step": 0.5,
+      "unit": "px",
+      "label": "Image Border Width",
+      "default": 0.5
+    },
+    {
+      "type": "color",
+      "id": "image_border_color",
+      "label": "Image Border Color",
+      "default": "#dddddd"
+    },
+    {
+      "type": "range",
+      "id": "image_border_radius",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Image Border Radius",
+      "default": 6
+    },
+    {
+      "type": "header",
+      "content": "Section Shadow"
+    },
+    {
+      "type": "color",
+      "id": "shadow_color",
+      "label": "Shadow Color",
+      "default": "#020202"
+    },
+    {
+      "type": "range",
+      "id": "shadow_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Shadow Opacity",
+      "default": 8
+    },
+    {
+      "type": "checkbox",
+      "id": "shadow_top_desktop",
+      "default": false,
+      "label": "Show Shadow Top (Desktop)"
+    },
+    {
+      "type": "checkbox",
+      "id": "shadow_bottom_desktop",
+      "default": false,
+      "label": "Show Shadow Bottom (Desktop)"
+    },
+    {
+      "type": "checkbox",
+      "id": "shadow_top_mobile",
+      "default": false,
+      "label": "Show Shadow Top (Mobile)"
+    },
+    {
+      "type": "checkbox",
+      "id": "shadow_bottom_mobile",
+      "default": false,
+      "label": "Show Shadow Bottom (Mobile)"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 50
     }
   ],
   "blocks": [
