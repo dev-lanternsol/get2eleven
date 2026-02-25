@@ -11,33 +11,16 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
-    "text_with_ball_PGV7CU": {
-      "type": "text-with-ball",
-      "name": "text with ball",
-      "settings": {
-        "text-1": "Make Your",
-        "image": "shopify://shop_images/Screenshot_2024-01-03_at_1.48_4.png",
-        "text-2": "Game"
-      }
-    },
     "170730775325ad2756": {
       "type": "apps",
       "blocks": {
         "instafeed_app_block_KA3iNL": {
-          "type": "shopify://apps/instafeed/blocks/app-block/c447db20-095d-4a10-9725-b5977662c9d5",
+          "type": "shopify:\/\/apps\/instafeed\/blocks\/app-block\/c447db20-095d-4a10-9725-b5977662c9d5",
           "settings": {
             "title": "",
             "title_color": "",
-            "title_size_v2": 0,
             "alignment": "center",
-            "instafeed_margin_top": 0,
-            "instafeed_margin_bottom": 0,
-            "instafeed_margin_sides": 0,
-            "show_instagram_link": false,
-            "link_alignment": "left",
-            "link_color": "#000000",
             "background_color": "",
-            "feed_id": "",
             "html_area": ""
           }
         }
@@ -49,16 +32,24 @@
         "include_margins": true
       }
     },
+    "text_with_ball_iHTdqK": {
+      "type": "text-with-ball",
+      "settings": {
+        "text-1": "Make your",
+        "image": "shopify:\/\/shop_images\/Screenshot_2024-01-03_at_1.48_4.png",
+        "text-2": "game"
+      }
+    },
     "footer_banner_ndrTQg": {
       "type": "footer_banner",
       "settings": {
         "heading": "Take your PickleBall game to the next level with us",
-        "caption": "<p>At Get2Eleven, we're not just about gear. We're about the thrill of the game, the camaraderie, and the excitement of each rally. Whether you're a seasoned pro or just getting started, our store is designed with you in mind. We've got everything you need to elevate your game and look good doing it!</p>",
-        "btn": "Shop Now",
-        "url": "shopify://collections/paddles",
-        "image": "shopify://shop_images/Group_344.png",
-        "bg": "shopify://shop_images/undefined_-_Imgur_e2092f1e-5dce-4c30-b6dd-b6b590f67544.png",
-        "bg_mobile": "shopify://shop_images/Rectangle_84.png"
+        "caption": "<p>At Get2Eleven, we're not just about gear. We're about the thrill of the game, the camaraderie, and the excitement of each rally. Whether you're a seasoned pro or just getting started, our store is designed with you in mind. We've got everything you need to elevate your game and look good doing it!<\/p>",
+        "btn": "shop now",
+        "url": "shopify:\/\/collections\/paddles",
+        "image": "shopify:\/\/shop_images\/Group_344.png",
+        "bg": "shopify:\/\/shop_images\/undefined_-_Imgur_e2092f1e-5dce-4c30-b6dd-b6b590f67544.png",
+        "bg_mobile": "shopify:\/\/shop_images\/Rectangle_84.png"
       }
     },
     "image_banner_fMVUnr": {
@@ -68,15 +59,13 @@
           "type": "heading",
           "settings": {
             "heading": "Take your PickleBall game to the next level with us",
-            "heading_size": "h1",
-            "heading_font_size": "f_32",
-            "heading_uppercase": false
+            "heading_size": "h1"
           }
         },
         "text_kRxNgz": {
           "type": "text",
           "settings": {
-            "text": "<p>Consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. enim veniam quis nostrud exercitation ullamco laborisaliquip exea commodo.</p>",
+            "text": "Consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. enim veniam quis nostrud exercitation ullamco laborisaliquip exea commodo.",
             "text_style": "body"
           }
         },
@@ -99,15 +88,14 @@
       ],
       "disabled": true,
       "settings": {
-        "image": "shopify://shop_images/undefined_-_Imgur_5d842e24-e6bc-49b7-b5ea-c3a7721b54e8.png",
-        "image_2": "shopify://shop_images/Group_455.png",
+        "image": "shopify:\/\/shop_images\/undefined_-_Imgur_5d842e24-e6bc-49b7-b5ea-c3a7721b54e8.png",
+        "image_2": "shopify:\/\/shop_images\/Group_455.png",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "desktop_content_position": "middle-left",
         "show_text_box": false,
         "desktop_content_alignment": "left",
         "color_scheme": "scheme-4",
-        "section_width": "boxed",
         "image_behavior": "none",
         "mobile_content_alignment": "left",
         "stack_images_on_mobile": false,
@@ -127,7 +115,7 @@
         "paragraph_AfCxjW": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>Enter your email & stay up to date ...</p>"
+            "text": "<p>Enter your email & stay up to date ...<\/p>"
           }
         },
         "email_form_KPcXg4": {
@@ -146,8 +134,8 @@
         "social_icons_D7zGeV"
       ],
       "settings": {
-        "icon": "shopify://shop_images/KZDH100-N-_-Dura-Fast-Neon-100-count-carton_6883-Edit_600x_1.png",
-        "icon_2": "shopify://shop_images/Ellipse_31_1.png",
+        "icon": "shopify:\/\/shop_images\/KZDH100-N-_-Dura-Fast-Neon-100-count-carton_6883-Edit_600x_1.png",
+        "icon_2": "shopify:\/\/shop_images\/Ellipse_31_1.png",
         "color_scheme": "",
         "full_width": true,
         "padding_top": 70,
@@ -160,7 +148,7 @@
         "image_BEWJDp": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/1_12.png",
+            "image": "shopify:\/\/shop_images\/1_12.png",
             "image_width": 550,
             "alignment": ""
           }
@@ -213,8 +201,8 @@
     }
   },
   "order": [
-    "text_with_ball_PGV7CU",
     "170730775325ad2756",
+    "text_with_ball_iHTdqK",
     "footer_banner_ndrTQg",
     "image_banner_fMVUnr",
     "newsletter_Q797ep",

@@ -370,7 +370,7 @@
    and constrains the overflow wrapper to exactly 3 cards wide.
    Only applied when .review-carousel--custom-card-width class is present.
 */
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 1025px) {
   .review-carousel--custom-card-width .review-carousel-overflow-wrapper {
     max-width: calc(341px * 3 + 6.4rem); /* 3 × 341px + 2 gaps of 3.2rem */
     margin: 0 auto;
